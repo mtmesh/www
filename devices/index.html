@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Meshtastic Devices | Austin Mesh</title>
+        <title>Meshtastic Devices | MTMesh</title>
         <meta name="description" content="Tried and tested solar-powered repeater build methods and parts for making your own Meshtastic repeater.">
         <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -13,7 +13,7 @@
     </head>
     <body>
         <header>
-            <a href="/"><img src="../images/Austin-Mesh-Logo.svg" class="logo" alt="Logo for Austin Mesh" title="Austin Mesh" width="500" height="121" /></a>
+            <a href="/"><img src="../images/MTMesh-Logo.svg" class="logo" alt="Logo for MTMesh" title="MTMesh" width="500" height="121" /></a>
             <button onclick="document.getElementById('event').showModal()" class="default meet-button">📅 Upcoming Meeting 9/9</button>
         </header>
         <dialog id="event">
@@ -70,17 +70,17 @@
                 </menu>
                 <menu class="menu--social">
                     <li>
-                        <a href="https://discord.gg/6a5Sv2s9bG" target="_blank" title="Join the AustinMesh Discord">
+                        <a href="https://discord.gg/6a5Sv2s9bG" target="_blank" title="Join the MTMesh Discord">
                             <img src="../images/social/discord.svg" height="21" alt="Discord Logo" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA" target="_blank" title="Join the AustinMesh YouTube">
+                        <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA" target="_blank" title="Join the MTMesh YouTube">
                             <img src="../images/social/youtube.svg" height="21" alt="YouTube Logo" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/p/Cq0jOpYLpZy/" target="_blank" title="Join the AustinMesh Instagram">
+                        <a href="https://www.instagram.com/p/Cq0jOpYLpZy/" target="_blank" title="Join the MTMesh Instagram">
                             <img src="../images/social/instagram.svg" height="21" alt="Instagram Logo" />
                         </a>
                     </li>
@@ -88,7 +88,7 @@
             </nav>
             <hgroup>
                 <h1>Devices for the Mesh</h1>
-                <p>Austin mesh uses a technology called <a href="https://meshtastic.org" target="_blank">Meshtastic</a> to power the network here in Central Texas. In order to connect to this network, a relatively low cost device is required. You'll often hear these devices referred to as <b>nodes</b>. You can <a href="https://www.rfindex.com">compare the best meshtastic nodes on RF Index</a>.</p>
+                <p>MTMesh uses a technology called <a href="https://meshtastic.org" target="_blank">Meshtastic</a> to power the network here in Montana. In order to connect to this network, a relatively low cost device is required. You'll often hear these devices referred to as <b>nodes</b>. You can <a href="https://www.rfindex.com">compare the best meshtastic nodes on RF Index</a>.</p>
             </hgroup>
             <ul>
                 <li><a href="#options">Device options and recommendations</a></li>
@@ -155,7 +155,7 @@
                     <li>Don’t add any modules. The GPS module increases battery usage significantly and is unnecessary if the repeater is in a fixed position.</li>
                     <li>Seal everything properly and make sure water has a way to get out of the case. Use o-rings for the antenna mount and wrap connectors in proxicast. Add a drain plug to the case so any condensation has a way to escape. For high humidity environments, spray the electronics with conformal coating.</li>
                 </ol>
-                <p>These are lessons learned from Austin Texas, where the main environmental stressors are heat and thunderstorms. In the summer of 2023 we 80 days over 100° F (38°C) and we had a stretch of 11 days over 105° F (40.5°C), during which two radios died. We also can have both high humidity and high temperature at the same time in Austin; in the summer the weather would swing from 80° F (27°C) with 85% humidity in the morning to 105° F (38°C) with 25% humidity in the afternoon. <a href="https://weatherspark.com/h/y/8004/2023/Historical-Weather-during-2023-in-Austin-Texas-United-States">Weather history here.</a> Our learnings are probably applicable to other southern and desert climates.</p>
+                <p>These are lessons learned from extreme weather conditions, where the main environmental stressors can be heat, cold, and storms. Temperature extremes can cause equipment failure, so proper enclosure design and temperature management are critical. Weather conditions can vary widely throughout the day and seasons, requiring robust designs that can handle temperature swings and humidity changes. Our learnings are applicable to various climate conditions, though specific considerations may vary by region.</p>
                 <details>
                     <summary>Details on the boards that died</summary>
                     <p>One was filled with water, the antenna seal didn't work. That's why the vent valve at the bottom is so important. One died because it got stuck in the low voltage state that requires a physical reset - that's fixed with the Voltaic packs. The third one died due to unknown causes but heat is suspected. When we tried to reboot with with wall power it wouldn't turn on - so the board was totally fried. That one I also sprayed with covalent coating nasty stuff that we won't use any more.</p>
@@ -164,7 +164,7 @@
                 <ol>
                     <li>Northern Climates and extreme cold
                         <ul>
-                            <li>This isn't from our experience, but we felt it was so valuable that we shoud link to it here. <a href="https://www.yycmesh.com/" target="_blank">YYC Mesh</a>, a group in southern Alberta as well as the Greater Vancouver/Victoria recently published their <a href="https://yycmesh.wordpress.com/2025/04/19/cold-weather-charging-of-lithium-ion-batteries-real-world-lessons-from-the-meshtastic-community/?utm_source=referral&utm_medium=website&utm_campaign=austinmesh" target="_blank">findings on batteries in cold temperatures</a>.
+                            <li>This isn't from our experience, but we felt it was so valuable that we shoud link to it here. <a href="https://www.yycmesh.com/" target="_blank">YYC Mesh</a>, a group in southern Alberta as well as the Greater Vancouver/Victoria recently published their <a href="https://yycmesh.wordpress.com/2025/04/19/cold-weather-charging-of-lithium-ion-batteries-real-world-lessons-from-the-meshtastic-community/?utm_source=referral&utm_medium=website&utm_campaign=mtmesh" target="_blank">findings on batteries in cold temperatures</a>.
                             <li>LiPo and Li-ion are fine(0 failures)</li>
                             <li>Capacity <b>IS</b> reduced. 3000mAh minimum kept nodes up and charge rates low(good thing)</li>
                             <li>Charging creates heat, enclosures trap heat</li>
@@ -259,7 +259,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support AustinMesh’s community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
+                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -374,7 +374,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support AustinMesh’s community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
+                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -419,7 +419,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support AustinMesh’s community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
+                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -509,8 +509,8 @@
         </main>
         <footer>
             <p>Our website content is licensed under Creative Commons
-                <br>feel free to use if for your club's website: <a href="https://github.com/austinmesh/www">Github</a>
-                <br>If we've inspired you, please <a href="mailto:info@austinmesh.org">email us</a>!
+                <br>feel free to use if for your club's website: <a href="https://github.com/mtmesh/www">Github</a>
+                <br>If we've inspired you, please <a href="mailto:info@mtmesh.net">email us</a>!
                 <br>This site is (c) by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
                 <br><a href="/privacy/">Privacy Policy</a>
             </p>
