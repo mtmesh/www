@@ -14,22 +14,7 @@
     <body>
         <header>
             <a href="/"><img src="../images/MTMesh-Logo.svg" class="logo" alt="Logo for MTMesh" title="MTMesh" width="500" height="121" /></a>
-            <button onclick="document.getElementById('event').showModal()" class="default meet-button">📅 Upcoming Meeting 9/9</button>
         </header>
-        <dialog id="event">
-    <header>
-        <h1>Meetup</h1>
-    </header>
-    <p>North side meetup @ Mister Tramps @ 6:30pm on September 9th. Meeting in the large back room. Dinner and drinks are covered if you have gotten a new or upgraded ham license in the last 3 month.</p>
-    <p><b>Tuesday, September 9, 2025, 6:30 PM CDT</b> (<a href="https://discord.com/events/1204595620204249138/1406249414527549561" target="_blank">Save the date</a>)</p>
-    <p>Mister Tramps</p>
-    <footer>
-        <form method="dialog">
-            <a class="default" href="https://discord.com/events/1204595620204249138/1406249414527549561" type="button">Save the date</a>
-            <button type="submit">Close</button>
-        </form>
-    </footer>
-</dialog>
         <main>
             <nav>
                 <menu>
@@ -101,7 +86,7 @@
             <section id="about">
                 <h2>All about MTMesh and Meshtastic</h2>
                 <h3>How does it work?</h3>
-                <p>We have set up a number of solar-powered radio repeaters in Montana. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they're close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.</p>
+                <p>We have set up a number of solar-powered radio repeaters in the Flathead valley and working out from there. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they're close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.</p>
                 <h3 id="eli5">Can you explain it like I'm 5?</h3>
                 <p>Pretend you're sitting in class and want to send a note to everyone in the class. You write your note on a piece of paper and copy it three times. The message can be up to 228 characters - about as long as this paragraph so far. You hand those three pieces of paper to the three people around you. Then those three people re-write the message three times and hand it to the three people around them and so on. Now imagine a big gust of wind comes and blows away some of the messages. If even just a few people saw the note and keep copying and re-sending it, eventually everyone will get a copy of the note. This is like sending an unencrypted message to everyone on the network.</p>
                 <p>Now imagine you want to send a message to a single person or a select group of people but you don't want other people who see the note to be able to read it. You could write the note using a secret language. You could then hand a decoder key to your friend or to a group of friends and they could decode the message. The message still gets passed the same way - with every single person writing the message a few times and handing it to everyone - but only those people with the decoder key will be able to understand the message. This is like sending an encrypted direct message or encrypted group message.</p>
@@ -132,10 +117,7 @@
             </section>
             <section id="coverage">
                 <h2>What kind of coverage does the MTMesh network have?</h2>
-                <p>As of Summer 2024 we have coverage throughout most of Montana. We're actively working to expand this coverage.</p>
-                <p>We now have a coverage map showing nodes seen over the last 15 days:</p>
-                <iframe src="https://graphs.mtmesh.org/d-solo/ddpwwgtdxf2m8f/mtmesh?orgId=1&from=now-15d&to=now&panelId=10" height="400" frameborder="0"></iframe>
-                <p><a href="https://meshmap.net/">The MQTT map at meshmap.net</a> is <b>not</b> representative of the coverage as we <a href="/join/#best-practices">do not recommend using MQTT</a> however it may still be useful for you to see what is in your area. Another <a href="https://canvis.app/meshtastic-map">map of <b>self reported</b> nodes</a> is also available, but more likely to be out-of-date.</p>
+                <p>As of Summer 2025 we have coverage throughout in Flathead, Judith Basin and working out from there. We're actively working to expand this coverage.</p>
             </section>
             <section id="comparisons">
                 <h2>Comparing it to APRS on Ham Radio</h2>
@@ -171,19 +153,6 @@
         </main>
         <footer>
             <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank">Austin Mesh's site</a> (which is (c) by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License). Our website content is licensed under Creative Commons-ShareAlike 4.0 International License.
-                <br><a href="/privacy/">Privacy Policy</a>
-            </p>
-        </footer>
-    </body>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector("header").classList.add("loaded");
-        });
-    </script>
-</html>
-                <br>feel free to use if for your club's website: <a href="https://github.com/mtmesh/www">Github</a>
-                <br>If we've inspired you, please <a href="mailto:info@mtmesh.net">email us</a>!
-                <br>This site is (c) by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
                 <br><a href="/privacy/">Privacy Policy</a>
             </p>
         </footer>
