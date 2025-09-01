@@ -3,163 +3,289 @@
     <head>
         <title>Learn about Meshtastic and MTMesh</title>
         <meta name="description" content="Learn all about Meshtastic, MTMesh, why we exist, and similar technologies.">
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-        <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
-        <link rel="stylesheet" href="../styles.css?v=6">
+        <link rel="stylesheet" href="../modern-styles.css">
     </head>
     <body>
-        <header>
-            <a href="/"><img src="../images/MTMesh-Logo.svg" class="logo" alt="Logo for MTMesh" title="MTMesh" width="500" height="121" /></a>
+        <a href="#main" class="skip-link">Skip to main content</a>
+        
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" aria-label="MTMesh Home">
+                        <img src="../images/MTMesh-Logo.svg" class="logo" alt="MTMesh Logo" width="240" height="58" />
+                    </a>
+                    
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/learn/" class="nav-link">Learn</a></li>
+                            <li class="nav-item"><a href="/join/" class="nav-link">Join</a></li>
+                            <li class="nav-item"><a href="/devices/" class="nav-link">Devices</a></li>
+                            <li class="nav-item"><a href="/partners/" class="nav-link">Partners</a></li>
+                            <li class="nav-item"><a href="/similar-networks/" class="nav-link">Networks</a></li>
+                        </ul>
+                        
+                        <div class="nav-social">
+                            <a href="https://www.reddit.com/r/mtmesh/" target="_blank" rel="noopener" aria-label="Join MTMesh on Reddit">
+                                <img src="../images/social/reddit.svg" height="24" width="24" alt="Reddit" />
+                            </a>
+                            <a href="https://discord.gg/KcvbFzhV" target="_blank" rel="noopener" aria-label="Join MTMesh Discord">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.010c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </header>
-        <main>
-            <nav>
-                <menu>
-                    <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="/learn/">Learn</a>
-                        <menu>
-                            <li><a href="/learn/#about">About</a></li>
-                            <li><a href="/learn/#coverage">Network coverage</a></li>
-                            <li><a href="/learn/#comparisons">Similar technology</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/join/">Join</a>
-                        <menu>
-                            <li><a href="/join/#network">Join the network</a></li>
-                            <li><a href="/join/#best-practices">Best practices</a></li>
-                            <li><a href="/join/#group">Join the group</a></li>
-                            <li><a href="/join/property-owner-faq-hosting-a-node">Property Owner FAQ</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/devices/">Devices</a>
-                        <menu>
-                            <li><a href="/devices/#options">Recommended Options</a></li>
-                            <li><a href="/devices/#solar">DIY Solar Repeaters</a></li>
-                            <li><a href="/devices/#aerial">Aerial Nodes</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/similar-networks/">Similar networks</a>
-                        <menu>
-                            <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
-                            <li><a href="/similar-networks/#start-a-similar-network">Start a similar network</a></li>
-                        </menu>
-                    </li>
-                    <li><a href="/partners/">Partners</a></li>
-                </menu>
-                <menu class="menu--social">
-                    <li>
-                        <a href="https://www.reddit.com/r/mtmesh/" target="_blank" title="Join the MTMesh on Reddit">
-                            <img src="../images/social/reddit.svg" height="21" alt="Reddit Logo" />
-                        </a>
-                    </li>
-                </menu>
-            </nav>
-            <hgroup>
-                <h1>Learn about MTMesh and Meshtastic</h1>
-                <p>MTMesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Montana. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
-            </hgroup>
-            <ul>
-                <li><a href="#about">About MTMesh and Meshtastic</a>
-                    <ul>
-                        <li>Why build a mesh in the first place?</li>
-                        <li>How does it work?</li>
-                        <li><a href="#eli5">Explain it like I'm 5</a></li>
-                        <li>What can it do?</li>
-                        <li>Why build this network?</li>
-                    </ul>
-                </li>
-                <li><a href="#coverage">Network coverage in Montana</a></li>
-                <li><a href="#comparisons">Comparisons to similar technology</a></li>
-            </ul>
-            <section>
-                <h2>Why build a mesh in the first place?</h2>
-                <blockquote cite="https://www.zeroretries.org/p/zero-retries-0170?open=false#%C2%A7a-few-good-comments-on-fcc-docket">First responders have access to FirstNet, a hardened, prioritized cellular service operated by AT&T. Ordinary citizens have no equivalent “network of last resort”… or at least they didn’t until Meshtastic was developed. Meshtastic is being used in (preparation for) emergency scenarios by ordinary citizens because it is inexpensive to buy individual nodes and doesn’t depend on infrastructure. Meshtastic’s relay (mesh) functionality is automatic, and it can easily be deployed by individuals or in groups such as a neighborhood.</blockquote>
-                <cite>Steve Stroh N8GNJ, <a href="https://www.zeroretries.org/p/zero-retries-0170?open=false#%C2%A7a-few-good-comments-on-fcc-docket">Zero Retries 0170</a></cite>
+
+        <main id="main">
+            <section class="section">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h1>Learn about MTMesh and Meshtastic</h1>
+                        <p class="text-large">MTMesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Montana. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
+                    </div>
+                    
+                    <!-- Quick Navigation Cards -->
+                    <div class="grid grid-3 mb-xl">
+                        <div class="card">
+                            <h3 class="card-title">About MTMesh</h3>
+                            <div class="card-content">
+                                <p>Understand how mesh networks work and why we built MTMesh for Montana communities.</p>
+                                <a href="#about" class="btn btn-primary mt-md">Learn More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">ELI5 - Simple Explanation</h3>
+                            <div class="card-content">
+                                <p>Our world-famous "Explain it Like I'm 5" guide makes mesh networking easy to understand.</p>
+                                <a href="#eli5" class="btn btn-primary mt-md">Read ELI5</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Network Coverage</h3>
+                            <div class="card-content">
+                                <p>See where our solar-powered repeaters are deployed across Montana's Flathead Valley.</p>
+                                <a href="#coverage" class="btn btn-primary mt-md">View Coverage</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-            <section id="about">
-                <h2>All about MTMesh and Meshtastic</h2>
-                <h3>How does it work?</h3>
-                <p>We have set up a number of solar-powered radio repeaters in the Flathead valley and working out from there. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they're close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.</p>
-                <h3 id="eli5">Can you explain it like I'm 5?</h3>
-                <p>Pretend you're sitting in class and want to send a note to everyone in the class. You write your note on a piece of paper and copy it three times. The message can be up to 228 characters - about as long as this paragraph so far. You hand those three pieces of paper to the three people around you. Then those three people re-write the message three times and hand it to the three people around them and so on. Now imagine a big gust of wind comes and blows away some of the messages. If even just a few people saw the note and keep copying and re-sending it, eventually everyone will get a copy of the note. This is like sending an unencrypted message to everyone on the network.</p>
-                <p>Now imagine you want to send a message to a single person or a select group of people but you don't want other people who see the note to be able to read it. You could write the note using a secret language. You could then hand a decoder key to your friend or to a group of friends and they could decode the message. The message still gets passed the same way - with every single person writing the message a few times and handing it to everyone - but only those people with the decoder key will be able to understand the message. This is like sending an encrypted direct message or encrypted group message.</p>
-                <p>MTMesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves. Our radios are solar powered and they don't need any internet or cell phone coverage. This means they will work even if the power is out.</p>
-                <h3>What can it do?</h3>
-                <p>Meshtastic is a bit like a decentralized social media platform or SMS text messaging. It has a number of different features which will be familiar to anyone who has sent a text message or posted on social media.</p>
-                <dl>
-                    <dt>1) Primary Channel:</dt>
-                    <dd>You can broadcast an unencrypted message to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” publicly on a social media platform.</dd>
-                    <dt>2) Group Channels:</dt>
-                    <dd>You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.</dd>
-                    <dt>3) Direct Messages:</dt>
-                    <dd>You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.</dd>
-                    <dt>4) Location:</dt>
-                    <dd>If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app.</dd>
-                    <dt>5) Connect Worldwide:</dt>
-                    <dd>If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.</dd>
-                    <dt>6) Telemetry Data:</dt>
-                    <dd>Nodes can be set up to send telemetry data like the battery status or signal strength, which is helpful for monitoring remote solar-powered nodes. Nodes can also have sensors connected to them which allow them to send data on temperature, humidity, or air pressure which allow them to act like weather stations.</dd>
-                </dl>
-                <h3>Why build this network?</h3>
-                <h4>1) Community</h4>
-                <p>Because this is essentially a city-wide group text message chain we are hoping people use the network to build community. Tell the group where your band is playing tonight, chat about local politics, ask for a good cheese dip recipe, etc.</p>
-                <h4>2) Disasters</h4>
-                <p>If the power goes out, like during the 2021 Winter Storm Uri, this network should allow people to continue to communicate with each other without electricity, cell phone coverage, or internet. This big city-wide group text chain could allow people to ask for help or offer assistance. People could get information about where warming centers are open or ask who in their neighborhood still has power. People could also send encrypted direct messages to check in on friends and family or they could send encrypted group messages to coordinate privately in a group.</p>
-                <h4>3) Decentralized, Open, and Resilient</h4>
-                <p>MTMesh is decentralized - there is no central server or corporation - all the communication bounces through the entire mesh. MTMesh is open to everyone - you don't have to ask permission to join and all of the software is open-source. MTMesh is resilient - our solar-powered radios don't need cell phone towers, internet access, or electricity. We hope this project will inspire others to build things that are decentralized, open, and resilient.</p>
+            <section class="section" style="background-color: var(--color-surface);">
+                <div class="container-content">
+                    <h2 class="section-title">Why build a mesh in the first place?</h2>
+                    <div class="card">
+                        <blockquote cite="https://www.zeroretries.org/p/zero-retries-0170?open=false#%C2%A7a-few-good-comments-on-fcc-docket" style="font-style: italic; font-size: var(--font-size-lg); line-height: var(--line-height-relaxed); border-left: 4px solid var(--color-secondary); padding-left: var(--space-lg); margin-bottom: var(--space-md);">First responders have access to FirstNet, a hardened, prioritized cellular service operated by AT&T. Ordinary citizens have no equivalent "network of last resort"… or at least they didn't until Meshtastic was developed. Meshtastic is being used in (preparation for) emergency scenarios by ordinary citizens because it is inexpensive to buy individual nodes and doesn't depend on infrastructure. Meshtastic's relay (mesh) functionality is automatic, and it can easily be deployed by individuals or in groups such as a neighborhood.</blockquote>
+                        <cite class="text-small text-muted">Steve Stroh N8GNJ, <a href="https://www.zeroretries.org/p/zero-retries-0170?open=false#%C2%A7a-few-good-comments-on-fcc-docket">Zero Retries 0170</a></cite>
+                    </div>
+                </div>
             </section>
-            <section id="coverage">
-                <h2>What kind of coverage does the MTMesh network have?</h2>
-                <p>As of Summer 2025 we have coverage throughout in Flathead, Judith Basin and working out from there. We're actively working to expand this coverage.</p>
+            <section id="about" class="section">
+                <div class="container-content">
+                    <h2 class="section-title">All about MTMesh and Meshtastic</h2>
+                    
+                    <!-- How it works -->
+                    <div class="card mb-xl">
+                        <h3 class="card-title">How does it work?</h3>
+                        <div class="card-content">
+                            <p>We have set up a number of solar-powered radio repeaters in the Flathead valley and working out from there. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they're close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- ELI5 Section - Prominently Featured -->
+                    <div id="eli5" class="card mb-xl" style="border: 2px solid var(--color-secondary); background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);">
+                        <h3 class="card-title" style="color: var(--color-primary);">Can you explain it like I'm 5?</h3>
+                        <div class="card-content">
+                            <p><strong>The Paper Note Analogy:</strong></p>
+                            <p>Pretend you're sitting in class and want to send a note to everyone in the class. You write your note on a piece of paper and copy it three times. The message can be up to 228 characters - about as long as this paragraph so far. You hand those three pieces of paper to the three people around you. Then those three people re-write the message three times and hand it to the three people around them and so on. Now imagine a big gust of wind comes and blows away some of the messages. If even just a few people saw the note and keep copying and re-sending it, eventually everyone will get a copy of the note. This is like sending an unencrypted message to everyone on the network.</p>
+                            
+                            <p><strong>Secret Messages:</strong></p>
+                            <p>Now imagine you want to send a message to a single person or a select group of people but you don't want other people who see the note to be able to read it. You could write the note using a secret language. You could then hand a decoder key to your friend or to a group of friends and they could decode the message. The message still gets passed the same way - with every single person writing the message a few times and handing it to everyone - but only those people with the decoder key will be able to understand the message. This is like sending an encrypted direct message or encrypted group message.</p>
+                            
+                            <p><strong>MTMesh is just like this:</strong></p>
+                            <p>MTMesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves. Our radios are solar powered and they don't need any internet or cell phone coverage. This means they will work even if the power is out.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- What can it do -->
+                    <div class="card mb-xl">
+                        <h3 class="card-title">What can it do?</h3>
+                        <div class="card-content">
+                            <p class="mb-lg">Meshtastic is a bit like a decentralized social media platform or SMS text messaging. It has a number of different features which will be familiar to anyone who has sent a text message or posted on social media.</p>
+                            
+                            <div class="grid grid-2">
+                                <div class="card">
+                                    <h4 class="font-semibold mb-sm">Primary Channel</h4>
+                                    <p class="text-small">You can broadcast an unencrypted message to the Primary Channel and everyone on your mesh will see it. This is a bit like "posting" publicly on a social media platform.</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <h4 class="font-semibold mb-sm">Group Channels</h4>
+                                    <p class="text-small">You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <h4 class="font-semibold mb-sm">Direct Messages</h4>
+                                    <p class="text-small">You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <h4 class="font-semibold mb-sm">Location</h4>
+                                    <p class="text-small">If you choose to enable it you can send your location to the mesh and it will show up on everyone's map in the app.</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <h4 class="font-semibold mb-sm">Connect Worldwide</h4>
+                                    <p class="text-small">If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <h4 class="font-semibold mb-sm">Telemetry Data</h4>
+                                    <p class="text-small">Nodes can be set up to send telemetry data like the battery status or signal strength, which is helpful for monitoring remote solar-powered nodes. Nodes can also have sensors connected to them which allow them to send data on temperature, humidity, or air pressure which allow them to act like weather stations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Why build this network -->
+                    <div class="card">
+                        <h3 class="card-title">Why build this network?</h3>
+                        <div class="card-content">
+                            <div class="grid grid-3">
+                                <div>
+                                    <h4 class="font-semibold mb-sm">Community</h4>
+                                    <p>Because this is essentially a city-wide group text message chain we are hoping people use the network to build community. Tell the group where your band is playing tonight, chat about local politics, ask for a good cheese dip recipe, etc.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-semibold mb-sm">Disasters</h4>
+                                    <p>If the power goes out, like during the 2021 Winter Storm Uri, this network should allow people to continue to communicate with each other without electricity, cell phone coverage, or internet. This big city-wide group text chain could allow people to ask for help or offer assistance. People could get information about where warming centers are open or ask who in their neighborhood still has power. People could also send encrypted direct messages to check in on friends and family or they could send encrypted group messages to coordinate privately in a group.</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-semibold mb-sm">Decentralized, Open, and Resilient</h4>
+                                    <p>MTMesh is decentralized - there is no central server or corporation - all the communication bounces through the entire mesh. MTMesh is open to everyone - you don't have to ask permission to join and all of the software is open-source. MTMesh is resilient - our solar-powered radios don't need cell phone towers, internet access, or electricity. We hope this project will inspire others to build things that are decentralized, open, and resilient.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-            <section id="comparisons">
-                <h2>Comparing it to APRS on Ham Radio</h2>
-                <p>For people who are familiar with using the <a href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System">Automatic Packet Reporting System (APRS) </a> on ham radio, Meshtastic is <strong>similar</strong> in a few ways:</p>
-                <h3>Similarities</h3>
-                <dl>
-                    <dt>Digipeaters</dt>
-                    <dd>APRS radios can be set up as clients, which receive all messages and only transmit the users messages, or APRS radios can be set up as digipeaters, which repeat all the messages they hear. Meshtastic radios by default all act as repeaters – just like APRS digipeaters.</dd>
-                    <dt>iGates</dt>
-                    <dd>MQTT Gateways are like APRS iGates – they repeat all local traffic over the internet to other MQTT Gateways around the world.</dd>
-                    <dt>ANSRVR</dt>
-                    <dd>APRS users can subscribe to groups using the ANSRVR service. This allows for group chats like the popular #APRSThursday net. Meshtastic has “Secondary Channels” that can be subscribe to, allowing users to send messages to everyone on the channel.</dd>
-                    <dt>Burst</dt>
-                    <dd>APRS uses the AX.25 protocol which sends messages using data bursts between 0.3 and 0.5 seconds long. Meshtastic uses the LoRa protocol which sends messages in data bursts between 0.5 and 10 seconds long.</dd>
-                </dl>
-                <h3>Differences</h3>
-                <p>But Meshtastic is also <strong>different</strong> than APRS in a few ways:</p>
-                <dl>
-                    <dt>Primary</dt>
-                    <dd>APRS doesn’t have a way to broadcast a message to everyone on the network. Messages sent to Meshtastic's Primary Channel go to everyone.</dd>
-                    <dt>Encryption</dt>
-                    <dd>APRS is unencrypted because it is illegal to use encryption over ham radio. Meshtastic is encrypted for communications on private group channels and for direct messages between users, because it runs on the 900 MHz ISM band, which does not have restrictions on encryption.</dd>
-                    <dt>License</dt>
-                    <dd>APRS requires the user to have a ham radio license. Meshtastic does not require any license and is open for anyone to use.</dd>
-                    <dt>Equipment Cost</dt>
-                    <dd>APRS capable handheld ham radios cost upwards of $400. Meshtastic radios cost less than $100.</dd>
-                    <dt>Email</dt>
-                    <dd>APRS has services which allow users to send emails and SMS text messages to people who aren’t ham radio users. Meshtastic does not have this feature but it could be added in the future.</dd>
-                    <dt>Simplicity</dt>
-                    <dd>APRS is quite a bit more difficult to use than Meshtastic. APRS does not have any standardized user interface – there are dozens of software packages available. Meshtastic has a standardized iPhone and Android app which is easy to understand for new users.</dd>
-                </dl>
+            <section id="coverage" class="section" style="background-color: var(--color-surface);">
+                <div class="container-content">
+                    <h2 class="section-title">What kind of coverage does the MTMesh network have?</h2>
+                    <div class="card text-center">
+                        <div class="card-content">
+                            <p class="text-large">As of Summer 2025 we have coverage throughout in Flathead, Judith Basin and working out from there. We're actively working to expand this coverage.</p>
+                            <div class="mt-lg">
+                                <a href="/join/" class="btn btn-secondary">Help Expand Coverage</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="comparisons" class="section">
+                <div class="container-content">
+                    <h2 class="section-title">Comparing it to APRS on Ham Radio</h2>
+                    <p class="text-center text-large mb-xl">For people who are familiar with using the <a href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System">Automatic Packet Reporting System (APRS)</a> on ham radio, Meshtastic is <strong>similar</strong> in a few ways:</p>
+                    
+                    <div class="grid grid-2">
+                        <!-- Similarities -->
+                        <div class="card">
+                            <h3 class="card-title">Similarities</h3>
+                            <div class="card-content">
+                                <div class="grid grid-2">
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">Digipeaters</h4>
+                                        <p class="text-small">APRS radios can be set up as clients, which receive all messages and only transmit the users messages, or APRS radios can be set up as digipeaters, which repeat all the messages they hear. Meshtastic radios by default all act as repeaters – just like APRS digipeaters.</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">iGates</h4>
+                                        <p class="text-small">MQTT Gateways are like APRS iGates – they repeat all local traffic over the internet to other MQTT Gateways around the world.</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">ANSRVR</h4>
+                                        <p class="text-small">APRS users can subscribe to groups using the ANSRVR service. This allows for group chats like the popular #APRSThursday net. Meshtastic has "Secondary Channels" that can be subscribe to, allowing users to send messages to everyone on the channel.</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">Burst</h4>
+                                        <p class="text-small">APRS uses the AX.25 protocol which sends messages using data bursts between 0.3 and 0.5 seconds long. Meshtastic uses the LoRa protocol which sends messages in data bursts between 0.5 and 10 seconds long.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Differences -->
+                        <div class="card">
+                            <h3 class="card-title">Differences</h3>
+                            <div class="card-content">
+                                <p class="mb-md">But Meshtastic is also <strong>different</strong> than APRS in a few ways:</p>
+                                
+                                <div class="grid grid-2">
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">Primary Channel</h4>
+                                        <p class="text-small">APRS doesn't have a way to broadcast a message to everyone on the network. Messages sent to Meshtastic's Primary Channel go to everyone.</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">Encryption</h4>
+                                        <p class="text-small">APRS is unencrypted because it is illegal to use encryption over ham radio. Meshtastic is encrypted for communications on private group channels and for direct messages between users, because it runs on the 900 MHz ISM band, which does not have restrictions on encryption.</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">License</h4>
+                                        <p class="text-small">APRS requires the user to have a ham radio license. Meshtastic does not require any license and is open for anyone to use.</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">Equipment Cost</h4>
+                                        <p class="text-small">APRS capable handheld ham radios cost upwards of $400. Meshtastic radios cost less than $100.</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">Email</h4>
+                                        <p class="text-small">APRS has services which allow users to send emails and SMS text messages to people who aren't ham radio users. Meshtastic does not have this feature but it could be added in the future.</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-sm">Simplicity</h4>
+                                        <p class="text-small">APRS is quite a bit more difficult to use than Meshtastic. APRS does not have any standardized user interface – there are dozens of software packages available. Meshtastic has a standardized iPhone and Android app which is easy to understand for new users.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
-        <footer>
-            <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank">Austin Mesh's site</a> (which is (c) by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License). Our website content is licensed under Creative Commons-ShareAlike 4.0 International License.
-                <br><a href="/privacy/">Privacy Policy</a>
-            </p>
+
+        <footer class="footer">
+            <div class="container-content">
+                <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank" rel="noopener">Austin Mesh's site</a> (which is © by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License).</p>
+                <p><a href="/privacy/">Privacy Policy</a> | <a href="mailto:info@mtmesh.net">Contact: info@mtmesh.net</a></p>
+            </div>
         </footer>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Add loaded class for animations
+                document.body.classList.add("loaded");
+            });
+        </script>
     </body>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector("header").classList.add("loaded");
-        });
-    </script>
 </html>

@@ -3,127 +3,258 @@
     <head>
         <title>Community Partners | MTMesh</title>
         <meta name="description" content="Learn how to partner with MTMesh to expand Meshtastic networks across Montana, or reach out to become a partner.">
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-        <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
-        <link rel="stylesheet" href="../styles.css?v=6">
+        <link rel="stylesheet" href="../modern-styles.css">
     </head>
     <body>
-        <header>
-            <a href="/"><img src="../images/MTMesh-Logo.svg" class="logo" alt="Logo for MTMesh" title="MTMesh" width="500" height="121" /></a>
+        <a href="#main" class="skip-link">Skip to main content</a>
+        
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" aria-label="MTMesh Home">
+                        <img src="../images/MTMesh-Logo.svg" class="logo" alt="MTMesh Logo" width="240" height="58" />
+                    </a>
+                    
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/learn/" class="nav-link">Learn</a></li>
+                            <li class="nav-item"><a href="/join/" class="nav-link">Join</a></li>
+                            <li class="nav-item"><a href="/devices/" class="nav-link">Devices</a></li>
+                            <li class="nav-item"><a href="/partners/" class="nav-link">Partners</a></li>
+                            <li class="nav-item"><a href="/similar-networks/" class="nav-link">Networks</a></li>
+                        </ul>
+                        
+                        <div class="nav-social">
+                            <a href="https://www.reddit.com/r/mtmesh/" target="_blank" rel="noopener" aria-label="Join MTMesh on Reddit">
+                                <img src="../images/social/reddit.svg" height="24" width="24" alt="Reddit" />
+                            </a>
+                            <a href="https://discord.gg/KcvbFzhV" target="_blank" rel="noopener" aria-label="Join MTMesh Discord">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.010c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </header>
-        <main>
-            <nav>
-                <menu>
-                    <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="/learn/">Learn</a>
-                        <menu>
-                            <li><a href="/learn/#about">About</a></li>
-                            <li><a href="/learn/#coverage">Network coverage</a></li>
-                            <li><a href="/learn/#comparisons">Similar technology</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/join/">Join</a>
-                        <menu>
-                            <li><a href="/join/#network">Join the network</a></li>
-                            <li><a href="/join/#best-practices">Best practices</a></li>
-                            <li><a href="/join/#group">Join the group</a></li>
-                            <li><a href="/join/property-owner-faq-hosting-a-node">Property Owner FAQ</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/devices/">Devices</a>
-                        <menu>
-                            <li><a href="/devices/#options">Recommended Options</a></li>
-                            <li><a href="/devices/#solar">DIY Solar Repeaters</a></li>
-                            <li><a href="/devices/#aerial">Aerial Nodes</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/similar-networks/">Similar networks</a>
-                        <menu>
-                            <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
-                            <li><a href="/similar-networks/#start-a-similar-network">Start a similar network</a></li>
-                        </menu>
-                    </li>
-                    <li><a href="/partners/">Partners</a></li>
-                </menu>
-                <menu class="menu--social">
-                    <li>
-                        <a href="https://www.reddit.com/r/mtmesh/" target="_blank" title="Join the MTMesh on Reddit">
-                            <img src="../images/social/reddit.svg" height="21" alt="Reddit Logo" />
-                        </a>
-                    </li>
-                </menu>
-            </nav>
-            <hgroup>
-                <h1>Our community partners</h1>
-                <p>Want to support MTMesh and the Montana community at large? <a href="mailto:info@mtmesh.net">Reach out to us via email at info@mtmesh.net!</a></p>
-            </hgroup>
-            <section>
-                <article>
-                    <h2 class="partner-heading">Educational Partnerships</h2>
-                    <p>MTMesh is actively seeking partnerships with <strong>Montana schools, universities, and educational organizations</strong> to bring hands-on STEM learning opportunities to students across the state. We believe in empowering young minds to explore wireless communication, electronics, and programming using <a href="https://meshtastic.org/" target="_blank" rel="noopener">Meshtastic</a> devices.</p>
+
+        <main id="main">
+            <!-- Hero Section -->
+            <section class="section">
+                <div class="container-content text-center">
+                    <h1 class="section-title fade-in">Partner with MTMesh</h1>
+                    <p class="text-large mb-lg">Join us in building Montana's most resilient communication network. Together, we can strengthen communities across Big Sky Country.</p>
+                    <a href="mailto:info@mtmesh.net" class="btn btn-secondary btn-large">Become a Partner Today</a>
+                </div>
+            </section>
+
+            <!-- Partnership Types -->
+            <section class="section">
+                <div class="container-content">
+                    <h2 class="section-title">Partnership Opportunities</h2>
                     
-                    <h3>STEM Learning with Meshtastic Technology</h3>
-                    <p>We're developing educational programs to introduce Montana students to real-world applications of wireless mesh networking. Using open-source LoRa (Long Range) technology, students can engage in hands-on activities that foster problem-solving, teamwork, and innovation while learning about:</p>
-                    <ul>
-                        <li>Fundamentals of wireless communication technology</li>
-                        <li>Practical experience in electronics and coding through building mesh networks</li>
-                        <li>Critical thinking and collaboration skills via real-world problem-solving</li>
-                        <li>Career exploration in technology, communication, and software development</li>
-                    </ul>
+                    <div class="grid grid-2 mb-xl">
+                        <div class="card slide-up">
+                            <h3 class="card-title">Educational Partnerships</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Partner with Montana schools, universities, and educational organizations to bring hands-on STEM learning to students across the state.</p>
+                                <p><strong>Perfect for:</strong> K-12 Schools, Universities, Libraries, Community Centers, Amateur Radio Clubs</p>
+                                <div class="mt-lg">
+                                    <a href="mailto:info@mtmesh.net?subject=Educational Partnership Inquiry" class="btn btn-primary">Start Educational Partnership</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card slide-up">
+                            <h3 class="card-title">Community & Business</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Join Montana businesses, municipalities, and community organizations in expanding mesh network coverage across the state.</p>
+                                <p><strong>Perfect for:</strong> Local Businesses, Municipalities, Emergency Services, Rural Communities</p>
+                                <div class="mt-lg">
+                                    <a href="mailto:info@mtmesh.net?subject=Community Partnership Inquiry" class="btn btn-primary">Explore Business Partnership</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEM Education Deep Dive -->
+            <section class="section" style="background-color: var(--color-surface);">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h2 class="section-title">STEM Learning with Meshtastic Technology</h2>
+                        <p class="text-large">Empowering Montana's next generation through hands-on wireless communication education</p>
+                    </div>
                     
-                    <h3>Partnership Opportunities</h3>
-                    <p>We're looking for Montana educational institutions interested in:</p>
-                    <ul>
-                        <li><strong>K-12 Schools:</strong> Integrate Meshtastic technology into STEM curricula and after-school programs</li>
-                        <li><strong>Universities & Colleges:</strong> Research partnerships and student project opportunities</li>
-                        <li><strong>Libraries & Community Centers:</strong> Host educational workshops and maker spaces</li>
-                        <li><strong>Amateur Radio Clubs:</strong> Collaborate on technical education and emergency communications</li>
-                    </ul>
+                    <div class="grid grid-4">
+                        <div class="card">
+                            <h4 class="card-title">Wireless Communication</h4>
+                            <div class="card-content">
+                                <p>Students learn fundamentals of wireless technology and how radio waves enable long-range communication.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 class="card-title">Electronics & Coding</h4>
+                            <div class="card-content">
+                                <p>Hands-on experience building mesh networks, programming devices, and troubleshooting systems.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 class="card-title">Problem Solving</h4>
+                            <div class="card-content">
+                                <p>Critical thinking and collaboration through real-world challenges in network design and deployment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 class="card-title">Career Exploration</h4>
+                            <div class="card-content">
+                                <p>Explore careers in technology, communication, software development, and emergency services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partnership Benefits -->
+            <section class="section">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h2 class="section-title">Why Partner with MTMesh?</h2>
+                        <p class="text-large">Discover the benefits of joining Montana's mesh networking community</p>
+                    </div>
                     
-                    <p>Interested in bringing STEM opportunities to your Montana organization? <a href="mailto:info@mtmesh.net">Contact us</a> to discuss partnership possibilities!</p>
-                </article>
-                
-                <article>
-                    <h2 class="partner-heading">Community & Business Partnerships</h2>
-                    <p>MTMesh welcomes partnerships with Montana businesses, municipalities, and community organizations to expand our mesh network coverage and provide valuable services to communities across the state.</p>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3 class="card-title">Enhanced Communication</h3>
+                            <div class="card-content">
+                                <p>Provide backup communications during emergencies or network outages. Keep your community connected when it matters most.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Community Resilience</h3>
+                            <div class="card-content">
+                                <p>Support local emergency preparedness and disaster response capabilities. Help build a more resilient Montana.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Technical Innovation</h3>
+                            <div class="card-content">
+                                <p>Participate in cutting-edge mesh networking technology and be part of the communication revolution.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Educational Impact</h3>
+                            <div class="card-content">
+                                <p>Support STEM education in Montana communities and help prepare students for technology careers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Partner -->
+            <section class="section" style="background-color: var(--color-surface);">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h2 class="section-title">How You Can Partner</h2>
+                        <p class="text-large">Multiple ways to get involved and strengthen Montana's mesh network</p>
+                    </div>
                     
-                    <h3>Partnership Benefits</h3>
-                    <ul>
-                        <li><strong>Enhanced Communication:</strong> Backup communications during emergencies or network outages</li>
-                        <li><strong>Community Resilience:</strong> Support local emergency preparedness and disaster response</li>
-                        <li><strong>Technical Innovation:</strong> Participate in cutting-edge mesh networking technology</li>
-                        <li><strong>Educational Impact:</strong> Support STEM education in Montana communities</li>
-                    </ul>
-                    
-                    <h3>How You Can Partner</h3>
-                    <ul>
-                        <li><strong>Host a Node:</strong> Provide rooftop or tower space for mesh network repeaters</li>
-                        <li><strong>Sponsor Equipment:</strong> Support network expansion through equipment donations</li>
-                        <li><strong>Educational Support:</strong> Host workshops or provide expertise to community programs</li>
-                        <li><strong>Emergency Services:</strong> Integrate mesh communications into emergency response plans</li>
-                    </ul>
-                    
-                    <p>Ready to explore partnership opportunities with MTMesh? <a href="mailto:info@mtmesh.net">Reach out today</a> to learn how we can work together to strengthen Montana communities through mesh networking.</p>
-                </article>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3 class="card-title">Host a Node</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Provide rooftop or tower space for mesh network repeaters. Help extend coverage across Montana's vast landscape.</p>
+                                <ul style="color: var(--color-text-light); margin-bottom: var(--space-lg);">
+                                    <li>Solar-powered, low maintenance</li>
+                                    <li>Minimal space requirements</li>
+                                    <li>Community impact visibility</li>
+                                </ul>
+                                <a href="mailto:info@mtmesh.net?subject=Node Hosting Inquiry" class="btn btn-outline">Host a Node</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Sponsor Equipment</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Support network expansion through equipment donations or funding. Every device strengthens the network.</p>
+                                <ul style="color: var(--color-text-light); margin-bottom: var(--space-lg);">
+                                    <li>Tax-deductible donations</li>
+                                    <li>Recognition opportunities</li>
+                                    <li>Direct community benefit</li>
+                                </ul>
+                                <a href="mailto:info@mtmesh.net?subject=Equipment Sponsorship" class="btn btn-outline">Sponsor Equipment</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Educational Support</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Host workshops, provide expertise, or offer facilities for community programs and student learning.</p>
+                                <ul style="color: var(--color-text-light); margin-bottom: var(--space-lg);">
+                                    <li>Workshop hosting</li>
+                                    <li>Expert mentorship</li>
+                                    <li>Facility sharing</li>
+                                </ul>
+                                <a href="mailto:info@mtmesh.net?subject=Educational Support" class="btn btn-outline">Support Education</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Emergency Services</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Integrate mesh communications into emergency response plans and disaster preparedness strategies.</p>
+                                <ul style="color: var(--color-text-light); margin-bottom: var(--space-lg);">
+                                    <li>Backup communications</li>
+                                    <li>Disaster resilience</li>
+                                    <li>Interoperability training</li>
+                                </ul>
+                                <a href="mailto:info@mtmesh.net?subject=Emergency Services Partnership" class="btn btn-outline">Partner for Emergency Prep</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="section">
+                <div class="container-content text-center">
+                    <h2 class="section-title">Ready to Make an Impact?</h2>
+                    <p class="text-large mb-lg">Let's work together to strengthen Montana communities through innovative mesh networking technology.</p>
+                    <div class="hero-actions">
+                        <a href="mailto:info@mtmesh.net?subject=Partnership Inquiry" class="btn btn-secondary btn-large">Get Started</a>
+                        <a href="/learn/" class="btn btn-outline btn-large">Learn About Mesh Networks</a>
+                    </div>
+                </div>
             </section>
         </main>
-        <footer>
-            <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank">Austin Mesh's site</a> (which is (c) by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License). Our website content is licensed under Creative Commons-ShareAlike 4.0 International License.
-                <br><a href="/privacy/">Privacy Policy</a>
-            </p>
+        <footer class="footer">
+            <div class="container-content">
+                <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank" rel="noopener">Austin Mesh's site</a> (which is © by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License).</p>
+                <p><a href="/privacy/">Privacy Policy</a> | <a href="mailto:info@mtmesh.net">Contact: info@mtmesh.net</a></p>
+            </div>
         </footer>
+        <script>
+            // Lazy loading and animations
+            document.addEventListener("DOMContentLoaded", function() {
+                // Add loaded class for animations
+                document.body.classList.add("loaded");
+            });
+        </script>
     </body>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector("header").classList.add("loaded");
-        });
-    </script>
 </html>

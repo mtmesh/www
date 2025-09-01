@@ -3,168 +3,198 @@
     <head>
         <title>Meshtastic Devices | MTMesh</title>
         <meta name="description" content="Tried and tested solar-powered repeater build methods and parts for making your own Meshtastic repeater.">
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-        <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
-        <link rel="stylesheet" href="../styles.css?v=6">
+        <link rel="stylesheet" href="../modern-styles.css">
     </head>
     <body>
-        <header>
-            <a href="/"><img src="../images/MTMesh-Logo.svg" class="logo" alt="Logo for MTMesh" title="MTMesh" width="500" height="121" /></a>
+        <a href="#main" class="skip-link">Skip to main content</a>
+        
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" aria-label="MTMesh Home">
+                        <img src="../images/MTMesh-Logo.svg" class="logo" alt="MTMesh Logo" width="240" height="58" />
+                    </a>
+                    
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/learn/" class="nav-link">Learn</a></li>
+                            <li class="nav-item"><a href="/join/" class="nav-link">Join</a></li>
+                            <li class="nav-item"><a href="/devices/" class="nav-link" aria-current="page">Devices</a></li>
+                            <li class="nav-item"><a href="/partners/" class="nav-link">Partners</a></li>
+                            <li class="nav-item"><a href="/similar-networks/" class="nav-link">Networks</a></li>
+                        </ul>
+                        
+                        <div class="nav-social">
+                            <a href="https://discord.gg/KcvbFzhV" target="_blank" rel="noopener" aria-label="Join MTMesh Discord">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.010c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418Z"/>
+                                </svg>
+                            </a>
+                            <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA" target="_blank" rel="noopener" aria-label="MTMesh YouTube Channel">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/p/Cq0jOpYLpZy/" target="_blank" rel="noopener" aria-label="MTMesh Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </header>
-        <main>
-            <nav>
-                <menu>
-                    <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="/learn/">Learn</a>
-                        <menu>
-                            <li><a href="/learn/#about">About</a></li>
-                            <li><a href="/learn/#coverage">Network coverage</a></li>
-                            <li><a href="/learn/#comparisons">Similar technology</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/join/">Join</a>
-                        <menu>
-                            <li><a href="/join/#network">Join the network</a></li>
-                            <li><a href="/join/#best-practices">Best practices</a></li>
-                            <li><a href="/join/#group">Join the group</a></li>
-                            <li><a href="/join/property-owner-faq-hosting-a-node">Property Owner FAQ</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/devices/">Devices</a>
-                        <menu>
-                            <li><a href="/devices/#options">Recommended Options</a></li>
-                            <li><a href="/devices/#solar">DIY Solar Repeaters</a></li>
-                            <li><a href="/devices/#aerial">Aerial Nodes</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/similar-networks/">Similar networks</a>
-                        <menu>
-                            <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
-                            <li><a href="/similar-networks/#start-a-similar-network">Start a similar network</a></li>
-                        </menu>
-                    </li>
-                    <li><a href="/partners/">Partners</a></li>
-                </menu>
-                <menu class="menu--social">
-                    <li>
-                        <a href="https://discord.gg/KcvbFzhV" target="_blank" title="Join the MTMesh Discord">
-                            <img src="../images/social/discord.svg" height="21" alt="Discord Logo" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA" target="_blank" title="Join the MTMesh YouTube">
-                            <img src="../images/social/youtube.svg" height="21" alt="YouTube Logo" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/p/Cq0jOpYLpZy/" target="_blank" title="Join the MTMesh Instagram">
-                            <img src="../images/social/instagram.svg" height="21" alt="Instagram Logo" />
-                        </a>
-                    </li>
-                </menu>
-            </nav>
-            <hgroup>
-                <h1>Devices for the Mesh</h1>
-                <p>MTMesh uses a technology called <a href="https://meshtastic.org" target="_blank">Meshtastic</a> to power the network here in Montana. In order to connect to this network, a relatively low cost device is required. You'll often hear these devices referred to as <b>nodes</b>. You can <a href="https://www.rfindex.com">compare the best meshtastic nodes on RF Index</a>.</p>
-            </hgroup>
-            <ul>
-                <li><a href="#options">Device options and recommendations</a></li>
-                <li><a href="#solar">Building a Solar-Powered Repeater for Meshtastic</a>
-                    <ul>
-                        <li><a href="#history">A brief history</a>
-                            <ul>
-                                <li>Versions</li>
-                                <li>Lessons learned</li>
-                                <li>Considerations for other climates</li>
-                            </ul>
-                        </li>
-                        <li><a href="#parts-list">Parts list</a>
-                            <ul>
-                                <li>Regular parts</li>
-                                <li>Robust RF Filtered</li>
-                                <li>Birdhouse parts</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
 
-
-            <section id="options">
-                <h2>Recommended Options</h2>
-                <p>I recently created a new tool, <a href="https://www.rfindex.com">RF Index</a>, which compares the various node options. This includes DIY, "Off the shelf", solar, etc. Let me know if you <a href="https://forms.gle/CNUbVP5eUTqZNsdX6" target="_blank" rel="nofollow">have any feedback</a>!
+        <main id="main">
+            <section class="section">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h1>Devices for the Mesh</h1>
+                        <p class="text-large">MTMesh uses a technology called <a href="https://meshtastic.org" target="_blank">Meshtastic</a> to power the network here in Montana. In order to connect to this network, a relatively low cost device is required. You'll often hear these devices referred to as <strong>nodes</strong>. You can <a href="https://www.rfindex.com">compare the best meshtastic nodes on RF Index</a>.</p>
+                    </div>
+                    
+                    <div class="grid grid-3 mb-xl">
+                        <div class="card">
+                            <h3 class="card-title">Device Options</h3>
+                            <div class="card-content">
+                                <p>Explore our recommended devices and get started with the mesh network.</p>
+                                <a href="#options" class="btn btn-primary">View Options</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Solar Repeaters</h3>
+                            <div class="card-content">
+                                <p>Build robust solar-powered repeaters for permanent network expansion.</p>
+                                <a href="#solar" class="btn btn-primary">Build Guide</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Aerial Nodes</h3>
+                            <div class="card-content">
+                                <p>Deploy temporary high-altitude nodes using drones and kites.</p>
+                                <a href="#aerial" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
 
-            <section>
-                <h2 id="solar">Building a Solar-Powered Repeater for Meshtastic</h2>
-                <h3 id="history">A brief history</h3>
-                <h4>History of versions</h4>
-                <p>We have tried 5 permutations of solar powering nodes:</p>
-                <details>
-                    <summary>Version 1.0 RAKBox-B2 2000mah LiPo</summary>
-                    <p>Using RAK RAKBox-B2 Enclosure with solar panel. The panel was connected directly to the RAK Wireless WisBlock Meshtastic Starter Kit US915. We connected a 2000 MAh Lithium Polymer battery directly to the RAK board. We drilled a hole in the top of the box and attached a fiberglass antenna, which was connected to the RAK board with an iPEX to N-Type connector. We mounted this on top of one of the UT buildings and it died within a month. The 0.4 watt panel is way too small.</p>
-                </details>
-                <details>
-                    <summary>Version 2.0 USB Solar</summary>
-                    <p>Same as 1.0 but we added a second 5 watt solar panel that was connected to the RAK board via USB. Also died within a month.</p>
-                </details>
-                <details>
-                    <summary>Version 3.0 Internal Solar, Power Module, 18650's</summary>
-                    <p>To minimize the amount of components outside the box we used a much larger box with a clear lid and placed the solar panel inside the box. We added a Texas Instruments Green Power Module between the solar panel and the RAK board to help regulate the power. For batteries we switched to using four 18650 batteries and we also added an overdischarge protection circuit from Voltaic Enclosures (not to be confused with Voltaic Systems) between the battery and the RAK board to provide clean shutoff when battery voltage fell below 2.5v. We mounted this on top of the UT buildings and it died in 3 months.</p>
-                </details>
-                <details>
-                    <summary>Version 4.0 External Solar</summary>
-                    <p>Same as Version 3.0 but we mounted the solar panel outside of the box (using a smaller box). We mounted this on a pole and it died within 3 months.</p>
-                </details>
-                <details open>
-                    <summary>Version 5.0 (Currently running)</summary>
-                    <p>For this version we stopped using the RAK’s solar and battery connectors entirely. Instead we connected a large 12 watt solar panel to a Voltaic Systems battery via USB and then connected the battery to the RAK board via USB. The Voltaic Systems battery acts as the solar charge controller and also acts as the overdischarge protection circuit; the battery will charge at a range of voltages from the solar panel (if it gets shaded) and the battery will shut off if the voltages drops too low and will reboot itself once it has recharged sufficiently.</p>
-                </details>
+            <section id="options" class="section" style="background-color: var(--color-surface);">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h2 class="section-title">Recommended Device Options</h2>
+                        <p class="text-large">I recently created a new tool, <a href="https://www.rfindex.com">RF Index</a>, which compares the various node options. This includes DIY, "Off the shelf", solar, etc. Let me know if you <a href="https://forms.gle/CNUbVP5eUTqZNsdX6" target="_blank" rel="nofollow">have any feedback</a>!</p>
+                        <div class="mt-lg">
+                            <a href="https://www.rfindex.com" target="_blank" class="btn btn-secondary btn-large">Compare Devices on RF Index</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <h4>Lessons learned:</h4>
-                <ol>
-                    <li>Don’t trust the RAK board to handle varying solar voltage or varying battery voltage. It is very unhappy if either voltage goes outside of a narrow range. In fact there is a <a href="https://meshtastic.discourse.group/t/rak-4631-solar-repeater/7694/7">known issue</a> where the Nordic nRF52840 module inside of the RAK 4631 chip causes it to enter a “Super Deep Sleep” fault state when it is supplied with 3.3V. This means when the battery voltage falls too low the RAK chip shuts down and can only be rebooted manually.</li>
-                    <li>Solar panels: bigger is better. 10 watts or more is ideal.</li>
-                    <li>Battery: bigger is better. 5,000 mAh or more is ideal.</li>
-                    <li>Antenna: fiberglass antennas are the most robust and can handle wind, rain, and UV light better than rubber ducky antennas.</li>
-                    <li>Heat can kill the battery – it is best to shade the box containing the battery.</li>
-                    <li>Don’t add any modules. The GPS module increases battery usage significantly and is unnecessary if the repeater is in a fixed position.</li>
-                    <li>Seal everything properly and make sure water has a way to get out of the case. Use o-rings for the antenna mount and wrap connectors in proxicast. Add a drain plug to the case so any condensation has a way to escape. For high humidity environments, spray the electronics with conformal coating.</li>
-                </ol>
-                <p>These are lessons learned from extreme weather conditions, where the main environmental stressors can be heat, cold, and storms. Temperature extremes can cause equipment failure, so proper enclosure design and temperature management are critical. Weather conditions can vary widely throughout the day and seasons, requiring robust designs that can handle temperature swings and humidity changes. Our learnings are applicable to various climate conditions, though specific considerations may vary by region.</p>
-                <details>
-                    <summary>Details on the boards that died</summary>
-                    <p>One was filled with water, the antenna seal didn't work. That's why the vent valve at the bottom is so important. One died because it got stuck in the low voltage state that requires a physical reset - that's fixed with the Voltaic packs. The third one died due to unknown causes but heat is suspected. When we tried to reboot with with wall power it wouldn't turn on - so the board was totally fried. That one I also sprayed with covalent coating nasty stuff that we won't use any more.</p>
-                </details>
-                <h4>Considerations for other climates</h4>
-                <ol>
-                    <li>Northern Climates and extreme cold
-                        <ul>
-                            <li>This isn't from our experience, but we felt it was so valuable that we shoud link to it here. <a href="https://www.yycmesh.com/" target="_blank">YYC Mesh</a>, a group in southern Alberta as well as the Greater Vancouver/Victoria recently published their <a href="https://yycmesh.wordpress.com/2025/04/19/cold-weather-charging-of-lithium-ion-batteries-real-world-lessons-from-the-meshtastic-community/?utm_source=referral&utm_medium=website&utm_campaign=mtmesh" target="_blank">findings on batteries in cold temperatures</a>.
-                            <li>LiPo and Li-ion are fine(0 failures)</li>
-                            <li>Capacity <b>IS</b> reduced. 3000mAh minimum kept nodes up and charge rates low(good thing)</li>
-                            <li>Charging creates heat, enclosures trap heat</li>
-                            <li>nRF52 > ESP32</li>
-                            <li><a href="https://empowerenergysolar.ca/wp-content/uploads/2022/11/NAIT_Reference_Array_Report_March_31_2016_revD.pdf" target="_blank">Solar panel angle matters</a></li>
-                        </ul>
-                    </li>
-                    <li>Coastal Climates: salt spray and condensation from fog can kill electronics quickly. In coastal climates it is best to spray the electronics with conformal coating.</li>
-                </ol>
 
-                <h3 id="parts-list">Parts list</h3>
-                <p>With all that said, here is the parts list for our most-preferred way to build a solar powered repeater. This design doesn’t require any soldering or complicated connectors. It also doesn’t require any battery management chips (which often have long shipping lead times and can be hard to get). For this design the solar panel is connected directly to the battery pack via USB. Then the battery pack is connected to the board via USB. The Voltaic Systems V25 battery is nice because it is optimized to charge from a solar panel and it is set standard to an “always on” mode which means the battery bank does not shut off after a set amount of time like other battery packs – this is useful as the RAK chip uses very little power and can trick other battery packs into shutting off. The other really nice thing about the Voltaic pack is than when it drains down completely it shuts down, but then once the solar panel has sufficiently charged it back up it will automatically turn itself back on again. The RAK radio uses between 100 and 1000 mAh per day, with about 400 mAh per day being average so theoretically the 6,400mAh Voltaic V25 could keep the radio running for 16 days without solar.</p>
-                <h4>Regular parts</h4>
-                <div class="table-wrapper">
-                    <table>
+            <section id="solar" class="section">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h2 class="section-title">Building a Solar-Powered Repeater for Meshtastic</h2>
+                        <p class="text-large">Learn from our experience building robust, weather-resistant solar repeaters for permanent network expansion.</p>
+                    </div>
+                    
+                    <div class="card mb-xl">
+                        <h3 id="history" class="card-title">A Brief History</h3>
+                        <div class="card-content">
+                            <h4>History of versions</h4>
+                            <p>We have tried 5 permutations of solar powering nodes:</p>
+                            
+                            <details>
+                                <summary>Version 1.0 RAKBox-B2 2000mah LiPo</summary>
+                                <p>Using RAK RAKBox-B2 Enclosure with solar panel. The panel was connected directly to the RAK Wireless WisBlock Meshtastic Starter Kit US915. We connected a 2000 MAh Lithium Polymer battery directly to the RAK board. We drilled a hole in the top of the box and attached a fiberglass antenna, which was connected to the RAK board with an iPEX to N-Type connector. We mounted this on top of one of the UT buildings and it died within a month. The 0.4 watt panel is way too small.</p>
+                            </details>
+                            
+                            <details>
+                                <summary>Version 2.0 USB Solar</summary>
+                                <p>Same as 1.0 but we added a second 5 watt solar panel that was connected to the RAK board via USB. Also died within a month.</p>
+                            </details>
+                            
+                            <details>
+                                <summary>Version 3.0 Internal Solar, Power Module, 18650's</summary>
+                                <p>To minimize the amount of components outside the box we used a much larger box with a clear lid and placed the solar panel inside the box. We added a Texas Instruments Green Power Module between the solar panel and the RAK board to help regulate the power. For batteries we switched to using four 18650 batteries and we also added an overdischarge protection circuit from Voltaic Enclosures (not to be confused with Voltaic Systems) between the battery and the RAK board to provide clean shutoff when battery voltage fell below 2.5v. We mounted this on top of the UT buildings and it died in 3 months.</p>
+                            </details>
+                            
+                            <details>
+                                <summary>Version 4.0 External Solar</summary>
+                                <p>Same as Version 3.0 but we mounted the solar panel outside of the box (using a smaller box). We mounted this on a pole and it died within 3 months.</p>
+                            </details>
+                            
+                            <details open>
+                                <summary>Version 5.0 (Currently running)</summary>
+                                <p>For this version we stopped using the RAK's solar and battery connectors entirely. Instead we connected a large 12 watt solar panel to a Voltaic Systems battery via USB and then connected the battery to the RAK board via USB. The Voltaic Systems battery acts as the solar charge controller and also acts as the overdischarge protection circuit; the battery will charge at a range of voltages from the solar panel (if it gets shaded) and the battery will shut off if the voltages drops too low and will reboot itself once it has recharged sufficiently.</p>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2 mb-xl">
+                        <div class="card">
+                            <h4 class="card-title">Key Lessons Learned</h4>
+                            <div class="card-content">
+                                <ol>
+                                    <li>Don't trust the RAK board to handle varying solar voltage or varying battery voltage. It is very unhappy if either voltage goes outside of a narrow range. In fact there is a <a href="https://meshtastic.discourse.group/t/rak-4631-solar-repeater/7694/7">known issue</a> where the Nordic nRF52840 module inside of the RAK 4631 chip causes it to enter a "Super Deep Sleep" fault state when it is supplied with 3.3V. This means when the battery voltage falls too low the RAK chip shuts down and can only be rebooted manually.</li>
+                                    <li>Solar panels: bigger is better. 10 watts or more is ideal.</li>
+                                    <li>Battery: bigger is better. 5,000 mAh or more is ideal.</li>
+                                    <li>Antenna: fiberglass antennas are the most robust and can handle wind, rain, and UV light better than rubber ducky antennas.</li>
+                                    <li>Heat can kill the battery – it is best to shade the box containing the battery.</li>
+                                    <li>Don't add any modules. The GPS module increases battery usage significantly and is unnecessary if the repeater is in a fixed position.</li>
+                                    <li>Seal everything properly and make sure water has a way to get out of the case. Use o-rings for the antenna mount and wrap connectors in proxicast. Add a drain plug to the case so any condensation has a way to escape. For high humidity environments, spray the electronics with conformal coating.</li>
+                                </ol>
+                                <p class="mt-md">These are lessons learned from extreme weather conditions, where the main environmental stressors can be heat, cold, and storms. Temperature extremes can cause equipment failure, so proper enclosure design and temperature management are critical. Weather conditions can vary widely throughout the day and seasons, requiring robust designs that can handle temperature swings and humidity changes. Our learnings are applicable to various climate conditions, though specific considerations may vary by region.</p>
+                                <details class="mt-md">
+                                    <summary>Details on the boards that died</summary>
+                                    <p>One was filled with water, the antenna seal didn't work. That's why the vent valve at the bottom is so important. One died because it got stuck in the low voltage state that requires a physical reset - that's fixed with the Voltaic packs. The third one died due to unknown causes but heat is suspected. When we tried to reboot with with wall power it wouldn't turn on - so the board was totally fried. That one I also sprayed with covalent coating nasty stuff that we won't use any more.</p>
+                                </details>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 class="card-title">Climate Considerations</h4>
+                            <div class="card-content">
+                                <h5>Northern Climates and extreme cold</h5>
+                                <ul>
+                                    <li>This isn't from our experience, but we felt it was so valuable that we should link to it here. <a href="https://www.yycmesh.com/" target="_blank">YYC Mesh</a>, a group in southern Alberta as well as the Greater Vancouver/Victoria recently published their <a href="https://yycmesh.wordpress.com/2025/04/19/cold-weather-charging-of-lithium-ion-batteries-real-world-lessons-from-the-meshtastic-community/?utm_source=referral&utm_medium=website&utm_campaign=mtmesh" target="_blank">findings on batteries in cold temperatures</a>.</li>
+                                    <li>LiPo and Li-ion are fine (0 failures)</li>
+                                    <li>Capacity <strong>IS</strong> reduced. 3000mAh minimum kept nodes up and charge rates low (good thing)</li>
+                                    <li>Charging creates heat, enclosures trap heat</li>
+                                    <li>nRF52 > ESP32</li>
+                                    <li><a href="https://empowerenergysolar.ca/wp-content/uploads/2022/11/NAIT_Reference_Array_Report_March_31_2016_revD.pdf" target="_blank">Solar panel angle matters</a></li>
+                                </ul>
+                                
+                                <h5 class="mt-md">Coastal Climates</h5>
+                                <p>Salt spray and condensation from fog can kill electronics quickly. In coastal climates it is best to spray the electronics with conformal coating.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-xl">
+                        <h3 id="parts-list" class="card-title">Parts List</h3>
+                        <div class="card-content">
+                            <p>With all that said, here is the parts list for our most-preferred way to build a solar powered repeater. This design doesn't require any soldering or complicated connectors. It also doesn't require any battery management chips (which often have long shipping lead times and can be hard to get). For this design the solar panel is connected directly to the battery pack via USB. Then the battery pack is connected to the board via USB. The Voltaic Systems V25 battery is nice because it is optimized to charge from a solar panel and it is set standard to an "always on" mode which means the battery bank does not shut off after a set amount of time like other battery packs – this is useful as the RAK chip uses very little power and can trick other battery packs into shutting off. The other really nice thing about the Voltaic pack is than when it drains down completely it shuts down, but then once the solar panel has sufficiently charged it back up it will automatically turn itself back on again. The RAK radio uses between 100 and 1000 mAh per day, with about 400 mAh per day being average so theoretically the 6,400mAh Voltaic V25 could keep the radio running for 16 days without solar.</p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-xl">
+                        <h4 class="card-title">Regular Parts Build - $185 Total</h4>
+                        <div class="card-content">
+                            <div class="table-container">
+                                <table class="table">
                         <thead>
                             <tr>
                                 <th>Item</th>
@@ -241,22 +271,33 @@
                                 <td><strong>$185</strong></td>
                                 <td>&nbsp;</td>
                             </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <h4 id="rf-filtered">Robust RF Filtered Parts List</h4>
-                <div class="flex">
-                    <p>One of our nodes is on top of a building surrounded my 2200w of public service antennas which operate around 850mhz. The result is that the RAK (and any other) board is quickly desensitized. We've had the best success doing 2 things. Keeping cable runs as short as possible, and use a notch or bandpass filter.</p>
-                    <a target="_blank" href="../images/ut-austin/ut-austin-rf-filtered-meshtastic-node.jpeg"><img src="../images/ut-austin/ut-austin-rf-filtered-meshtastic-node.jpeg" width="300" /></a>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
 
-                </div>
-                <div class="table-wrapper">
-                    <table>
+                    <div class="card mb-xl">
+                        <h4 id="rf-filtered" class="card-title">Robust RF Filtered Parts List - $331 Total</h4>
+                        <div class="card-content">
+                            <div class="grid grid-2 mb-lg">
+                                <div>
+                                    <p>One of our nodes is on top of a building surrounded by 2200w of public service antennas which operate around 850mhz. The result is that the RAK (and any other) board is quickly desensitized. We've had the best success doing 2 things: keeping cable runs as short as possible, and use a notch or bandpass filter.</p>
+                                </div>
+                                <div class="text-center">
+                                    <a target="_blank" href="../images/ut-austin/ut-austin-rf-filtered-meshtastic-node.jpeg">
+                                        <img src="../images/ut-austin/ut-austin-rf-filtered-meshtastic-node.jpeg" style="max-width: 100%; height: auto; border-radius: var(--radius-md);" alt="RF filtered Meshtastic node installation" />
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="table-container">
+                                <table class="table">
                         <thead>
                             <tr>
                                 <th>Item</th>
@@ -356,18 +397,24 @@
                                 <td><strong>$331</strong></td>
                                 <td>&nbsp;</td>
                             </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <h4>Birdhouse parts</h4>
-                <p>To turn this repeater into a solar-powered meshtastic birdhouse you can just add the following components. Simply paint the top of the birdhouse black and glue on the solar panel, cut a hole in the back of the birdhouse big enough to put the box into it, attach the antenna mount L-Bracket to the side of the birdhouse, and connect the box to the antenna on the mount with the pigtail using the jam nut.</p>
-                <div class="table-wrapper">
-                    <table>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-xl">
+                        <h4 class="card-title">Birdhouse Extension Parts</h4>
+                        <div class="card-content">
+                            <p>To turn this repeater into a solar-powered meshtastic birdhouse you can just add the following components. Simply paint the top of the birdhouse black and glue on the solar panel, cut a hole in the back of the birdhouse big enough to put the box into it, attach the antenna mount L-Bracket to the side of the birdhouse, and connect the box to the antenna on the mount with the pigtail using the jam nut.</p>
+                            
+                            <div class="table-container">
+                                <table class="table">
                         <thead>
                             <tr>
                                 <th>Item</th>
@@ -401,109 +448,180 @@
                                 <td>$15</td>
                                 <td><a href="https://amzn.to/4je6ZBj">Amazon</a> or <a href="https://www.dxengineering.com/parts/lsn-tmb58b">DX Engineering</a></td>
                             </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section>
-                <h2>Aerial Nodes</h2>
-                <p>As you may already know, the mesh technology we use relies on the LoRa technology in the 900mhz frequency range. This means that connection is dependent on Line of Site(LoS) between the antennas. <b>The easiest way to ensure LoS is with height</b>. The easiest (though temporary) way to get height is through an aerial platform including but not limited to UAVs(drones or planes) or kites!</p>
+            <section id="aerial" class="section">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h2 class="section-title">Aerial Nodes</h2>
+                        <p class="text-large">As you may already know, the mesh technology we use relies on the LoRa technology in the 900mhz frequency range. This means that connection is dependent on Line of Site (LoS) between the antennas. <strong>The easiest way to ensure LoS is with height</strong>. The easiest (though temporary) way to get height is through an aerial platform including but not limited to UAVs (drones or planes) or kites!</p>
+                    </div>
 
-                <h3>Drone Nodes</h3>
-                <p>In our <a href="/similar-networks/#start-a-similar-network">starting a similar network</a> section we discussed the intentional usage of drones to help grow your network. This section will cover some key tips around hardware, strategy, and safety.</p>
-                <ul>
-                    <li><b>Schedule:</b> Most drones will only fly for 15-30m per battery. Schedule communication windows specifically so that batteries are not wasted. Consider prescheduling times with your group to either have multiple drones up at once, or extend windows by alternating who is in the air.</li>
-                    <li><b>Weight:</b> Due to the short flight times, your node can use a very small battery. Think 100mah. Strip all non necessary items.</li>
-                    <li><b>Safety:</b> Fly in open areas. Use minimum height necessary. Make sure the node is secure and can't tip or the antenna fold which may hit propellers which will cause a crash. Avoid hanging the node unless there is no other solution. Hanging nodes easily swing up and hit propellers.</li>
-                    <li><b>Configuration:</b> Use 2 nodes. One on the ground that you connect to with your devices and one on the drone. Set the node on the drone Router or Router Late to ensure messages actually pass through. If set to Client it may not retransmit the packet as it has already heard the packet from multiple other ground nodes. Consider setting the ground node to Client Mute.</li>
-                </ul>
+                    <div class="card mb-xl">
+                        <h3 class="card-title">Drone Nodes</h3>
+                        <div class="card-content">
+                            <p>In our <a href="/similar-networks/#start-a-similar-network">starting a similar network</a> section we discussed the intentional usage of drones to help grow your network. This section will cover some key tips around hardware, strategy, and safety.</p>
+                            
+                            <div class="grid grid-2 mt-lg">
+                                <div>
+                                    <h5>Scheduling & Strategy</h5>
+                                    <ul>
+                                        <li><strong>Schedule:</strong> Most drones will only fly for 15-30m per battery. Schedule communication windows specifically so that batteries are not wasted. Consider prescheduling times with your group to either have multiple drones up at once, or extend windows by alternating who is in the air.</li>
+                                        <li><strong>Configuration:</strong> Use 2 nodes. One on the ground that you connect to with your devices and one on the drone. Set the node on the drone Router or Router Late to ensure messages actually pass through. If set to Client it may not retransmit the packet as it has already heard the packet from multiple other ground nodes. Consider setting the ground node to Client Mute.</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5>Hardware & Safety</h5>
+                                    <ul>
+                                        <li><strong>Weight:</strong> Due to the short flight times, your node can use a very small battery. Think 100mah. Strip all non necessary items.</li>
+                                        <li><strong>Safety:</strong> Fly in open areas. Use minimum height necessary. Make sure the node is secure and can't tip or the antenna fold which may hit propellers which will cause a crash. Avoid hanging the node unless there is no other solution. Hanging nodes easily swing up and hit propellers.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <h4>Examples</h4>
-                <ul>
-                    <li><a href="https://amzn.to/3TCedo8" target="_blank">DJI Air 3</a> (affiliate link)</li>
-                    <li><a href="https://www.rfindex.com/meshtastic/devices/seeedstudio-wio-sx1262-xiao-esp32s3" target="_blank">Seeed/XIAO</a></li>
-                </ul>
-                <img src="../images/aerial/dji-air-3-1.webp" width="290" loading="lazy" />
-                <img src="../images/aerial/dji-air-3-2.webp" width="290" loading="lazy" />
-                <img src="../images/aerial/dji-air-3-3.webp" width="290" loading="lazy" />
-                <img src="../images/aerial/dji-air-3-4.webp" width="290" loading="lazy" />
-                <hr />
-                <ul>
-                    <li><a href="https://amzn.to/467sdOc" target="_blank">DJI Mavic Mini</a> (affiliate link)</li>
-                    <li><a href="https://www.rfindex.com/meshtastic/devices/lilygo-t-echo" target="_blank">LilyGo T-Echo</a></li>
-                </ul>
-                <img src="../images/aerial/techo-drone.webp" width="290" loading="lazy" />
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4"><small>Some of these links are affiliate links. Any commission we earn helps support MTMesh's community network at no extra cost to you. <a href="/privacy">Privacy policy</a></small></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
 
-                <h5>Other Examples</h5>
-                <figure>
-                    <figcaption>DIY Quadcopter</figcaption>
-                    <img src="../images/aerial/diy-quad.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>Unknown Drone with a T-Echo</figcaption>
-                    <img src="../images/aerial/drone-unknown.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>Mavic Air 3 with a custom small node</figcaption>
-                    <img src="../images/aerial/mavic-air-3-small.webp" width="290" loading="lazy" />
-                    <img src="../images/aerial/mavic-air-3-small-2.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>Mavic Pro with a custom printed backpack</figcaption>
-                    <img src="../images/aerial/mavic-pro-backpack.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>Mavic with rubberbands holding a node on</figcaption>
-                    <img src="../images/aerial/mavic-rubberband.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>DJI Mini 2 Printed Backpack</figcaption>
-                    <img src="../images/aerial/mavic-ultralight.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>THIS IS A JOKE! Though I would love to see a video of someone really trying this</figcaption>
-                    <img src="../images/aerial/g2-joke.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>GoPro Node Case in a DIY Quad</figcaption>
-                    <img src="../images/aerial/go-pro-czase-node.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>Mavic with a hanging flexible antenna</figcaption>
-                    <img src="../images/aerial/mavic-hanging-antenna.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>Mavic Mini with a custom node</figcaption>
-                    <img src="../images/aerial/mavic-mini-node.webp" width="290" loading="lazy" />
-                </figure>
-                <figure>
-                    <figcaption>Mavic Pro 2 with a RAK</figcaption>
-                    <img src="../images/aerial/mavic-pro-2-rak.webp" width="290" loading="lazy" />
-                </figure>
+                    <div class="card mb-xl">
+                        <h4 class="card-title">Recommended Drone & Node Combinations</h4>
+                        <div class="card-content">
+                            <div class="grid grid-2 mb-lg">
+                                <div>
+                                    <h5>DJI Air 3 + Seeed/XIAO</h5>
+                                    <ul>
+                                        <li><a href="https://amzn.to/3TCedo8" target="_blank">DJI Air 3</a> (affiliate link)</li>
+                                        <li><a href="https://www.rfindex.com/meshtastic/devices/seeedstudio-wio-sx1262-xiao-esp32s3" target="_blank">Seeed/XIAO</a></li>
+                                    </ul>
+                                    <div class="grid grid-2 mt-md">
+                                        <img src="../images/aerial/dji-air-3-1.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);" loading="lazy" alt="DJI Air 3 drone setup 1" />
+                                        <img src="../images/aerial/dji-air-3-2.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);" loading="lazy" alt="DJI Air 3 drone setup 2" />
+                                        <img src="../images/aerial/dji-air-3-3.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);" loading="lazy" alt="DJI Air 3 drone setup 3" />
+                                        <img src="../images/aerial/dji-air-3-4.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);" loading="lazy" alt="DJI Air 3 drone setup 4" />
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h5>DJI Mavic Mini + LilyGo T-Echo</h5>
+                                    <ul>
+                                        <li><a href="https://amzn.to/467sdOc" target="_blank">DJI Mavic Mini</a> (affiliate link)</li>
+                                        <li><a href="https://www.rfindex.com/meshtastic/devices/lilygo-t-echo" target="_blank">LilyGo T-Echo</a></li>
+                                    </ul>
+                                    <div class="mt-md text-center">
+                                        <img src="../images/aerial/techo-drone.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);" loading="lazy" alt="T-Echo on drone" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <h3>Kite Nodes</h3>
-                <p>Coming soon!</p>
+                    <div class="card mb-xl">
+                        <h4 class="card-title">Community Examples</h4>
+                        <div class="card-content">
+                            <div class="grid grid-4">
+                                <figure class="text-center">
+                                    <img src="../images/aerial/diy-quad.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="DIY Quadcopter" />
+                                    <figcaption class="text-small text-muted">DIY Quadcopter</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/drone-unknown.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="Unknown Drone with a T-Echo" />
+                                    <figcaption class="text-small text-muted">Unknown Drone with a T-Echo</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/mavic-air-3-small.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="Mavic Air 3 with custom small node" />
+                                    <figcaption class="text-small text-muted">Mavic Air 3 with custom small node</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/mavic-pro-backpack.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="Mavic Pro with custom printed backpack" />
+                                    <figcaption class="text-small text-muted">Mavic Pro with custom printed backpack</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/mavic-rubberband.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="Mavic with rubberbands holding a node on" />
+                                    <figcaption class="text-small text-muted">Mavic with rubberbands holding a node on</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/mavic-ultralight.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="DJI Mini 2 Printed Backpack" />
+                                    <figcaption class="text-small text-muted">DJI Mini 2 Printed Backpack</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/g2-joke.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="Humorous G2 setup" />
+                                    <figcaption class="text-small text-muted">THIS IS A JOKE! Though I would love to see a video of someone really trying this</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/go-pro-czase-node.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="GoPro Node Case in a DIY Quad" />
+                                    <figcaption class="text-small text-muted">GoPro Node Case in a DIY Quad</figcaption>
+                                </figure>
+                            </div>
+                            
+                            <div class="grid grid-3 mt-lg">
+                                <figure class="text-center">
+                                    <img src="../images/aerial/mavic-hanging-antenna.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="Mavic with a hanging flexible antenna" />
+                                    <figcaption class="text-small text-muted">Mavic with a hanging flexible antenna</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/mavic-mini-node.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="Mavic Mini with a custom node" />
+                                    <figcaption class="text-small text-muted">Mavic Mini with a custom node</figcaption>
+                                </figure>
+                                
+                                <figure class="text-center">
+                                    <img src="../images/aerial/mavic-pro-2-rak.webp" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: var(--space-sm);" loading="lazy" alt="Mavic Pro 2 with a RAK" />
+                                    <figcaption class="text-small text-muted">Mavic Pro 2 with a RAK</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="card">
+                        <h3 class="card-title">Kite Nodes</h3>
+                        <div class="card-content">
+                            <p>Coming soon!</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
-        <footer>
-            <p>Our website content is licensed under Creative Commons
-                <br>feel free to use if for your club's website: <a href="https://github.com/mtmesh/www">Github</a>
-                <br>If we've inspired you, please <a href="mailto:info@mtmesh.net">email us</a>!
-                <br>This site is (c) by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-                <br><a href="/privacy/">Privacy Policy</a>
-            </p>
+
+        <footer class="footer">
+            <div class="container-content">
+                <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank" rel="noopener">Austin Mesh's site</a> (which is © by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License).</p>
+                <p><a href="/privacy/">Privacy Policy</a> | <a href="mailto:info@mtmesh.net">Contact: info@mtmesh.net</a></p>
+            </div>
         </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Add loaded class for animations
+                document.body.classList.add("loaded");
+            });
+        </script>
     </body>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector("header").classList.add("loaded");
-        });
-    </script>
 </html>

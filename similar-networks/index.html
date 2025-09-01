@@ -3,128 +3,177 @@
     <head>
         <title>Similar Networks | MTMesh</title>
         <meta name="description" content="Discover similar mesh networks and learn how to start your own.">
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-        <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
-        <link rel="stylesheet" href="../styles.css?v=4">
+        <link rel="stylesheet" href="../modern-styles.css">
     </head>
     <body>
-        <header>
-            <a href="/"><img src="../images/MTMesh-Logo.svg" class="logo" alt="Logo for MTMesh" title="MTMesh" width="500" height="121" /></a>
+        <a href="#main" class="skip-link">Skip to main content</a>
+        
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" aria-label="MTMesh Home">
+                        <img src="../images/MTMesh-Logo.svg" class="logo" alt="MTMesh Logo" width="240" height="58" />
+                    </a>
+                    
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/learn/" class="nav-link">Learn</a></li>
+                            <li class="nav-item"><a href="/join/" class="nav-link">Join</a></li>
+                            <li class="nav-item"><a href="/devices/" class="nav-link">Devices</a></li>
+                            <li class="nav-item"><a href="/partners/" class="nav-link">Partners</a></li>
+                            <li class="nav-item"><a href="/similar-networks/" class="nav-link">Networks</a></li>
+                        </ul>
+                        
+                        <div class="nav-social">
+                            <a href="https://www.reddit.com/r/mtmesh/" target="_blank" rel="noopener" aria-label="Join MTMesh on Reddit">
+                                <img src="../images/social/reddit.svg" height="24" width="24" alt="Reddit" />
+                            </a>
+                            <a href="https://discord.gg/KcvbFzhV" target="_blank" rel="noopener" aria-label="Join MTMesh Discord">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.010c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </header>
-        <main>
-            <nav>
-                <menu>
-                    <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="/learn/">Learn</a>
-                        <menu>
-                            <li><a href="/learn/#about">About</a></li>
-                            <li><a href="/learn/#coverage">Network coverage</a></li>
-                            <li><a href="/learn/#comparisons">Similar technology</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/join/">Join</a>
-                        <menu>
-                            <li><a href="/join/#network">Join the network</a></li>
-                            <li><a href="/join/#best-practices">Best practices</a></li>
-                            <li><a href="/join/#group">Join the group</a></li>
-                            <li><a href="/join/property-owner-faq-hosting-a-node">Property Owner FAQ</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/devices/">Devices</a>
-                        <menu>
-                            <li><a href="/devices/#options">Recommended Options</a></li>
-                            <li><a href="/devices/#solar">DIY Solar Repeaters</a></li>
-                            <li><a href="/devices/#aerial">Aerial Nodes</a></li>
-                        </menu>
-                    </li>
-                    <li>
-                        <a href="/similar-networks/">Similar networks</a>
-                        <menu>
-                            <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
-                            <li><a href="/similar-networks/#start-a-similar-network">Start a similar network</a></li>
-                        </menu>
-                    </li>
-                    <li><a href="/partners/">Partners</a></li>
-                </menu>
-                <menu class="menu--social">
-                    <li>
-                        <a href="https://discord.gg/KcvbFzhV" target="_blank" title="Join the MTMesh Discord">
-                            <img src="../images/social/discord.svg" height="21" alt="Discord Logo" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA" target="_blank" title="Join the MTMesh YouTube">
-                            <img src="../images/social/youtube.svg" height="21" alt="YouTube Logo" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/p/Cq0jOpYLpZy/" target="_blank" title="Join the MTMesh Instagram">
-                            <img src="../images/social/instagram.svg" height="21" alt="Instagram Logo" />
-                        </a>
-                    </li>
-                </menu>
-            </nav>
-            <h1>Similar networks</h1>
-            <section>
-                <h2>Other area meshes</h2>
-                <p>Here are some of our partner meshes across the US</p>
-                <ul>
-                    <li>Birmingham, Alabama: <a href="http://birminghammesh.org/">Birmingham Mesh</a></li>
-                    <li>Calgary, Alberta: <a href="https://yycmesh.com">YYC Mesh</a></li>
-                    <li>Charlotte, North Carolina: <a href="https://charlottemesh.org/">Charlotte Mesh</a></li>
-                    <li>North Carolina <a href="https://ncmesh.net/">NC Mesh</a></li>
-                    <li>Chicago, Illinois: <a href="https://chicagolandmesh.org/">Chicagoland Mesh</a></li>
-                    <li>Denver, Colorado: <a href="https://denvermesh.org/">Denver Mesh</a></li>
-                    <li>Hawaii: <a href="https://www.hawaiimesh.net/">Hawaii Mesh</a></li>
-                    <li>Nashville, Tennessee: <a href="https://www.instagram.com/meshville.tn">Meshville</a></li>
-                    <li>Northern Texas: <a href="https://ntxmesh.com">North Texas Mesh</a></li>
-                    <li>Northwest Arkansas: <a href="https://nwamesh.com/">Northwest Arkansas Mesh</a></li>
-                    <li>Okmesh: <a href="https://okmesh.org/">Okmesh</a></li>
-                    <li>Philadelphia, Pennsylvania: <a href="https://iffybooks.net/">Iffy Books is leading the effort</a></li>
-                    <li>San Francisco(Bay Area): <a href="https://bayme.sh">bayme.sh</a></li>
-                    <li>Southern California: <a href="https://socalmesh.org/">SoCal Mesh</a></li>
-                    <li>Wisconsin: <a href="https://meshconsin.org/">Meshconsin</a></li>
-                </ul>
+
+        <main id="main">
+            <section class="section">
+                <div class="container-content">
+                    <div class="text-center">
+                        <h1 class="section-title">Mesh Networks Across America</h1>
+                        <p class="text-large mb-xl">Connect with our partner networks and learn how to start your own community mesh</p>
+                    </div>
+                </div>
             </section>
-            <section id="start-a-similar-network">
-                <h2>How to start a similar mesh network for your area</h2>
-                <p>For anyone trying to start a similar mesh network, here's what we've found to work:</p>
-                <ol>
-                    <li>The hardest part(and arguably the most fun part) of setting up a mesh network is organizing people. For a mesh to work well you need a <b>lot</b> of people working to set up nodes around town. Finding these people is harder than putting together hardware.</li>
-                    <li>Have regular meetings - we try to have meetings once per quarter. Sometimes we have 30+ people and sometimes it's just 2 or 3 of us meeting up at the pub. Keeping regular meetings means that people can feel confident that if they miss a meeting there will be another one soon.</li>
-                    <li>Use some type of internet based chat room like Discord, Slack, or Telegram in addition to the mesh.</li>
-                    <li>Create an email list and make sure to add anyone who is interested in the club. Not everyone wants to use the aforementioned internet chat room.</li>
-                    <li>Set up social media accounts and advertise your meetings and talk about your achievements. When you get a solar power node set up be sure to talk about it!</li>
-                    <li>Connect with your local ham radio club(s) - they're very knowledgable about radio and they often have access to towers and rooftops.</li>
-                    <li>Connect with your local disaster relief agency, red cross, or mutual aid group - they are also often willing to put up repeaters on their buildings.</li>
-                </ol>
-                <h3>Using drones to grow your Meshtastic network</h3>
-                <aside>
-                    <h4 style="margin-top:0;">LilyGo T-Echo<br/>Hanging from a Drone</h4>
-                    <img src="../images/aerial/techo-drone.webp" width="200" />
-                </aside>
-                <p>Once a week, anyone in the area with a drone should coordinate a time and get up to altitude. Use a node on the ground set to client_mute to send out a number of messages inviting people to your internet chat room and generally stir up some traffic on the mesh.</p>
-                <p>Why? We found is that there are a lot of people out there who have a node, and it's just sitting on their desk because they didn't see any nodes when they first turned it on. They may not see your message right then, but they will in the coming days or weeks.</p>
-                <p><small>Tip: In larger meshes(200+ online nodes) the drone nodes may be configured as ROUTER.</small></p>
-                <div style="clear:both;"></div>
+
+            <section id="other-meshes" class="section">
+                <div class="container">
+                    <div class="text-center mb-xl">
+                        <h2 class="h2">Partner Mesh Networks</h2>
+                        <p class="text-large">Discover thriving mesh communities across North America</p>
+                    </div>
+                    
+                    <div class="grid grid-3">
+                        <div class="card slide-up">
+                            <h3 class="card-title">Southeast Networks</h3>
+                            <div class="card-content">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="mb-sm"><a href="http://birminghammesh.org/" target="_blank" rel="noopener">Birmingham Mesh</a> - Alabama</li>
+                                    <li class="mb-sm"><a href="https://charlottemesh.org/" target="_blank" rel="noopener">Charlotte Mesh</a> - North Carolina</li>
+                                    <li class="mb-sm"><a href="https://ncmesh.net/" target="_blank" rel="noopener">NC Mesh</a> - North Carolina</li>
+                                    <li><a href="https://www.instagram.com/meshville.tn" target="_blank" rel="noopener">Meshville</a> - Nashville, Tennessee</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card slide-up">
+                            <h3 class="card-title">Western Networks</h3>
+                            <div class="card-content">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="mb-sm"><a href="https://denvermesh.org/" target="_blank" rel="noopener">Denver Mesh</a> - Colorado</li>
+                                    <li class="mb-sm"><a href="https://www.hawaiimesh.net/" target="_blank" rel="noopener">Hawaii Mesh</a> - Hawaii</li>
+                                    <li class="mb-sm"><a href="https://bayme.sh" target="_blank" rel="noopener">bayme.sh</a> - San Francisco Bay Area</li>
+                                    <li><a href="https://socalmesh.org/" target="_blank" rel="noopener">SoCal Mesh</a> - Southern California</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card slide-up">
+                            <h3 class="card-title">Central & Northern Networks</h3>
+                            <div class="card-content">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="mb-sm"><a href="https://yycmesh.com" target="_blank" rel="noopener">YYC Mesh</a> - Calgary, Alberta</li>
+                                    <li class="mb-sm"><a href="https://chicagolandmesh.org/" target="_blank" rel="noopener">Chicagoland Mesh</a> - Illinois</li>
+                                    <li class="mb-sm"><a href="https://ntxmesh.com" target="_blank" rel="noopener">North Texas Mesh</a> - Northern Texas</li>
+                                    <li class="mb-sm"><a href="https://nwamesh.com/" target="_blank" rel="noopener">Northwest Arkansas Mesh</a> - Arkansas</li>
+                                    <li class="mb-sm"><a href="https://okmesh.org/" target="_blank" rel="noopener">Okmesh</a> - Oklahoma</li>
+                                    <li class="mb-sm"><a href="https://iffybooks.net/" target="_blank" rel="noopener">Iffy Books</a> - Philadelphia, Pennsylvania</li>
+                                    <li><a href="https://meshconsin.org/" target="_blank" rel="noopener">Meshconsin</a> - Wisconsin</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="start-a-similar-network" class="section" style="background-color: var(--color-surface);">
+                <div class="container">
+                    <div class="text-center mb-xl">
+                        <h2 class="h2">Start Your Own Mesh Network</h2>
+                        <p class="text-large">Essential steps to build a thriving mesh community in your area</p>
+                    </div>
+                    
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3 class="card-title">Community Building Essentials</h3>
+                            <div class="card-content">
+                                <ol style="margin-left: var(--space-md);">
+                                    <li class="mb-md"><strong>Organize people first</strong> - The hardest (and most fun) part is finding enthusiasts. You need many people to set up nodes around town.</li>
+                                    <li class="mb-md"><strong>Hold regular meetings</strong> - We meet quarterly. Sometimes 30+ people, sometimes just 2-3 at the pub. Regular schedule builds confidence.</li>
+                                    <li class="mb-md"><strong>Set up online chat</strong> - Use Discord, Slack, or Telegram alongside the mesh for coordination.</li>
+                                    <li><strong>Create an email list</strong> - Not everyone uses chat apps. Email ensures broad communication.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 class="card-title">Outreach & Partnerships</h3>
+                            <div class="card-content">
+                                <ol style="margin-left: var(--space-md);" start="5">
+                                    <li class="mb-md"><strong>Social media presence</strong> - Advertise meetings and celebrate achievements. Share your solar node setups!</li>
+                                    <li class="mb-md"><strong>Connect with ham radio clubs</strong> - They're radio experts with access to towers and rooftops.</li>
+                                    <li><strong>Partner with disaster relief</strong> - Red Cross and mutual aid groups often welcome repeaters on their buildings.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-xl">
+                        <div class="card">
+                            <h3 class="card-title">Growth Strategy: Drone Operations</h3>
+                            <div class="card-content">
+                                <div style="display: flex; gap: var(--space-lg); align-items: flex-start; flex-wrap: wrap;">
+                                    <div style="flex: 1; min-width: 300px;">
+                                        <p class="mb-md">Weekly coordinated drone flights can dramatically expand your network reach and discover hidden nodes.</p>
+                                        <p class="mb-md"><strong>The strategy:</strong> Use a node on the ground set to client_mute to send messages inviting people to your chat room and generate mesh traffic.</p>
+                                        <p class="mb-md"><strong>Why it works:</strong> Many people have nodes sitting on desks because they saw no activity when first powered on. Your message may not be seen immediately, but will be discovered over time.</p>
+                                        <p class="text-small text-muted"><strong>Pro tip:</strong> In larger meshes (200+ online nodes), configure drone nodes as ROUTER.</p>
+                                    </div>
+                                    <div style="flex-shrink: 0;">
+                                        <figure>
+                                            <img src="../images/aerial/techo-drone.webp" width="200" alt="LilyGo T-Echo device hanging from a drone" style="border-radius: var(--radius-md);" />
+                                            <figcaption class="text-small text-muted mt-sm">LilyGo T-Echo hanging from a drone</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
-        <footer>
-            <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank">Austin Mesh's site</a> (which is (c) by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License). Our website content is licensed under Creative Commons-ShareAlike 4.0 International License.
-                <br><a href="/privacy/">Privacy Policy</a>
-            </p>
+
+        <footer class="footer">
+            <div class="container-content">
+                <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank" rel="noopener">Austin Mesh's site</a> (which is © by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License).</p>
+                <p><a href="/privacy/">Privacy Policy</a> | <a href="mailto:info@mtmesh.net">Contact: info@mtmesh.net</a></p>
+            </div>
         </footer>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Add loaded class for animations
+                document.body.classList.add("loaded");
+            });
+        </script>
     </body>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector("header").classList.add("loaded");
-        });
-    </script>
 </html>
