@@ -3,182 +3,213 @@
     <head>
         <title>Property Owner FAQ | MTMesh</title>
         <meta name="description" content="Information for property owners considering hosting an MTMesh node on their property.">
-        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-        <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
-        <link rel="stylesheet" href="../../styles.css?v=6">
+        <link rel="stylesheet" href="../../modern-styles.css">
     </head>
     <body>
-        <header>
-            <a href="/"><img src="../../images/MTMesh-Logo.svg" class="logo" alt="Logo for MTMesh" title="MTMesh" width="500" height="121" /></a>
-        </header>
-        <main>
-            <nav>
-                <menu>
-                <li><a href="/">Home</a></li>
-                <li>
-                    <a href="/learn/">Learn</a>
-                    <menu>
-                        <li><a href="/learn/#about">About</a></li>
-                        <li><a href="/learn/#coverage">Network coverage</a></li>
-                        <li><a href="/learn/#comparisons">Similar technology</a></li>
-                    </menu>
-                </li>
-                <li>
-                    <a href="/join/">Join</a>
-                    <menu>
-                        <li><a href="/join/#network">Join the network</a></li>
-                        <li><a href="/join/#best-practices">Best practices</a></li>
-                        <li><a href="/join/#group">Join the group</a></li>
-                        <li><a href="/join/property-owner-faq-hosting-a-node">Property Owner FAQ</a></li>
-                    </menu>
-                </li>
-                <li>
-                    <a href="/devices/">Devices</a>
-                    <menu>
-                        <li><a href="/devices/#options">Recommended Options</a></li>
-                        <li><a href="/devices/#solar">DIY Solar Repeaters</a></li>
-                        <li><a href="/devices/#aerial">Aerial Nodes</a></li>
-                    </menu>
-                </li>
-                <li>
-                    <a href="/similar-networks/">Similar networks</a>
-                    <menu>
-                        <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
-                        <li><a href="/similar-networks/#start-a-similar-network">Start a similar network</a></li>
-                    </menu>
-                </li>
-                <li><a href="/partners/">Partners</a></li>
-                </menu>
-                <menu class="menu--social">
-                    <li>
-                        <a href="https://discord.gg/KcvbFzhV" target="_blank" title="Join the MTMesh Discord">
-                            <img src="../../images/social/discord.svg" height="21" alt="Discord Logo" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA" target="_blank" title="Join the MTMesh YouTube">
-                            <img src="../../images/social/youtube.svg" height="21" alt="YouTube Logo" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/p/Cq0jOpYLpZy/" target="_blank" title="Join the MTMesh Instagram">
-                            <img src="../../images/social/instagram.svg" height="21" alt="Instagram Logo" />
-                        </a>
-                    </li>
-                </menu>
-            </nav>
-            <section class="faq" aria-labelledby="faq-title">
-                <h1 id="faq-title">FAQ: Hosting an MTMesh Node on Your Property</h1>
-
-                <div class="flex space-evenly">
-                    <figure class="p-1 mx-.5 flash muted">
-                        <figcaption>Pole mounted node on UT Austin</figcaption>
-                        <a href="/images/faq/ut-austin-node.webp" target="_blank"><img src="../../images/faq/ut-austin-node.webp" width="200" /></a>
-                    </figure>
-                    <figure class="p-1 mx-.5 flash muted">
-                        <figcaption>Magnetic mounted node on AISD</figcaption>
-                        <a href="/images/faq/aisd-magnet-node-mount.webp" target="_blank"><img src="../../images/faq/aisd-magnet-node-mount.webp" width="200" /></a>
-                    </figure>
-                    <figure class="p-1 mx-.5 flash muted">
-                        <figcaption>Magnetic mounted node on ADRN</figcaption>
-                        <a href="/images/faq/adrn-magnet-node.webp" target="_blank"><img src="../../images/faq/adrn-magnet-node.webp" width="200" /></a>
-                    </figure>
+        <a href="#main" class="skip-link">Skip to main content</a>
+        
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" aria-label="MTMesh Home">
+                        <img src="../../images/MTMesh-Logo.svg" class="logo" alt="MTMesh Logo" width="240" height="58" />
+                    </a>
+                    
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/learn/" class="nav-link">Learn</a></li>
+                            <li class="nav-item"><a href="/join/" class="nav-link">Join</a></li>
+                            <li class="nav-item"><a href="/devices/" class="nav-link">Devices</a></li>
+                            <li class="nav-item"><a href="/partners/" class="nav-link">Partners</a></li>
+                            <li class="nav-item"><a href="/similar-networks/" class="nav-link">Networks</a></li>
+                        </ul>
+                        
+                        <div class="nav-social">
+                            <a href="https://www.reddit.com/r/mtmesh/" target="_blank" rel="noopener" aria-label="Join MTMesh on Reddit">
+                                <img src="../../images/social/reddit.svg" height="24" width="24" alt="Reddit" />
+                            </a>
+                            <a href="https://discord.gg/KcvbFzhV" target="_blank" rel="noopener" aria-label="Join MTMesh Discord">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.010c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
                 </div>
+            </div>
+        </header>
 
-                <h4>1. What exactly is the node being used for?</h4>
-                <ul>
-                    <li>Expands a free, open source, community mesh network using low-power radio</li>
-                    <li>Enables text-based communication in areas with limited cellular or internet coverage</li>
-                    <li>Often used for emergency readiness and local community support</li>
-                </ul>
+        <main id="main">
+            <section class="section">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h1 class="section-title">FAQ: Hosting an MTMesh Node on Your Property</h1>
+                        <p class="text-large text-muted">Everything property owners need to know about hosting mesh network nodes</p>
+                    </div>
 
-                <h4>2. What kind of equipment will be installed?</h4>
-                <ul>
-                    <li>Typically a small, weatherproof box containing a microcontroller and battery</li>
-                    <li>A lightweight antenna and a solar panel</li>
-                    <li>Usually under 2 pounds and compact (roughly the size of a router, but the antenna is longer)</li>
-                </ul>
+                    <!-- Node Installation Examples -->
+                    <div class="grid grid-3 mb-2xl">
+                        <div class="card text-center">
+                            <img src="../../images/faq/ut-austin-node.webp" alt="Pole mounted node on UT Austin" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-sm);" />
+                            <p class="text-small text-muted">Pole mounted node on UT Austin</p>
+                        </div>
+                        <div class="card text-center">
+                            <img src="../../images/faq/aisd-magnet-node-mount.webp" alt="Magnetic mounted node on AISD" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-sm);" />
+                            <p class="text-small text-muted">Magnetic mounted node on AISD</p>
+                        </div>
+                        <div class="card text-center">
+                            <img src="../../images/faq/adrn-magnet-node.webp" alt="Magnetic mounted node on ADRN" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: var(--space-sm);" />
+                            <p class="text-small text-muted">Magnetic mounted node on ADRN</p>
+                        </div>
+                    </div>
 
-                <h4>3. How will it be powered?</h4>
-                <ul>
-                    <li>Nodes are solar-powered and self-sufficient</li>
-                </ul>
+                    <!-- FAQ Content organized by topic -->
+                    <div class="grid grid-2">
+                        <!-- Purpose and Function -->
+                        <div class="card">
+                            <h3 class="card-title">Purpose & Function</h3>
+                            <div class="card-content">
+                                <h4 class="mb-sm">What exactly is the node being used for?</h4>
+                                <ul class="mb-lg">
+                                    <li>Expands a free, open source, community mesh network using low-power radio</li>
+                                    <li>Enables text-based communication in areas with limited cellular or internet coverage</li>
+                                    <li>Often used for emergency readiness and local community support</li>
+                                </ul>
+                                
+                                <h4 class="mb-sm">More detailed functionality:</h4>
+                                <ul>
+                                    <li>Expands the MTMesh community mesh network using low-power radio</li>
+                                    <li>Acts as a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network</li>
+                                    <li>Often used for hiking, emergency readiness, and local community support</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <h4>4. What kind of antenna or cabling will be involved?</h4>
-                <ul>
-                    <li>Usually a small external antenna mounted to a mast or pole</li>
-                    <li>No cabling into the building.</li>
-                    <li>Typical installation uses either magnets, u-bolts around a mast or pole, or hose clamps. No drilling or screwing required unless agreed upon.</li>
-                </ul>
+                        <!-- Equipment and Installation -->
+                        <div class="card">
+                            <h3 class="card-title">Equipment & Installation</h3>
+                            <div class="card-content">
+                                <h4 class="mb-sm">What kind of equipment will be installed?</h4>
+                                <ul class="mb-lg">
+                                    <li>Typically a small, weatherproof box containing a microcontroller and battery</li>
+                                    <li>A lightweight antenna and a solar panel</li>
+                                    <li>Usually under 2 pounds and compact (roughly the size of a router, but the antenna is longer)</li>
+                                </ul>
+                                
+                                <h4 class="mb-sm">What kind of antenna or cabling will be involved?</h4>
+                                <ul>
+                                    <li>Usually a small external antenna mounted to a mast or pole</li>
+                                    <li>No cabling into the building</li>
+                                    <li>Typical installation uses either magnets, u-bolts around a mast or pole, or hose clamps. No drilling or screwing required unless agreed upon</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <h4>5. What is the expected maintenance requirement?</h4>
-                <ul>
-                    <li>Very low, nodes are designed to run autonomously for long periods.</li>
-                    <li>Occasional visits (e.g., once or twice a year) may be needed for firmware updates or hardware checks.</li>
-                    <li>Access terms can be set in writing.</li>
-                </ul>
+                        <!-- Power and Maintenance -->
+                        <div class="card">
+                            <h3 class="card-title">Power & Maintenance</h3>
+                            <div class="card-content">
+                                <h4 class="mb-sm">How will it be powered?</h4>
+                                <ul class="mb-lg">
+                                    <li>Nodes are solar-powered and self-sufficient</li>
+                                </ul>
+                                
+                                <h4 class="mb-sm">What is the expected maintenance requirement?</h4>
+                                <ul>
+                                    <li>Very low, nodes are designed to run autonomously for long periods</li>
+                                    <li>Occasional visits (e.g., once or twice a year) may be needed for firmware updates or hardware checks</li>
+                                    <li>Access terms can be set in writing</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <h4>6. What exactly is the node being used for? (More detail)</h4>
-                <ul>
-                    <li>Expands the MTMesh community mesh network using low-power radio</li>
-                    <li>Acts as a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network.</li>
-                    <li>Often used for hiking, emergency readiness, and local community support</li>
-                </ul>
+                        <!-- Technical Specifications -->
+                        <div class="card">
+                            <h3 class="card-title">Technical Details</h3>
+                            <div class="card-content">
+                                <h4 class="mb-sm">What range and signal coverage will this node support?</h4>
+                                <ul class="mb-lg">
+                                    <li>Depends on elevation and antenna, typically 2–10 miles or more</li>
+                                    <li>Helps connect devices over long distances through mesh relaying</li>
+                                    <li>Operates in license-free Industrial, Science, and Medical band (902–928MHz)</li>
+                                </ul>
+                                
+                                <h4 class="mb-sm">Will the equipment cause any interference with my existing systems?</h4>
+                                <ul>
+                                    <li>Extremely unlikely, Meshtastic operates on different frequencies from Wi-Fi, cell, or TV systems and is extremely low power</li>
+                                    <li>Designed to be non-disruptive and FCC-compliant</li>
+                                    <li>You can request testing or documentation if concerned</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <h4>7. What range and signal coverage will this node support?</h4>
-                <ul>
-                    <li>Depends on elevation and antenna, typically 2–10 miles or more</li>
-                    <li>Helps connect devices over long distances through mesh relaying</li>
-                    <li>Operates in license-free Industrial, Science, and Medical band (902–928mhz)</li>
-                </ul>
+                        <!-- Legal and Administrative -->
+                        <div class="card">
+                            <h3 class="card-title">Legal & Administrative</h3>
+                            <div class="card-content">
+                                <h4 class="mb-sm">What are the liability implications?</h4>
+                                <ul class="mb-lg">
+                                    <li>The building owner carries the liability, though the likelihood of an incident is not expected to be material</li>
+                                </ul>
+                                
+                                <h4 class="mb-sm">Are there any permits, HOA, zoning, or regulatory issues to be aware of?</h4>
+                                <ul>
+                                    <li>Permits are not needed for small antennas or non-commercial installations</li>
+                                    <li>HOA or building rules may restrict roof modifications — check before proceeding</li>
+                                    <li>It's best to get written permission if you're a tenant or part of a shared property</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <h4>8. Will the equipment cause any interference with my existing systems?</h4>
-                <ul>
-                    <li>Extremely unlikely, Meshtastic operates on different frequencies from Wi-Fi, cell, or TV systems and is extremely low power.</li>
-                    <li>Designed to be non-disruptive and FCC-compliant.</li>
-                    <li>You can request testing or documentation if concerned.</li>
-                </ul>
+                        <!-- Terms and Partnership -->
+                        <div class="card">
+                            <h3 class="card-title">Terms & Partnership</h3>
+                            <div class="card-content">
+                                <h4 class="mb-sm">How long is the node expected to stay there? Can it be removed at any time?</h4>
+                                <ul class="mb-lg">
+                                    <li>We will work together to determine a clear timeframe or agreement</li>
+                                    <li>No long-term obligation required. Ultimately, you may request removal at any time, with coordination and time allowance for removal</li>
+                                    <li>Removal should leave no permanent marks or damage</li>
+                                </ul>
+                                
+                                <h4 class="mb-sm">Who else in Montana has one of this community's nodes installed?</h4>
+                                <ul>
+                                    <li>Montana schools and organizations</li>
+                                    <li>Montana educational institutions</li>
+                                    <li>Montana State University</li>
+                                    <li>Montana Disaster Relief Network</li>
+                                    <li>Various Montana business partners</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-                <h4>9. What are the liability implications?</h4>
-                <ul>
-                    <li>The building owner carries the liability, though the likelihood of an incident is not expected to be material</li>
-                </ul>
-
-                <h4>10. Are there any permits, HOA, zoning, or regulatory issues to be aware of?</h4>
-                <ul>
-                    <li>Permits are not needed for small antennas or non-commercial installations</li>
-                    <li>HOA or building rules may restrict roof modifications — check before proceeding</li>
-                    <li>It's best to get written permission if you're a tenant or part of a shared property</li>
-                </ul>
-
-                <h4>11. How long is the node expected to stay there? Can it be removed at any time?</h4>
-                <ul>
-                    <li>We will work together to determine a clear timeframe or agreement</li>
-                    <li>No long-term obligation required. Ultimately, you may request removal at any time, with coordination and time allowance for removal.</li>
-                    <li>Removal should leave no permanent marks or damage</li>
-                </ul>
-
-                <h4>12. Who else in Montana has one of this community's nodes installed?</h4>
-                <ul>
-                    <li>Montana schools and organizations</li>
-                    <li>Montana educational institutions</li>
-                    <li>Montana State University</li>
-                    <li>Montana Disaster Relief Network</li>
-                    <li>Various Montana business partners</li>
-                </ul>
+                    <!-- Call to Action -->
+                    <div class="text-center mt-2xl">
+                        <div class="card" style="background-color: var(--color-secondary); border-color: var(--color-secondary);">
+                            <h3 class="card-title" style="color: var(--color-primary);">Ready to Host a Node?</h3>
+                            <div class="card-content">
+                                <p style="color: var(--color-primary); margin-bottom: var(--space-lg);">Join our community of property owners helping to build Montana's resilient communication network.</p>
+                                <a href="/join/" class="btn btn-primary btn-large">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
-        <footer>
-            <p>Our website content is licensed under Creative Commons
-                <br>feel free to use if for your club's website: <a href="https://github.com/mtmesh/www">Github</a>
-                <br>If we've inspired you, please <a href="mailto:info@mtmesh.net">email us</a>!
-                <br>This site is (c) by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-                <br><a href="/privacy/">Privacy Policy</a>
-            </p>
+
+        <footer class="footer">
+            <div class="container-content">
+                <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank" rel="noopener">Austin Mesh's site</a> (which is © by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License).</p>
+                <p><a href="/privacy/">Privacy Policy</a> | <a href="mailto:info@mtmesh.net">Contact: info@mtmesh.net</a></p>
+            </div>
         </footer>
         <script type="application/ld+json">
         {
@@ -275,19 +306,21 @@
             },
             {
               "@type": "Question",
-              "name": "Who else in Austin has one of this community’s nodes installed?",
+              "name": "Who else in Montana has one of this community's nodes installed?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Austin Independent School District (4 schools), Austin Liberal Arts and Sciences Academy, University of Texas, Austin Disaster Relief Network, and Google."
+                "text": "Montana schools and organizations, Montana educational institutions, Montana State University, Montana Disaster Relief Network, and various Montana business partners."
               }
             }
           ]
         }
         </script>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Add loaded class for animations
+                document.body.classList.add("loaded");
+            });
+        </script>
     </body>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector("header").classList.add("loaded");
-    });
-    </script>
 </html>

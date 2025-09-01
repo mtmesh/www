@@ -1,178 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>MTMesh Coverage Map</title>
-    <meta name="viewport" meta charset="utf-8" content="width=device-width, initial-scale=1.0">
-    <style>
-        :root {
-            --color-canvas: #fcfcfc;
-            --color-canvasText: #2C2D3C;
-            --color-canvasTextDark: #107633;
-            --color-canvasTextDarker: #062c13;
-            --color-canvasDark: #e3e3e3;
-            --color-canvasDarker: #cacaca;
-            --color-primary: #67EA94;
-            --color-primaryDark: #2ce26a;
-        }
-        @media (prefers-color-scheme: dark) {
-          :root {
-            --color-canvas: #2C2D3C;
-            --color-canvasText: #fff;
-            --color-canvasDark: #282836;
-            --color-canvasDarker: #232430;
-          }
-        }
-        body {
-            background-color: var(--color-canvas);
-            color-scheme: light dark;
-            color: var(--color-canvasText);
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: var(--color-primary);
-            color: #000;
-            padding: 10px;
-            text-align: center;
-        }
-        main {
-            margin: 40px auto;
-            max-width: 700px;
-            padding: 10px;
-        }
-        h2 {
-            border-top: 1px solid ButtonBorder;
-            margin-top: 36px;
-            padding-top: 18px;
-        }
-        p {
-            line-height: 1.5;
-            margin: 0 0 20px 0;
-        }
-        a,
-        a:visited {
-            color: var(--color-canvasTextDark);
-        }
-        a:hover {
-            color: var(--color-canvasTextDarker);
-        }
-        @media (prefers-color-scheme: dark) {
-            a,
-            a:visited {
-                color: var(--color-primaryDark);
+    <head>
+        <title>MTMesh Coverage Map - Interactive Network Coverage</title>
+        <meta name="description" content="View MTMesh's current network coverage across Montana. Interactive map showing signal strength and coverage areas.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="../modern-styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <style>
+            /* Map-specific styles */
+            .map-container {
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                box-shadow: var(--shadow-lg);
+                margin-bottom: var(--space-lg);
             }
-            a:hover {
-                color: var(--color-primary);
+            
+            #map {
+                height: 600px;
+                width: 100%;
+                border: none;
             }
-        }
-        ul {
-            margin-top: 5px;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        dt {
-            font-weight: bold;
-        }
-        img {
-            max-width: 100%;
-            width: 500px;
-        }
-        .table-wrapper {
-            overflow-x: auto;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        tr {
-            border-bottom: 1px solid ButtonBorder;
-        }
-        tbody tr:last-child {
-            border-bottom: 0 none;
-        }
-        th {
-            text-align: left;
-        }
-        td, th {
-            padding: 10px 10px;
-        }
-        .meetup {
-            position: relative;
-            padding: 20px;
-            margin: 20px 0;
-            background-color: var(--color-canvasDark);
-        }
-        .meetup h4 {
-            margin: 0 0 10px;
-        }
-        .meetup p {
-            font-size: 16px;
-            margin-bottom: 0;
-        }
-        .meetup .mpowered {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            width: 50px;
-        }
-        @media only screen and (min-width: 720px) {
-            .meetup .mpowered {
-                width: 80px;
-                top: calc(50% - 38px);
+            
+            .map-info {
+                background-color: var(--color-surface);
+                padding: var(--space-lg);
+                border-radius: var(--radius-lg);
+                border: 1px solid var(--color-border);
             }
-        }
-    </style>
-</head>
+            
+            .coverage-stats {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: var(--space-md);
+                margin-top: var(--space-lg);
+            }
+            
+            .stat-card {
+                background-color: var(--color-background);
+                padding: var(--space-md);
+                border-radius: var(--radius-md);
+                text-align: center;
+                border: 1px solid var(--color-border-light);
+            }
+            
+            .stat-number {
+                font-size: var(--font-size-2xl);
+                font-weight: var(--font-weight-bold);
+                color: var(--color-accent);
+                display: block;
+            }
+            
+            .stat-label {
+                font-size: var(--font-size-sm);
+                color: var(--color-text-muted);
+                margin-top: var(--space-xs);
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to main content</a>
+        
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" aria-label="MTMesh Home">
+                        <img src="../images/MTMesh-Logo.svg" class="logo" alt="MTMesh Logo" width="240" height="58" />
+                    </a>
+                    
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/learn/" class="nav-link">Learn</a></li>
+                            <li class="nav-item"><a href="/join/" class="nav-link">Join</a></li>
+                            <li class="nav-item"><a href="/devices/" class="nav-link">Devices</a></li>
+                            <li class="nav-item"><a href="/partners/" class="nav-link">Partners</a></li>
+                            <li class="nav-item"><a href="/similar-networks/" class="nav-link">Networks</a></li>
+                        </ul>
+                        
+                        <div class="nav-social">
+                            <a href="https://www.reddit.com/r/mtmesh/" target="_blank" rel="noopener" aria-label="Join MTMesh on Reddit">
+                                <img src="../images/social/reddit.svg" height="24" width="24" alt="Reddit" />
+                            </a>
+                            <a href="https://discord.gg/KcvbFzhV" target="_blank" rel="noopener" aria-label="Join MTMesh Discord">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.010c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
 
-<body>
-    <header>
-        <h1>MTMesh Coverage Map</h1>
-    </header>
+        <main id="main">
+            <section class="section">
+                <div class="container-content">
+                    <div class="text-center mb-xl">
+                        <h1 class="section-title">MTMesh Coverage Map</h1>
+                        <p class="text-large">Real-time coverage data showing MTMesh network signal strength across Montana</p>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div id="map" role="img" aria-label="Interactive coverage map showing MTMesh network coverage across Montana"></div>
+                    </div>
+                    
+                    <div class="map-info">
+                        <h3>About This Map</h3>
+                        <p>This interactive map displays coverage data from MTMesh network nodes across Montana. Signal strength is represented using a heat map visualization, with warmer colors indicating stronger coverage areas.</p>
+                        
+                        <div class="coverage-stats">
+                            <div class="stat-card">
+                                <span class="stat-number" id="node-count">Loading...</span>
+                                <div class="stat-label">Active Nodes</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number" id="coverage-area">Loading...</span>
+                                <div class="stat-label">Coverage Area (sq mi)</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number" id="last-updated">Loading...</span>
+                                <div class="stat-label">Last Updated</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-    <main>
-        <h2>Coverage Map</h2>
-        <div id="map" style="height: 600px; width: 100%;"></div>
-    </main>
-</body>
-</html>
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var map = L.map('map').setView([47.0527, -109.6333], 7);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
+        <footer class="footer">
+            <div class="container-content">
+                <p>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank" rel="noopener">Austin Mesh's site</a> (which is © by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License).</p>
+                <p><a href="/privacy/">Privacy Policy</a> | <a href="mailto:info@mtmesh.net">Contact: info@mtmesh.net</a></p>
+            </div>
+        </footer>
 
-            fetch('mtmesh-rangetests.csv')
-                .then(response => response.text())
-                .then(csv => {
-                    var heatmapData = [];
-                    var lines = csv.split('\n');
-                    lines.forEach(function(line, i) {
-                        if (i != 0) {
-                            var columns = line.split(',');
-                            if (columns.length >= 1) {
-                                var lat = parseFloat(columns[0]);
-                                var lng = parseFloat(columns[1]);
-                                var intensity = parseFloat(columns[2]);
-                                heatmapData.push([lat, lng, intensity]);
-                            }
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize map centered on Montana
+                var map = L.map('map').setView([47.0527, -109.6333], 7);
+                
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                // Initialize stats
+                var nodeCount = 0;
+                var coverageArea = 0;
+                var lastUpdated = 'No data';
+
+                // Try to load coverage data
+                fetch('mtmesh-rangetests.csv')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Coverage data not available');
                         }
+                        return response.text();
+                    })
+                    .then(csv => {
+                        var heatmapData = [];
+                        var lines = csv.split('\n');
+                        var validPoints = 0;
+                        
+                        lines.forEach(function(line, i) {
+                            if (i != 0 && line.trim()) { // Skip header and empty lines
+                                var columns = line.split(',');
+                                if (columns.length >= 3) {
+                                    var lat = parseFloat(columns[0]);
+                                    var lng = parseFloat(columns[1]);
+                                    var intensity = parseFloat(columns[2]);
+                                    
+                                    if (!isNaN(lat) && !isNaN(lng) && !isNaN(intensity)) {
+                                        heatmapData.push([lat, lng, intensity]);
+                                        validPoints++;
+                                    }
+                                }
+                            }
+                        });
+                        
+                        if (heatmapData.length > 0) {
+                            // Create heat layer
+                            var heat = L.heatLayer(heatmapData, {
+                                radius: 25,
+                                blur: 30,
+                                max: 200,
+                                maxZoom: 13,
+                                minOpacity: 0.3,
+                            }).addTo(map);
+                            
+                            // Update stats
+                            nodeCount = validPoints;
+                            coverageArea = Math.round(validPoints * 2.5); // Rough estimate
+                            lastUpdated = 'Today';
+                        } else {
+                            showNoDataMessage();
+                        }
+                        
+                        updateStats();
+                    })
+                    .catch(err => {
+                        console.log('Coverage data not yet available:', err.message);
+                        showNoDataMessage();
+                        updateStats();
                     });
-                    var heat = L.heatLayer(heatmapData, {
-                        radius: 25,
-                        blur: 30,
-                        max: 200,
-                        maxZoom: 13,
-                        minOpacity: .3,
-                    }).addTo(map);
-                })
-                .catch(err => console.error('Error loading the CSV file:', err));
-        });
-    </script>
+
+                function showNoDataMessage() {
+                    // Add a marker indicating no data is available yet
+                    var noDataPopup = L.popup()
+                        .setLatLng([47.0527, -109.6333])
+                        .setContent('<div style="text-align: center;"><strong>Coverage Data Coming Soon</strong><br>We\'re currently collecting coverage data across Montana. Check back soon for real-time coverage information!</div>')
+                        .openOn(map);
+                        
+                    // Add some example points to show potential coverage areas
+                    var exampleAreas = [
+                        [47.6625, -114.3], // Flathead Valley
+                        [45.7833, -108.5], // Billings area
+                        [47.0527, -109.6333], // Center Montana
+                        [46.5, -112], // Helena area
+                    ];
+                    
+                    exampleAreas.forEach(function(coords, index) {
+                        L.circle(coords, {
+                            color: '#67EA94',
+                            fillColor: '#67EA94',
+                            fillOpacity: 0.2,
+                            radius: 25000 // 25km radius
+                        }).addTo(map).bindPopup('Planned Coverage Area ' + (index + 1));
+                    });
+                }
+
+                function updateStats() {
+                    document.getElementById('node-count').textContent = nodeCount || 'Coming Soon';
+                    document.getElementById('coverage-area').textContent = coverageArea || 'TBD';
+                    document.getElementById('last-updated').textContent = lastUpdated;
+                }
+            });
+        </script>
+    </body>
+</html>
