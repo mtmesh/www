@@ -569,7 +569,7 @@ p {
 /* Focus Management */
 .skip-link {
     position: absolute;
-    top: -40px;
+    top: -100px;
     left: 6px;
     background: var(--color-primary);
     color: var(--color-background);
@@ -577,6 +577,7 @@ p {
     text-decoration: none;
     border-radius: var(--radius-sm);
     z-index: 1000;
+    transition: top var(--transition-fast);
 }
 
 .skip-link:focus {
