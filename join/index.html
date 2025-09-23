@@ -160,7 +160,7 @@
                 </div>
             </section>
             <!-- Best Practices Section -->
-            <section id="best-practices" class="section">
+            <section id="best-practices" class="section" style="background-color: #2c2d3c; color: white;">
                 <div class="container-content">
                     <div class="text-center mb-2xl">
                         <h2 class="section-title">Network Best Practices</h2>
@@ -168,8 +168,8 @@
                     </div>
                     
                     <!-- Quick Reference Card -->
-                    <div class="card mb-2xl" style="background-color: var(--color-secondary); border-color: var(--color-accent);">
-                        <h3 class="card-title">Quick Reference - TL;DR</h3>
+                    <div class="card mb-2xl" style="background-color: var(--color-secondary); border-color: var(--color-accent); color: var(--color-text);">
+                        <h3 class="card-title" style="color: var(--color-text);">Quick Reference - TL;DR</h3>
                         <div class="card-content">
                             <div class="grid grid-2">
                                 <ul style="list-style: none; padding: 0;">
@@ -177,7 +177,7 @@
                                     <li class="mb-sm"><strong>Role:</strong> Client (NOT Router & Client)</li>
                                 </ul>
                                 <ul style="list-style: none; padding: 0;">
-                                    <li class="mb-sm"><strong>Hop Count:</strong> 3</li>
+                                    <li class="mb-sm"><strong>Hop Count:</strong> 5 (up to 7 in rural areas)</li>
                                     <li class="mb-sm"><strong>Broadcast Intervals:</strong> 3 hours</li>
                                 </ul>
                             </div>
@@ -187,7 +187,7 @@
                     
                     <!-- Detailed Guidelines -->
                     <div class="grid grid-2">
-                        <div class="card">
+                        <div class="card" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
                             <h3 class="card-title">MQTT Settings</h3>
                             <div class="card-content">
                                 <p class="mb-md">We've chosen not to use MQTT to build a stronger RF-based mesh network instead of relying on internet connections.</p>
@@ -196,7 +196,7 @@
                             </div>
                         </div>
                         
-                        <div class="card">
+                        <div class="card" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
                             <h3 class="card-title">Device Role</h3>
                             <div class="card-content">
                                 <p class="mb-md">Use "Client" role for best results. While "Client/Router" may seem better, extensive testing shows "Client" works best for users and the network.</p>
@@ -205,17 +205,17 @@
                             </div>
                         </div>
                         
-                        <div class="card">
+                        <div class="card" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
                             <h3 class="card-title">Hop Count</h3>
                             <div class="card-content">
-                                <p class="mb-md">Start with 3 hops and use the minimum needed to reach your destination.</p>
-                                <p class="mb-md"><strong>Home + Relay setup:</strong> Use 4 hops if your client goes through a roof-mounted relay.</p>
-                                <p class="mb-md"><strong>Network edge:</strong> 5 hops may help, but optimize hardware and placement first.</p>
-                                <p class="font-semibold">Recommendation: Start with 3, optimize placement before increasing</p>
+                                <p class="mb-md">Start with 5 hops and use the minimum needed to reach your destination.</p>
+                                <p class="mb-md"><strong>Rural areas:</strong> Use up to 7 hops for very remote locations with sparse node coverage.</p>
+                                <p class="mb-md"><strong>Dense areas:</strong> 3-4 hops may be sufficient where many nodes are present.</p>
+                                <p class="font-semibold">Recommendation: Start with 5, aim for as low as possible while maintaining connectivity</p>
                             </div>
                         </div>
                         
-                        <div class="card">
+                        <div class="card" style="background-color: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
                             <h3 class="card-title">Broadcast Intervals</h3>
                             <div class="card-content">
                                 <p class="mb-md">Reduce channel utilization with these recommended settings:</p>
