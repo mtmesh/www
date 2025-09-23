@@ -231,7 +231,7 @@ p {
 
 .btn-primary {
     background-color: var(--color-primary);
-    color: var(--color-background);
+    color: #1a1b2a;
     border-color: var(--color-primary);
     font-weight: var(--font-weight-medium);
 }
@@ -245,7 +245,7 @@ p {
 
 .btn-secondary {
     background-color: var(--color-secondary);
-    color: var(--color-header-text);
+    color: #1a1b2a;
     border-color: var(--color-secondary);
     font-weight: var(--font-weight-medium);
 }
