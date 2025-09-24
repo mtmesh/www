@@ -309,13 +309,14 @@ a.btn-outline:focus {
 .card-highlight {
     background-color: var(--color-primary);
     border-color: var(--color-accent);
-    color: var(--color-header-text);
+    color: #1a1b2a;
 }
 
 .card-highlight h3,
 .card-highlight h4,
-.card-highlight strong {
-    color: var(--color-header-text);
+.card-highlight strong,
+.card-highlight p {
+    color: #1a1b2a;
 }
 
 .card-title {
