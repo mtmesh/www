@@ -123,6 +123,11 @@ a:visited {
     color: var(--color-primary);
 }
 
+/* Override link colors for buttons */
+a.btn, a.btn:hover, a.btn:visited {
+    text-decoration: none;
+}
+
 /* Typography System */
 .h1, h1 {
     font-size: var(--font-size-4xl);
@@ -231,7 +236,7 @@ p {
 
 .btn-primary {
     background-color: var(--color-primary);
-    color: #1a1b2a;
+    color: #1a1b2a !important;
     border-color: var(--color-primary);
     font-weight: var(--font-weight-medium);
 }
@@ -239,13 +244,14 @@ p {
 .btn-primary:hover {
     background-color: var(--color-primary-light);
     border-color: var(--color-primary-light);
+    color: #1a1b2a !important;
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
     background-color: var(--color-secondary);
-    color: #1a1b2a;
+    color: #1a1b2a !important;
     border-color: var(--color-secondary);
     font-weight: var(--font-weight-medium);
 }
@@ -253,6 +259,7 @@ p {
 .btn-secondary:hover {
     background-color: var(--color-accent);
     border-color: var(--color-accent);
+    color: #1a1b2a !important;
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
