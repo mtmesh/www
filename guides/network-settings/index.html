@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Network Settings Best Practices | MTMesh</title>
+        <meta name="description" content="Recommended Meshtastic network settings for optimal MTMesh performance including MQTT, device roles, hop counts, and broadcast intervals.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="../../modern-styles.css">
+    </head>
+    <body>
+        <a href="#main" class="skip-link">Skip to main content</a>
+
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" aria-label="MTMesh Home">
+                        <img src="../../images/MTMesh-Logo.svg" class="logo" alt="MTMesh Logo" width="240" height="58" />
+                    </a>
+
+                    <nav class="nav" aria-label="Main navigation">
+                        <ul class="nav-menu">
+                            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="/learn/" class="nav-link">Learn</a></li>
+                            <li class="nav-item"><a href="/join/" class="nav-link">Join</a></li>
+                            <li class="nav-item"><a href="/devices/" class="nav-link">Devices</a></li>
+                            <li class="nav-item"><a href="/partners/" class="nav-link">Partners</a></li>
+                            <li class="nav-item"><a href="/guides/" class="nav-link">Guides</a></li>
+                        </ul>
+
+                        <div class="nav-social">
+                            <a href="https://www.reddit.com/r/mtmesh/" target="_blank" rel="noopener" aria-label="Join MTMesh on Reddit">
+                                <img src="../../images/social/reddit-simple.svg" width="24" height="24" alt="Reddit" />
+                            </a>
+                            <a href="https://discord.gg/KcvbFzhV" target="_blank" rel="noopener" aria-label="Join MTMesh Discord">
+                                <img src="../../images/social/discord-simple.svg" width="24" height="24" alt="Discord" />
+                            </a>
+                            <a href="https://github.com/mtmesh/www" target="_blank" rel="noopener" aria-label="MTMesh GitHub">
+                                <img src="../../images/social/github-simple.svg" width="24" height="24" alt="GitHub" />
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="section">
+                <div class="container-content">
+                    <div class="text-center mb-2xl">
+                        <h1>Network Settings Best Practices</h1>
+                        <p class="text-large">Recommended Meshtastic configuration for optimal MTMesh network performance</p>
+                    </div>
+
+                    <!-- Quick Reference Card -->
+                    <div class="card mb-2xl" style="border: 2px solid var(--color-secondary); background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);">
+                        <h2 class="card-title" style="color: var(--color-primary);">Quick Reference - TL;DR</h2>
+                        <div class="card-content">
+                            <div class="grid grid-2">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="mb-sm"><strong>MQTT:</strong> Optional (see below)</li>
+                                    <li class="mb-sm"><strong>Role:</strong> Client (NOT Router & Client)</li>
+                                </ul>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li class="mb-sm"><strong>Hop Count:</strong> 5 (up to 7 in rural areas)</li>
+                                    <li class="mb-sm"><strong>Broadcast Intervals:</strong> 3 hours</li>
+                                </ul>
+                            </div>
+                            <p class="text-small text-muted mt-md">Following these guidelines ensures the best experience for everyone as we grow.</p>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Guidelines -->
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3 class="card-title">MQTT Settings</h3>
+                            <div class="card-content">
+                                <p class="mb-md">MTMesh runs a dedicated MQTT server to bridge distant areas of Montana and provide real-time mesh monitoring. This helps connect isolated regions and track network health.</p>
+                                <p class="mb-md"><strong>Want to connect?</strong> Join our <a href="https://discord.gg/KcvbFzhV" target="_blank">Discord</a> or check <a href="https://www.reddit.com/r/mtmesh/" target="_blank">Reddit</a> for MQTT configuration details and server information.</p>
+                                <p class="font-semibold">Note: MQTT is optional - the mesh works great without it!</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card-title">Device Role</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Use "Client" role for best results. While "Client/Router" may seem better, extensive testing shows "Client" works best for users and the network.</p>
+                                <p class="mb-md"><strong>For device-connected nodes</strong> not contributing to the network, use "Client Mute" to reduce airtime.</p>
+                                <p class="font-semibold">Recommendation: Start with "Client" role even for well-placed nodes</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card-title">Hop Count</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Start with 5 hops and use the minimum needed to reach your destination.</p>
+                                <p class="mb-md"><strong>Rural areas:</strong> Use up to 7 hops for very remote locations with sparse node coverage.</p>
+                                <p class="mb-md"><strong>Dense areas:</strong> 3-4 hops may be sufficient where many nodes are present.</p>
+                                <p class="font-semibold">Recommendation: Start with 5, aim for as low as possible while maintaining connectivity</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card-title">Broadcast Intervals</h3>
+                            <div class="card-content">
+                                <p class="mb-md">Reduce channel utilization with these recommended settings:</p>
+                                <div class="mb-md">
+                                    <p class="font-semibold mb-xs">Device Config:</p>
+                                    <p class="text-small">Node Info Broadcast: 3 Hours</p>
+                                </div>
+                                <div class="mb-md">
+                                    <p class="font-semibold mb-xs">Position:</p>
+                                    <p class="text-small">Broadcast: 1 Hour, Smart Position: Enabled, Min Interval: 1 Min, Min Distance: 100m</p>
+                                </div>
+                                <div>
+                                    <p class="font-semibold mb-xs">Telemetry:</p>
+                                    <p class="text-small">Device Metrics: 3 Hours, Sensor Metrics: 1 Hour</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Why These Settings -->
+                    <div class="card mt-2xl">
+                        <h2 class="card-title">Why These Settings Matter</h2>
+                        <div class="card-content">
+                            <p class="mb-md">Montana's geography presents unique challenges for mesh networking. These recommendations are based on real-world testing across:</p>
+                            <ul style="color: var(--color-text-light); margin-bottom: var(--space-lg); padding-left: var(--space-lg);">
+                                <li>Sparse population density with long distances between nodes</li>
+                                <li>Mountainous terrain affecting signal propagation</li>
+                                <li>Extreme temperature ranges (-40°F to 100°F+)</li>
+                                <li>Solar-powered nodes with limited battery capacity in winter</li>
+                            </ul>
+                            <p>As the network grows and node density increases, these recommendations may evolve. Check back periodically or join our <a href="https://discord.gg/KcvbFzhV" target="_blank">Discord</a> for updates.</p>
+                        </div>
+                    </div>
+
+                    <!-- Questions -->
+                    <div class="text-center mt-2xl">
+                        <h2 class="section-title">Questions About Settings?</h2>
+                        <p class="text-large mb-lg">Our community is here to help with configuration and troubleshooting.</p>
+                        <div class="hero-actions">
+                            <a href="https://discord.gg/KcvbFzhV" target="_blank" class="btn btn-secondary btn-large">Ask on Discord</a>
+                            <a href="https://www.reddit.com/r/mtmesh/" target="_blank" class="btn btn-outline btn-large">Post on Reddit</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container-content">
+                <p><small>This website is a fork of <a href="https://www.austinmesh.org/" target="_blank" rel="noopener">Austin Mesh's site</a> (which is © by Tommy Ekstrand and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License).</small></p>
+                <p><a href="/privacy/">Privacy Policy</a></p>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Add loaded class for animations
+                document.body.classList.add("loaded");
+            });
+        </script>
+    </body>
+</html>
