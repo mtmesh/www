@@ -52,7 +52,7 @@ if [ "$NEXT_EVENT" = "null" ] || [ -z "$NEXT_EVENT" ]; then
     <header>
         <h1>No Upcoming Events</h1>
     </header>
-    <p>There are currently no scheduled events. Please check back later or join our <a href=\"https://discord.gg/KcvbFzhV\" target="_blank">Discord</a> for updates.</p>
+    <p>There are currently no scheduled events. Please check back later or join our <a href=\"https://discord.gg/DsReq2nr\" target="_blank">Discord</a> for updates.</p>
     <footer>
         <form method="dialog">
             <button type="submit">Close</button>
