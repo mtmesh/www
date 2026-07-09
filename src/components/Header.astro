@@ -4,6 +4,7 @@ const nav = [
   { href: "/learn/", label: "Learn" },
   { href: "/join/", label: "Join" },
   { href: "/devices/", label: "Devices" },
+  { href: "/guides/", label: "Guides" },
   { href: "/partners/", label: "Partners" },
 ];
 
@@ -28,7 +29,7 @@ const linkBase =
   Skip to main content
 </a>
 
-<header class="sticky top-0 z-50 bg-brand shadow-lg shadow-black/25 backdrop-blur">
+<header class="sticky top-0 z-50 bg-brand shadow-lg shadow-black/25">
   <div class="mx-auto max-w-6xl px-4">
     <div class="flex items-center justify-between gap-4 py-4">
       <a href="/" aria-label="MTMesh home" class="shrink-0">
@@ -42,8 +43,8 @@ const linkBase =
       </a>
 
       <!-- Desktop navigation -->
-      <nav aria-label="Main navigation" class="hidden items-center gap-8 md:flex">
-        <ul class="flex items-center gap-6">
+      <nav aria-label="Main navigation" class="hidden items-center gap-6 md:flex">
+        <ul class="flex items-center gap-5">
           {
             nav.map((item) => (
               <li>
@@ -61,7 +62,7 @@ const linkBase =
             ))
           }
         </ul>
-        <div class="flex items-center gap-1">
+        <div class="hidden items-center gap-1 lg:flex">
           {
             social.map((s) => (
               <a
@@ -91,7 +92,7 @@ const linkBase =
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </summary>
-        <div class="absolute inset-x-0 top-full bg-brand px-4 pb-5 shadow-lg shadow-black/25">
+        <div class="menu-panel absolute inset-x-0 top-full bg-brand px-4 pb-5 shadow-lg shadow-black/25">
           <ul class="flex flex-col gap-1 border-t border-header-ink/15 pt-3">
             {
               nav.map((item) => (

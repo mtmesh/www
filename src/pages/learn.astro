@@ -13,7 +13,7 @@ import Button from "../components/Button.astro";
   <!-- Intro + quick nav -->
   <Section>
     <div class="mb-12 text-center">
-      <h1>Learn about MTMesh and Meshtastic</h1>
+      <h1 class="mb-4">Learn about MTMesh and Meshtastic</h1>
       <p class="text-lg">
         MTMesh is an ambitious community project tackling Montana's epic
         geography - from Glacier's peaks to Yellowstone's valleys, across
@@ -33,7 +33,7 @@ import Button from "../components/Button.astro";
           Understand how mesh networks provide wilderness coverage and
           emergency backup communications.
         </p>
-        <Button href="#about">Learn More</Button>
+        <Button href="#about" class="mt-auto self-start">Learn More</Button>
       </Card>
 
       <Card title="ELI5 - Simple Explanation">
@@ -41,7 +41,7 @@ import Button from "../components/Button.astro";
           Our world-famous "Explain it Like I'm 5" guide makes mesh
           networking easy to understand.
         </p>
-        <Button href="#eli5">Read ELI5</Button>
+        <Button href="#eli5" class="mt-auto self-start">Read ELI5</Button>
       </Card>
 
       <Card title="Network Coverage">
@@ -49,7 +49,7 @@ import Button from "../components/Button.astro";
           See where our solar-powered repeaters extend coverage into
           wilderness and remote areas.
         </p>
-        <Button href="#coverage">View Coverage</Button>
+        <Button href="#coverage" class="mt-auto self-start">View Coverage</Button>
       </Card>
     </div>
   </Section>
@@ -157,7 +157,7 @@ import Button from "../components/Button.astro";
       </p>
 
       <div class="grid gap-6 sm:grid-cols-2">
-        <Card>
+        <Card interactive={false}>
           <h4 class="mb-2 font-semibold">Primary Channel</h4>
           <p class="text-sm">
             You can broadcast an unencrypted message to the Primary
@@ -166,7 +166,7 @@ import Button from "../components/Button.astro";
           </p>
         </Card>
 
-        <Card>
+        <Card interactive={false}>
           <h4 class="mb-2 font-semibold">Group Channels</h4>
           <p class="text-sm">
             You can send an encrypted message to a select group of people
@@ -179,7 +179,7 @@ import Button from "../components/Button.astro";
           </p>
         </Card>
 
-        <Card>
+        <Card interactive={false}>
           <h4 class="mb-2 font-semibold">Direct Messages</h4>
           <p class="text-sm">
             You can send encrypted direct messages to people on the mesh.
@@ -187,7 +187,7 @@ import Button from "../components/Button.astro";
           </p>
         </Card>
 
-        <Card>
+        <Card interactive={false}>
           <h4 class="mb-2 font-semibold">Location</h4>
           <p class="text-sm">
             If you choose to enable it you can send your location to the
@@ -195,7 +195,7 @@ import Button from "../components/Button.astro";
           </p>
         </Card>
 
-        <Card>
+        <Card interactive={false}>
           <h4 class="mb-2 font-semibold">Connect Worldwide</h4>
           <p class="text-sm">
             If anyone on your local mesh is running an MQTT gateway your
@@ -206,7 +206,7 @@ import Button from "../components/Button.astro";
           </p>
         </Card>
 
-        <Card>
+        <Card interactive={false}>
           <h4 class="mb-2 font-semibold">Telemetry Data</h4>
           <p class="text-sm">
             Nodes can be set up to send telemetry data like the battery
@@ -278,15 +278,18 @@ import Button from "../components/Button.astro";
         As of Summer 2025 we have coverage in multiple counties across
         Montana and are actively working to expand statewide coverage.
       </p>
-      <div class="mt-6">
-        <Button href="/join/" variant="secondary">Help Expand Coverage</Button>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <Button href="/coverage-map/" variant="secondary">
+          View the Coverage Map
+        </Button>
+        <Button href="/join/" variant="outline">Help Expand Coverage</Button>
       </div>
     </Card>
   </Section>
 
   <!-- Comparisons -->
   <Section id="comparisons">
-    <h2 class="mb-12 text-center">Comparing it to APRS on Ham Radio</h2>
+    <h2 class="mb-4 text-center">Comparing it to APRS on Ham Radio</h2>
     <p class="mb-12 text-center text-lg">
       For people who are familiar with using the <a
         href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System"
@@ -409,5 +412,17 @@ import Button from "../components/Button.astro";
         </div>
       </Card>
     </div>
+  </Section>
+
+  <!-- Similar networks -->
+  <Section surface class="text-center">
+    <h2 class="mb-4">Mesh Networks Beyond Montana</h2>
+    <p class="mx-auto mb-8 max-w-2xl text-lg">
+      MTMesh is part of a growing movement of community-run mesh networks
+      across North America.
+    </p>
+    <Button href="/similar-networks/" variant="secondary">
+      Explore Similar Networks
+    </Button>
   </Section>
 </Base>
