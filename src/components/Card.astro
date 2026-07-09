@@ -1,0 +1,35 @@
+---
+interface Props {
+  title?: string;
+  highlight?: boolean;
+  class?: string;
+}
+
+const { title, highlight = false, class: cls = "" } = Astro.props;
+
+const wrap = highlight
+  ? "bg-brand border-accent text-header-ink [&_p]:text-header-ink [&_strong]:text-header-ink [&_h4]:text-header-ink"
+  : "bg-surface border-line text-ink-light transition-all duration-200 hover:bg-surface-hover hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/25";
+---
+
+<div
+  class:list={[
+    "rounded-2xl border p-6 shadow-md shadow-black/20",
+    wrap,
+    cls,
+  ]}
+>
+  {
+    title && (
+      <h3
+        class:list={[
+          "mb-2 text-xl font-semibold",
+          highlight ? "text-header-ink" : "text-brand",
+        ]}
+      >
+        {title}
+      </h3>
+    )
+  }
+  <slot />
+</div>

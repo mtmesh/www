@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Button from "../components/Button.astro";
+
+const target = "/devices/#solar";
+---
+
+<Base
+  title="Redirecting to Solar Repeaters"
+  description="Redirecting to solar repeater information on the MTMesh devices page."
+  noindex
+>
+  <Section class="text-center">
+    <h1>Redirecting to Solar Repeaters</h1>
+    <p class="mb-6 text-lg">
+      You're being redirected to the solar repeater section on our devices page.
+    </p>
+    <p class="mb-8">
+      If you're not redirected automatically, please click the link below:
+    </p>
+    <Button href={target} variant="primary" size="lg">Go to Solar Repeaters</Button>
+  </Section>
+
+  <script is:inline set:html={`setTimeout(function(){window.location.href=${JSON.stringify(target)};},3000);`} />
+</Base>

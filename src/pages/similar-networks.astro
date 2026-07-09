@@ -1,0 +1,93 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+
+const southeast = [
+  { href: "https://www.austinmesh.org/", label: "Austin Mesh", place: "Austin, Texas" },
+  { href: "http://birminghammesh.org/", label: "Birmingham Mesh", place: "Alabama" },
+  { href: "https://charlottemesh.org/", label: "Charlotte Mesh", place: "North Carolina" },
+  { href: "https://ncmesh.net/", label: "NC Mesh", place: "North Carolina" },
+  { href: "https://www.instagram.com/meshville.tn", label: "Meshville", place: "Nashville, Tennessee" },
+];
+
+const western = [
+  { href: "https://denvermesh.org/", label: "Denver Mesh", place: "Colorado" },
+  { href: "https://www.hawaiimesh.net/", label: "Hawaii Mesh", place: "Hawaii" },
+  { href: "https://bayme.sh", label: "bayme.sh", place: "San Francisco Bay Area" },
+  { href: "https://socalmesh.org/", label: "SoCal Mesh", place: "Southern California" },
+];
+
+const centralNorthern = [
+  { href: "https://yycmesh.com", label: "YYC Mesh", place: "Calgary, Alberta" },
+  { href: "https://chicagolandmesh.org/", label: "Chicagoland Mesh", place: "Illinois" },
+  { href: "https://ntxmesh.com", label: "North Texas Mesh", place: "Northern Texas" },
+  { href: "https://nwamesh.com/", label: "Northwest Arkansas Mesh", place: "Arkansas" },
+  { href: "https://okmesh.org/", label: "Okmesh", place: "Oklahoma" },
+  { href: "https://iffybooks.net/", label: "Iffy Books", place: "Philadelphia, Pennsylvania" },
+  { href: "https://meshconsin.org/", label: "Meshconsin", place: "Wisconsin" },
+];
+---
+
+<Base
+  title="Similar Networks"
+  fullTitle="Similar Networks | MTMesh"
+  description="Discover similar mesh networks and learn how to start your own."
+>
+  <Section>
+    <div class="text-center">
+      <h1 class="mb-6">Mesh Networks Across America</h1>
+      <p class="text-lg">
+        Connect with our partner networks and learn how to start your own
+        community mesh
+      </p>
+    </div>
+  </Section>
+
+  <Section id="other-meshes" wide>
+    <div class="mb-12 text-center">
+      <h2>Partner Mesh Networks</h2>
+      <p class="text-lg">
+        Discover thriving mesh communities across North America
+      </p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Card title="Southeast Networks">
+        <ul class="list-none p-0">
+          {
+            southeast.map((n, i) => (
+              <li class={i < southeast.length - 1 ? "mb-2" : ""}>
+                <a href={n.href} target="_blank" rel="noopener">{n.label}</a> - {n.place}
+              </li>
+            ))
+          }
+        </ul>
+      </Card>
+
+      <Card title="Western Networks">
+        <ul class="list-none p-0">
+          {
+            western.map((n, i) => (
+              <li class={i < western.length - 1 ? "mb-2" : ""}>
+                <a href={n.href} target="_blank" rel="noopener">{n.label}</a> - {n.place}
+              </li>
+            ))
+          }
+        </ul>
+      </Card>
+
+      <Card title="Central & Northern Networks">
+        <ul class="list-none p-0">
+          {
+            centralNorthern.map((n, i) => (
+              <li class={i < centralNorthern.length - 1 ? "mb-2" : ""}>
+                <a href={n.href} target="_blank" rel="noopener">{n.label}</a> - {n.place}
+              </li>
+            ))
+          }
+        </ul>
+      </Card>
+    </div>
+  </Section>
+</Base>

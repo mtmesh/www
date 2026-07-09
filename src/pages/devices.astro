@@ -1,0 +1,104 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+---
+
+<Base
+  title="Devices"
+  fullTitle="Meshtastic Devices | MTMesh"
+  description="Tried and tested solar-powered repeater build methods and parts for making your own Meshtastic repeater."
+>
+  <Section>
+    <div class="mb-12 text-center">
+      <h1>Devices for the Mesh</h1>
+      <p class="text-lg">
+        MTMesh uses a technology called <a
+          href="https://meshtastic.org"
+          target="_blank"
+          rel="noopener">Meshtastic</a
+        > to power the network here in Montana. In order to connect to this network,
+        a relatively low cost device is required. You'll often hear these devices
+        referred to as <strong>nodes</strong>. You can <a
+          href="https://www.rfindex.com">compare the best meshtastic nodes on RF Index</a
+        >.
+      </p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Card title="Device Options">
+        <p class="mb-4">
+          Explore our recommended devices and get started with the mesh
+          network.
+        </p>
+        <Button href="#options">View Options</Button>
+      </Card>
+
+      <Card title="Solar Repeaters">
+        <p class="mb-4">
+          Build robust solar-powered repeaters for permanent network
+          expansion.
+        </p>
+        <Button href="#solar">Build Guide</Button>
+      </Card>
+
+      <Card title="Aerial Nodes">
+        <p class="mb-4">
+          Deploy temporary high-altitude nodes using drones and kites.
+        </p>
+        <Button href="#aerial">Learn More</Button>
+      </Card>
+    </div>
+  </Section>
+
+  <Section surface id="options">
+    <div class="text-center">
+      <h2 class="mb-12">Recommended Device Options</h2>
+      <p class="mb-4 text-lg">
+        Start with the official <a href="https://meshtastic.org"
+          >Meshtastic</a
+        > hardware documentation for comprehensive device specifications and compatibility
+        information.
+      </p>
+      <p class="text-lg">
+        Then check out <a href="https://www.rfindex.com">RF Index</a>, a
+        community tool that compares various node options including DIY
+        builds, off-the-shelf devices, solar setups, and more.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <Button
+          href="https://meshtastic.org/docs/hardware/devices/"
+          target="_blank"
+          rel="noopener"
+          size="lg"
+        >
+          Official Device Guide
+        </Button>
+        <Button
+          href="https://www.rfindex.com"
+          target="_blank"
+          rel="noopener"
+          variant="secondary"
+          size="lg"
+        >
+          Compare on RF Index
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <Section id="solar">
+    <div class="text-center">
+      <h2 class="mb-12">Solar Repeaters</h2>
+      <p class="text-lg">Solar repeater guides coming soon.</p>
+    </div>
+  </Section>
+
+  <Section id="aerial">
+    <div class="text-center">
+      <h2 class="mb-12">Aerial Nodes</h2>
+      <p class="text-lg">Aerial node guides coming soon.</p>
+    </div>
+  </Section>
+</Base>

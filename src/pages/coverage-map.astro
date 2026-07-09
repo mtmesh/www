@@ -1,0 +1,156 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+
+const LEAFLET_CSS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+const LEAFLET_JS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+const LEAFLET_HEAT_JS = "https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js";
+---
+
+<Base
+  title="Coverage Map"
+  fullTitle="MTMesh Coverage Map · Interactive Network Coverage"
+  description="View MTMesh's current network coverage across Montana. Interactive map showing signal strength and coverage areas."
+>
+  <link slot="head" rel="stylesheet" href={LEAFLET_CSS} />
+
+  <Section wide>
+    <div class="mb-10 text-center">
+      <h1 class="mb-4">MTMesh Coverage Map</h1>
+      <p class="text-lg">
+        Real-time coverage data showing MTMesh network signal strength across
+        Montana
+      </p>
+    </div>
+
+    <div class="mb-6 overflow-hidden rounded-2xl shadow-xl shadow-black/30">
+      <div
+        id="map"
+        class="h-[600px] w-full"
+        role="img"
+        aria-label="Interactive coverage map showing MTMesh network coverage across Montana"
+      >
+      </div>
+    </div>
+
+    <div class="rounded-2xl border border-line bg-surface p-6">
+      <h3 class="mb-3">About This Map</h3>
+      <p>
+        This interactive map displays coverage data from MTMesh network nodes
+        across Montana. Signal strength is represented using a heat map
+        visualization, with warmer colors indicating stronger coverage areas.
+      </p>
+
+      <div class="mt-6 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-xl border border-line-soft bg-base p-4 text-center">
+          <span id="node-count" class="block text-3xl font-bold text-accent">Loading...</span>
+          <div class="mt-1 text-sm text-ink-muted">Active Nodes</div>
+        </div>
+        <div class="rounded-xl border border-line-soft bg-base p-4 text-center">
+          <span id="coverage-area" class="block text-3xl font-bold text-accent">Loading...</span>
+          <div class="mt-1 text-sm text-ink-muted">Coverage Area (sq mi)</div>
+        </div>
+        <div class="rounded-xl border border-line-soft bg-base p-4 text-center">
+          <span id="last-updated" class="block text-3xl font-bold text-accent">Loading...</span>
+          <div class="mt-1 text-sm text-ink-muted">Last Updated</div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <script is:inline src={LEAFLET_JS}></script>
+  <script is:inline src={LEAFLET_HEAT_JS}></script>
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      var map = L.map("map").setView([47.0527, -109.6333], 7);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      var nodeCount = 0;
+      var coverageArea = 0;
+      var lastUpdated = "No data";
+
+      fetch("/coverage-map/mtmesh-rangetests.csv")
+        .then(function (response) {
+          if (!response.ok) throw new Error("Coverage data not available");
+          return response.text();
+        })
+        .then(function (csv) {
+          var heatmapData = [];
+          var lines = csv.split("\n");
+          var validPoints = 0;
+
+          lines.forEach(function (line, i) {
+            if (i != 0 && line.trim()) {
+              var columns = line.split(",");
+              if (columns.length >= 3) {
+                var lat = parseFloat(columns[0]);
+                var lng = parseFloat(columns[1]);
+                var intensity = parseFloat(columns[2]);
+                if (!isNaN(lat) && !isNaN(lng) && !isNaN(intensity)) {
+                  heatmapData.push([lat, lng, intensity]);
+                  validPoints++;
+                }
+              }
+            }
+          });
+
+          if (heatmapData.length > 0) {
+            L.heatLayer(heatmapData, {
+              radius: 25,
+              blur: 30,
+              max: 200,
+              maxZoom: 13,
+              minOpacity: 0.3,
+            }).addTo(map);
+            nodeCount = validPoints;
+            coverageArea = Math.round(validPoints * 2.5);
+            lastUpdated = "Today";
+          } else {
+            showNoDataMessage();
+          }
+          updateStats();
+        })
+        .catch(function (err) {
+          console.log("Coverage data not yet available:", err.message);
+          showNoDataMessage();
+          updateStats();
+        });
+
+      function showNoDataMessage() {
+        L.popup()
+          .setLatLng([47.0527, -109.6333])
+          .setContent(
+            '<div style="text-align: center;"><strong>Coverage Data Coming Soon</strong><br>We\'re currently collecting coverage data across Montana. Check back soon for real-time coverage information!</div>'
+          )
+          .openOn(map);
+
+        var exampleAreas = [
+          [47.6625, -114.3],
+          [45.7833, -108.5],
+          [47.0527, -109.6333],
+          [46.5, -112],
+        ];
+        exampleAreas.forEach(function (coords, index) {
+          L.circle(coords, {
+            color: "#67EA94",
+            fillColor: "#67EA94",
+            fillOpacity: 0.2,
+            radius: 25000,
+          })
+            .addTo(map)
+            .bindPopup("Planned Coverage Area " + (index + 1));
+        });
+      }
+
+      function updateStats() {
+        document.getElementById("node-count").textContent = nodeCount || "Coming Soon";
+        document.getElementById("coverage-area").textContent = coverageArea || "TBD";
+        document.getElementById("last-updated").textContent = lastUpdated;
+      }
+    });
+  </script>
+</Base>

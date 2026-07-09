@@ -1,0 +1,316 @@
+---
+import Base from "../../layouts/Base.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+
+const examples = [
+  {
+    src: "/images/faq/aisd-magnet-node-mount.webp",
+    alt: "Magnetic mounted node on AISD",
+    caption: "Magnetic mounted node on AISD",
+  },
+  {
+    src: "/images/faq/adrn-magnet-node.webp",
+    alt: "Magnetic mounted node on ADRN",
+    caption: "Magnetic mounted node on ADRN",
+  },
+];
+
+const faqs = [
+  {
+    title: "Purpose & Function",
+    body: [
+      {
+        q: "What exactly is the node being used for?",
+        items: [
+          "Expands a free, open source, community mesh network using low-power radio",
+          "Enables text-based communication in areas with limited cellular or internet coverage",
+          "Often used for emergency readiness and local community support",
+        ],
+      },
+      {
+        q: "More detailed functionality:",
+        items: [
+          "Expands the MTMesh community mesh network using low-power radio",
+          "Enables communication in wilderness areas and during emergencies, allowing people to communicate publicly or privately with anyone on the network",
+          "Often used for hiking, emergency readiness, and local community support",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Equipment & Installation",
+    body: [
+      {
+        q: "What kind of equipment will be installed?",
+        items: [
+          "Typically a small, weatherproof box containing a microcontroller and battery",
+          "A lightweight antenna and a solar panel",
+          "Usually under 2 pounds and compact (roughly the size of a router, but the antenna is longer)",
+        ],
+      },
+      {
+        q: "What kind of antenna or cabling will be involved?",
+        items: [
+          "Usually a small external antenna mounted to a mast or pole",
+          "No cabling into the building",
+          "Typical installation uses either magnets, u-bolts around a mast or pole, or hose clamps. No drilling or screwing required unless agreed upon",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Power & Maintenance",
+    body: [
+      {
+        q: "How will it be powered?",
+        items: ["Nodes are solar-powered and self-sufficient"],
+      },
+      {
+        q: "What is the expected maintenance requirement?",
+        items: [
+          "Very low, nodes are designed to run autonomously for long periods",
+          "Occasional visits (e.g., once or twice a year) may be needed for firmware updates or hardware checks",
+          "Access terms can be set in writing",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Technical Details",
+    body: [
+      {
+        q: "What range and signal coverage will this node support?",
+        items: [
+          "Depends on elevation and antenna, typically 2–10 miles or more",
+          "Helps connect devices over long distances through mesh relaying",
+          "Operates in license-free Industrial, Science, and Medical band (902–928MHz)",
+        ],
+      },
+      {
+        q: "Will the equipment cause any interference with my existing systems?",
+        items: [
+          "Extremely unlikely, Meshtastic operates on different frequencies from Wi-Fi, cell, or TV systems and is extremely low power",
+          "Designed to be non-disruptive and FCC-compliant",
+          "You can request testing or documentation if concerned",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Legal & Administrative",
+    body: [
+      {
+        q: "What are the liability implications?",
+        items: [
+          "The building owner carries the liability, though the likelihood of an incident is not expected to be material",
+        ],
+      },
+      {
+        q: "Are there any permits, HOA, zoning, or regulatory issues to be aware of?",
+        items: [
+          "Permits are not needed for small antennas or non-commercial installations",
+          "HOA or building rules may restrict roof modifications — check before proceeding",
+          "It's best to get written permission if you're a tenant or part of a shared property",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Terms & Partnership",
+    body: [
+      {
+        q: "How long is the node expected to stay there? Can it be removed at any time?",
+        items: [
+          "We will work together to determine a clear timeframe or agreement",
+          "No long-term obligation required. Ultimately, you may request removal at any time, with coordination and time allowance for removal",
+          "Removal should leave no permanent marks or damage",
+        ],
+      },
+      {
+        q: "Who else in Montana has one of this community's nodes installed?",
+        items: [
+          "Montana schools and organizations",
+          "Montana educational institutions",
+          "Montana State University",
+          "Montana Disaster Relief Network",
+          "Various Montana business partners",
+        ],
+      },
+    ],
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What exactly is the node being used for?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It expands a free, open source, community mesh network using low-power radio, enables text-based communication in areas with limited cellular or internet coverage, and is often used for emergency readiness and local community support.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What kind of equipment will be installed?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A small, weatherproof box containing a microcontroller and battery, a lightweight antenna, and a solar panel, usually under 2 pounds and compact.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How will it be powered?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Nodes are solar-powered and self-sufficient.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What kind of antenna or cabling will be involved?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Usually a small external antenna mounted to a mast or pole with no cabling into the building, and installation typically requires no drilling unless agreed upon.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the expected maintenance requirement?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Very low, with occasional visits once or twice a year for firmware updates or checks, and access terms can be set in writing.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What exactly is the node being used for? (More detail)",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It expands the MTMesh community mesh network using low-power radio, enables wilderness and emergency communications, and supports hiking, emergency readiness, and community use.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What range and signal coverage will this node support?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depends on elevation and antenna, typically 2–10 miles or more, helping connect devices over long distances through mesh relaying, in the 902–928 MHz ISM band.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Will the equipment cause any interference with my existing systems?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Extremely unlikely; Meshtastic uses different frequencies than Wi-Fi, cell, or TV systems, is low power, and is FCC-compliant.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the liability implications?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The building owner carries the liability, though the likelihood of an incident is not expected to be material.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are there any permits, HOA, zoning, or regulatory issues to be aware of?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Permits are not needed for small antennas or non-commercial installs, but HOA or building rules may apply. Written permission is recommended for tenants.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long is the node expected to stay there? Can it be removed at any time?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The timeframe can be agreed upon, with no long-term obligation, and removal can be requested at any time without leaving permanent damage.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Who else in Montana has one of this community's nodes installed?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Montana schools and organizations, Montana educational institutions, Montana State University, Montana Disaster Relief Network, and various Montana business partners.",
+      },
+    },
+  ],
+};
+---
+
+<Base
+  title="Property Owner FAQ"
+  fullTitle="Property Owner FAQ | MTMesh"
+  description="Information for property owners considering hosting an MTMesh node on their property."
+>
+  <Section>
+    <div class="mb-12 text-center">
+      <h1>FAQ: Hosting an MTMesh Node on Your Property</h1>
+      <p class="text-lg text-ink-muted">
+        Everything property owners need to know about hosting mesh network
+        nodes
+      </p>
+    </div>
+
+    <!-- Node Installation Examples -->
+    <div class="mb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        examples.map((ex) => (
+          <Card class="text-center">
+            <img
+              src={ex.src}
+              alt={ex.alt}
+              class="mb-2 h-[150px] w-full rounded-xl object-cover"
+              loading="lazy"
+            />
+            <p class="text-sm text-ink-muted">{ex.caption}</p>
+          </Card>
+        ))
+      }
+    </div>
+
+    <!-- FAQ Content organized by topic -->
+    <div class="grid gap-8 sm:grid-cols-2">
+      {
+        faqs.map((section) => (
+          <Card title={section.title}>
+            <div class="rich-text">
+              {section.body.map((qa) => (
+                <>
+                  <h4 class="mb-2">{qa.q}</h4>
+                  <ul>
+                    {qa.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </>
+              ))}
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-16 text-center">
+      <Card highlight>
+        <h3 class="mb-4">Ready to Host a Node?</h3>
+        <p class="mb-6">
+          Join our community of property owners helping to build Montana's
+          resilient communication network.
+        </p>
+        <Button href="/join/" size="lg">Get Started</Button>
+      </Card>
+    </div>
+  </Section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} is:inline />
+</Base>

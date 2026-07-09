@@ -1,0 +1,16 @@
+---
+interface Props {
+  surface?: boolean;
+  wide?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const { surface = false, wide = false, class: cls = "", id } = Astro.props;
+---
+
+<section id={id} class:list={["py-16 md:py-24", surface ? "bg-surface" : "bg-base"]}>
+  <div class:list={["mx-auto px-4", wide ? "max-w-6xl" : "max-w-4xl", cls]}>
+    <slot />
+  </div>
+</section>

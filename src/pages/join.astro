@@ -1,0 +1,175 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+---
+
+<Base
+  title="Join"
+  fullTitle="Join MTMesh - Connect to Montana's Mesh Network"
+  description="Join MTMesh and connect to Montana's wilderness and emergency communications network. Get your device, join our community, and follow best practices for optimal network performance."
+>
+  <!-- Hero Section -->
+  <Section wide class="text-center">
+    <h1>Join the MTMesh Network</h1>
+    <p class="text-lg mb-8">
+      Connect to Montana's resilient communication network in three simple
+      steps
+    </p>
+
+    <!-- Quick Action Cards -->
+    <div class="mb-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Card title="1. Get Connected">
+        <p class="mb-6">
+          Join our online community and get support from fellow mesh
+          enthusiasts.
+        </p>
+        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="secondary">
+          Join Discord
+        </Button>
+      </Card>
+
+      <Card title="2. Get Hardware">
+        <p class="mb-6">
+          Purchase or build a Meshtastic radio to connect to the network.
+        </p>
+        <Button href="/devices/">View Devices</Button>
+      </Card>
+
+      <Card title="3. Start Messaging">
+        <p class="mb-6">
+          Download the app, pair your device, and start communicating.
+        </p>
+        <Button href="#network" variant="outline">Setup Guide</Button>
+      </Card>
+    </div>
+
+    <!-- Primary CTAs -->
+    <div class="text-center">
+      <h2 class="mb-6">Ready to Get Started?</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="secondary" size="lg">
+          Join Our Discord
+        </Button>
+        <Button href="https://www.reddit.com/r/mtmesh/" target="_blank" rel="noopener" variant="outline" size="lg">
+          Follow on Reddit
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Join the Group Section -->
+  <Section id="group" surface wide>
+    <div class="mb-12 text-center">
+      <h2 class="mb-12 text-center">Join the Community</h2>
+      <p class="text-lg">
+        Connect with fellow mesh enthusiasts and stay updated on network
+        developments
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2">
+      <Card title="Primary Community Hub">
+        <p class="mb-6">
+          Join our active Discord server for real-time support, technical
+          discussions, and community updates.
+        </p>
+        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="secondary" size="lg">
+          Join Discord Server
+        </Button>
+      </Card>
+
+      <Card title="Stay Informed">
+        <p class="mb-4">
+          Follow us for updates and join our mailing list for in-person
+          meetings in Montana.
+        </p>
+        <div class="mb-4 flex flex-wrap gap-4">
+          <Button href="https://www.reddit.com/r/mtmesh/" target="_blank" rel="noopener">
+            Reddit Community
+          </Button>
+          <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="outline">
+            Discord
+          </Button>
+        </div>
+        <p class="text-sm text-ink-muted">
+          Also follow us on <a href="https://twitter.com/MTMeshOrg" target="_blank" rel="noopener">Twitter</a>,
+          <a href="https://www.instagram.com/p/Cq0jOpYLpZy/" target="_blank" rel="noopener">Instagram</a>, and
+          <a href="https://www.tiktok.com/@mtmesh.org" target="_blank" rel="noopener">TikTok</a>.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Connect to Network Section -->
+  <Section id="network" wide>
+    <div class="mb-12 text-center">
+      <h2 class="mb-12 text-center">Connect to the Network</h2>
+      <p class="text-lg">
+        Follow these simple steps to get your device connected and start
+        messaging
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2">
+      <Card title="Step 1: Get a Meshtastic Radio">
+        <p class="mb-4">
+          <strong>Budget Option (~$35):</strong> Build your own using the official
+          <a href="https://meshtastic.org/docs/hardware/devices/" target="_blank" rel="noopener">Meshtastic hardware list</a>.
+        </p>
+        <p class="mb-4">
+          <strong>Ready-to-Go (~$70):</strong> LILYGO T-Echo - just flash the firmware
+          and start using.
+        </p>
+        <p class="mb-4">
+          <strong>Pre-built (~$50-$100):</strong> Battery-powered radios with 3D printed
+          cases available on Etsy or eBay.
+        </p>
+        <p class="mb-6">
+          <strong>Solar-Powered (~$100-$200):</strong> Best for permanent outdoor installations
+          - mount as high as possible for maximum coverage.
+        </p>
+        <Button href="/devices/">View Device Guide</Button>
+      </Card>
+
+      <Card title="Steps 2-4: Setup & Connect">
+        <div class="rich-text">
+          <ol class="mb-6">
+            <li>
+              Download the <a href="https://meshtastic.org/docs/software" target="_blank" rel="noopener">Meshtastic App</a>
+              on your iPhone or Android device
+            </li>
+            <li>Pair your radio to your phone using Bluetooth</li>
+            <li>Open the Meshtastic app and say hello to the network!</li>
+          </ol>
+        </div>
+        <Button href="https://meshtastic.org/docs/software" target="_blank" rel="noopener" variant="secondary">
+          Download Meshtastic App
+        </Button>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Network Settings Section -->
+  <Section id="network-settings" surface wide>
+    <div class="mb-12 text-center">
+      <h2 class="mb-12 text-center">Configure Your Device</h2>
+      <p class="text-lg">
+        Optimize your Meshtastic device for the MTMesh network
+      </p>
+    </div>
+
+    <Card>
+      <div class="text-center">
+        <p class="mb-4 text-lg">
+          Follow our recommended network settings to ensure optimal
+          performance for everyone on the mesh.
+        </p>
+        <Button href="/guides/network-settings/" variant="secondary" size="lg">
+          View Network Settings Guide
+        </Button>
+      </div>
+    </Card>
+  </Section>
+</Base>
