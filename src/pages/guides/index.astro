@@ -71,7 +71,7 @@ const advanced = [
 >
   <Section>
     <div class="mb-12 text-center">
-      <h1>MTMesh Guides</h1>
+      <h1 class="mb-4">MTMesh Guides</h1>
       <p class="text-lg">
         Step-by-step instructions for building, configuring, and optimizing
         your mesh network experience
@@ -84,14 +84,14 @@ const advanced = [
       <div class="grid gap-8 sm:grid-cols-2">
         {
           gettingStarted.map((g) => (
-            <Card title={g.title}>
+            <Card title={g.title} interactive={!!g.href}>
               <p class:list={["mb-4", !g.href && "text-ink-muted"]}>
                 {g.body}
               </p>
               {g.href ? (
-                <Button href={g.href}>{g.cta}</Button>
+                <Button href={g.href} class="mt-auto self-start">{g.cta}</Button>
               ) : (
-                <Button variant="outline" disabled>
+                <Button variant="outline" disabled class="mt-auto self-start">
                   Coming Soon
                 </Button>
               )}
@@ -107,9 +107,9 @@ const advanced = [
       <div class="grid gap-8 sm:grid-cols-2">
         {
           building.map((g) => (
-            <Card title={g.title}>
+            <Card title={g.title} interactive={false}>
               <p class="mb-4 text-ink-muted">{g.body}</p>
-              <Button variant="outline" disabled>
+              <Button variant="outline" disabled class="mt-auto self-start">
                 Coming Soon
               </Button>
             </Card>
@@ -124,9 +124,9 @@ const advanced = [
       <div class="grid gap-8 sm:grid-cols-2">
         {
           advanced.map((g) => (
-            <Card title={g.title}>
+            <Card title={g.title} interactive={false}>
               <p class="mb-4 text-ink-muted">{g.body}</p>
-              <Button variant="outline" disabled>
+              <Button variant="outline" disabled class="mt-auto self-start">
                 Coming Soon
               </Button>
             </Card>

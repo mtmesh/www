@@ -12,7 +12,7 @@ import Button from "../components/Button.astro";
 >
   <!-- Hero Section -->
   <Section wide class="text-center">
-    <h1>Join the MTMesh Network</h1>
+    <h1 class="mb-4">Join the MTMesh Network</h1>
     <p class="text-lg mb-8">
       Connect to Montana's resilient communication network in three simple
       steps
@@ -25,7 +25,7 @@ import Button from "../components/Button.astro";
           Join our online community and get support from fellow mesh
           enthusiasts.
         </p>
-        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="secondary">
+        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="secondary" class="mt-auto self-center">
           Join Discord
         </Button>
       </Card>
@@ -34,14 +34,14 @@ import Button from "../components/Button.astro";
         <p class="mb-6">
           Purchase or build a Meshtastic radio to connect to the network.
         </p>
-        <Button href="/devices/">View Devices</Button>
+        <Button href="/devices/" class="mt-auto self-center">View Devices</Button>
       </Card>
 
       <Card title="3. Start Messaging">
         <p class="mb-6">
           Download the app, pair your device, and start communicating.
         </p>
-        <Button href="#network" variant="outline">Setup Guide</Button>
+        <Button href="#network" variant="outline" class="mt-auto self-center">Setup Guide</Button>
       </Card>
     </div>
 
@@ -62,21 +62,31 @@ import Button from "../components/Button.astro";
   <!-- Join the Group Section -->
   <Section id="group" surface wide>
     <div class="mb-12 text-center">
-      <h2 class="mb-12 text-center">Join the Community</h2>
+      <h2 class="mb-4 text-center">Join the Community</h2>
       <p class="text-lg">
         Connect with fellow mesh enthusiasts and stay updated on network
         developments
       </p>
     </div>
 
-    <div class="grid gap-8 sm:grid-cols-2">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <Card title="Primary Community Hub">
         <p class="mb-6">
           Join our active Discord server for real-time support, technical
           discussions, and community updates.
         </p>
-        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="secondary" size="lg">
+        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="secondary" class="mt-auto self-start">
           Join Discord Server
+        </Button>
+      </Card>
+
+      <Card title="Host a Node">
+        <p class="mb-6">
+          Have a rooftop, tower, or high ground? Hosting a solar-powered node
+          is low-maintenance and dramatically expands coverage.
+        </p>
+        <Button href="/join/property-owner-faq-hosting-a-node/" class="mt-auto self-start">
+          Property Owner FAQ
         </Button>
       </Card>
 
@@ -105,7 +115,7 @@ import Button from "../components/Button.astro";
   <!-- Connect to Network Section -->
   <Section id="network" wide>
     <div class="mb-12 text-center">
-      <h2 class="mb-12 text-center">Connect to the Network</h2>
+      <h2 class="mb-4 text-center">Connect to the Network</h2>
       <p class="text-lg">
         Follow these simple steps to get your device connected and start
         messaging
@@ -130,7 +140,7 @@ import Button from "../components/Button.astro";
           <strong>Solar-Powered (~$100-$200):</strong> Best for permanent outdoor installations
           - mount as high as possible for maximum coverage.
         </p>
-        <Button href="/devices/">View Device Guide</Button>
+        <Button href="/devices/" class="mt-auto self-start">View Device Guide</Button>
       </Card>
 
       <Card title="Steps 2-4: Setup & Connect">
@@ -144,7 +154,7 @@ import Button from "../components/Button.astro";
             <li>Open the Meshtastic app and say hello to the network!</li>
           </ol>
         </div>
-        <Button href="https://meshtastic.org/docs/software" target="_blank" rel="noopener" variant="secondary">
+        <Button href="https://meshtastic.org/docs/software" target="_blank" rel="noopener" variant="secondary" class="mt-auto self-start">
           Download Meshtastic App
         </Button>
       </Card>
@@ -154,7 +164,7 @@ import Button from "../components/Button.astro";
   <!-- Network Settings Section -->
   <Section id="network-settings" surface wide>
     <div class="mb-12 text-center">
-      <h2 class="mb-12 text-center">Configure Your Device</h2>
+      <h2 class="mb-4 text-center">Configure Your Device</h2>
       <p class="text-lg">
         Optimize your Meshtastic device for the MTMesh network
       </p>

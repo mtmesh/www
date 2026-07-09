@@ -6,6 +6,17 @@ const social = [
 ];
 const year = new Date().getFullYear();
 
+const footNav = [
+  { href: "/learn/", label: "Learn" },
+  { href: "/join/", label: "Join" },
+  { href: "/devices/", label: "Devices" },
+  { href: "/guides/", label: "Guides" },
+  { href: "/coverage-map/", label: "Coverage Map" },
+  { href: "/partners/", label: "Partners" },
+  { href: "/similar-networks/", label: "Similar Networks" },
+  { href: "/privacy/", label: "Privacy Policy" },
+];
+
 const footLink =
   "text-ink-light no-underline underline-offset-2 transition-colors hover:text-accent hover:underline";
 ---
@@ -29,11 +40,7 @@ const footLink =
     </div>
 
     <nav aria-label="Footer" class="mb-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
-      <a href="/learn/" class={footLink}>Learn</a>
-      <a href="/join/" class={footLink}>Join</a>
-      <a href="/devices/" class={footLink}>Devices</a>
-      <a href="/partners/" class={footLink}>Partners</a>
-      <a href="/privacy/" class={footLink}>Privacy Policy</a>
+      {footNav.map((n) => <a href={n.href} class={footLink}>{n.label}</a>)}
     </nav>
 
     <p class="mx-auto max-w-2xl text-xs leading-relaxed text-ink-muted">

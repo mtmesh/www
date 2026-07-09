@@ -37,6 +37,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Keep in-page anchor targets clear of the sticky header */
+    scroll-padding-top: 5.5rem;
   }
 
   body {
@@ -115,6 +117,22 @@
   }
 }
 
+/* Mobile nav disclosure ease-in */
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+details[open] .menu-panel {
+  animation: menu-in 0.18s ease-out;
+}
+
 /* Staggered load-in used on the homepage hero + cards */
 @keyframes rise {
   from {
@@ -133,6 +151,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .rise {
+    animation: none;
+  }
+  details[open] .menu-panel {
     animation: none;
   }
   html {

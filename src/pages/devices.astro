@@ -12,7 +12,7 @@ import Button from "../components/Button.astro";
 >
   <Section>
     <div class="mb-12 text-center">
-      <h1>Devices for the Mesh</h1>
+      <h1 class="mb-4">Devices for the Mesh</h1>
       <p class="text-lg">
         MTMesh uses a technology called <a
           href="https://meshtastic.org"
@@ -32,7 +32,7 @@ import Button from "../components/Button.astro";
           Explore our recommended devices and get started with the mesh
           network.
         </p>
-        <Button href="#options">View Options</Button>
+        <Button href="#options" class="mt-auto self-start">View Options</Button>
       </Card>
 
       <Card title="Solar Repeaters">
@@ -40,14 +40,14 @@ import Button from "../components/Button.astro";
           Build robust solar-powered repeaters for permanent network
           expansion.
         </p>
-        <Button href="#solar">Build Guide</Button>
+        <Button href="#solar" class="mt-auto self-start">Build Guide</Button>
       </Card>
 
       <Card title="Aerial Nodes">
         <p class="mb-4">
           Deploy temporary high-altitude nodes using drones and kites.
         </p>
-        <Button href="#aerial">Learn More</Button>
+        <Button href="#aerial" class="mt-auto self-start">Learn More</Button>
       </Card>
     </div>
   </Section>
@@ -90,15 +90,34 @@ import Button from "../components/Button.astro";
 
   <Section id="solar">
     <div class="text-center">
-      <h2 class="mb-12">Solar Repeaters</h2>
-      <p class="text-lg">Solar repeater guides coming soon.</p>
+      <h2 class="mb-4">Solar Repeaters</h2>
+      <p class="mx-auto mb-8 max-w-2xl text-lg">
+        A full build guide for Montana-hardened solar repeaters is in the
+        works. In the meantime, ask in Discord — several members run solar
+        nodes year-round.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="/guides/" variant="secondary">Browse Guides</Button>
+        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="outline">
+          Ask on Discord
+        </Button>
+      </div>
     </div>
   </Section>
 
-  <Section id="aerial">
+  <Section id="aerial" surface>
     <div class="text-center">
-      <h2 class="mb-12">Aerial Nodes</h2>
-      <p class="text-lg">Aerial node guides coming soon.</p>
+      <h2 class="mb-4">Aerial Nodes</h2>
+      <p class="mx-auto mb-8 max-w-2xl text-lg">
+        Temporary high-altitude nodes lifted by drones and kites can bridge
+        terrain that towers can't. A deployment guide is coming soon.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="/guides/" variant="secondary">Browse Guides</Button>
+        <Button href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener" variant="outline">
+          Ask on Discord
+        </Button>
+      </div>
     </div>
   </Section>
 </Base>
