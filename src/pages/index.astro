@@ -1,0 +1,123 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+
+const whyPoints = [
+  {
+    title: "Wilderness Coverage",
+    body: "Extend communications into remote wilderness areas, forests, and national parks where cell networks don't reach.",
+  },
+  {
+    title: "Emergency Resilience",
+    body: "Maintain critical communications during disasters like wildfires and blackouts when traditional infrastructure fails.",
+  },
+  {
+    title: "STEM Education & Research",
+    body: "Supporting education and research across Montana's diverse terrain and extreme temperature ranges.",
+  },
+  {
+    title: "Extreme Environment Tested",
+    body: "Solar-powered nodes operate reliably across Montana's sparse population and challenging topography.",
+  },
+];
+---
+
+<Base
+  title="Home"
+  fullTitle="MTMesh · Wilderness & Emergency Communications Network"
+>
+  <!-- Hero -->
+  <section
+    class="relative flex min-h-[520px] items-center overflow-hidden md:min-h-[560px]"
+    aria-label="Montana countryside with mesh network technology"
+  >
+    <img
+      src="/images/mtmesh-hero-large.webp"
+      alt=""
+      fetchpriority="high"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/45 to-black/30"
+    >
+    </div>
+    <div class="rise relative z-10 mx-auto max-w-4xl px-4 py-16 text-center">
+      <h1
+        class="text-4xl font-bold leading-tight text-white text-balance drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] md:text-5xl"
+      >
+        Communications for Montana's Wilderness & Emergencies
+      </h1>
+      <p
+        class="mx-auto mt-6 max-w-2xl text-lg text-white/90 drop-shadow md:text-xl"
+      >
+        Connecting wilderness areas, national parks, and providing critical
+        backup during wildfires and blackouts
+      </p>
+      <div class="mt-9 flex flex-wrap justify-center gap-4">
+        <Button href="/join/" variant="secondary" size="lg">
+          Join the Network
+        </Button>
+        <Button href="/learn/" variant="outline" size="lg" class="!text-white !border-white hover:!bg-white/10">
+          Learn More
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three entry points -->
+  <Section wide>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Card title="Learn the Basics">
+        <p class="mb-4">
+          New to mesh networks? Our world-famous
+          <a href="/learn/#eli5">Meshtastic ELI5</a> explains everything in simple
+          terms.
+        </p>
+        <Button href="/learn/">Get Started</Button>
+      </Card>
+      <Card title="Join the Network">
+        <p class="mb-4">
+          Connect your device to expand coverage into wilderness areas and
+          support emergency communications.
+        </p>
+        <Button href="/join/">Join Now</Button>
+      </Card>
+      <Card title="Build Your Own">
+        <p class="mb-4">
+          Get detailed guides for building solar-powered repeaters and aerial
+          nodes to expand coverage.
+        </p>
+        <Button href="/devices/">View Devices</Button>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Why MTMesh -->
+  <Section wide>
+    <h2 class="mb-12 text-center">Why MTMesh?</h2>
+    <div class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+      {
+        whyPoints.map((p) => (
+          <div>
+            <h3 class="mb-2">{p.title}</h3>
+            <p>{p.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <!-- Partners CTA -->
+  <Section surface class="text-center">
+    <h2 class="mb-4">Looking for Community Partners</h2>
+    <p class="mx-auto mb-8 max-w-2xl text-lg">
+      Help us build a strong network across Montana. We're seeking property
+      owners, tech enthusiasts, and community organizations.
+    </p>
+    <Button href="/partners/" variant="secondary" size="lg">
+      Become a Partner
+    </Button>
+  </Section>
+</Base>

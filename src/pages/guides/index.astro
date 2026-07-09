@@ -1,0 +1,167 @@
+---
+import Base from "../../layouts/Base.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+
+const gettingStarted = [
+  {
+    title: "Network Settings",
+    body: "Recommended Meshtastic configuration for optimal MTMesh performance including MQTT, device roles, hop counts, and broadcast intervals.",
+    href: "/guides/network-settings/",
+    cta: "View Guide",
+  },
+  {
+    title: "Buying Your First Device",
+    body: "Coming soon: Guide to selecting the right Meshtastic device for your needs and budget.",
+  },
+  {
+    title: "Flashing Firmware",
+    body: "Coming soon: Step-by-step instructions for installing Meshtastic firmware on your device.",
+  },
+  {
+    title: "Connecting to MTMesh",
+    body: "Coming soon: How to configure your device and connect to the MTMesh network.",
+  },
+];
+
+const building = [
+  {
+    title: "Solar Repeater Guide",
+    body: "Coming soon: Complete build guide for solar-powered mesh repeaters designed for Montana's climate.",
+  },
+  {
+    title: "Aerial Nodes",
+    body: "Coming soon: Deploy temporary high-altitude nodes using drones, kites, and balloons.",
+  },
+  {
+    title: "Weatherproofing",
+    body: "Coming soon: Protect your outdoor nodes from Montana's extreme weather conditions.",
+  },
+  {
+    title: "Portable Kits",
+    body: "Coming soon: Build portable mesh kits for hiking, camping, and emergency response.",
+  },
+];
+
+const advanced = [
+  {
+    title: "Range Testing",
+    body: "Coming soon: Techniques for testing and optimizing your node's range and coverage.",
+  },
+  {
+    title: "Antenna Selection",
+    body: "Coming soon: Choosing and installing the right antenna for your deployment scenario.",
+  },
+  {
+    title: "MQTT Gateway Setup",
+    body: "Coming soon: Configure your node as an MQTT gateway to bridge distant mesh networks.",
+  },
+  {
+    title: "Troubleshooting",
+    body: "Coming soon: Common issues and solutions for Meshtastic devices on MTMesh.",
+  },
+];
+---
+
+<Base
+  title="Guides"
+  fullTitle="Guides | MTMesh"
+  description="Comprehensive guides for building, configuring, and optimizing Meshtastic devices for the MTMesh network."
+>
+  <Section>
+    <div class="mb-12 text-center">
+      <h1>MTMesh Guides</h1>
+      <p class="text-lg">
+        Step-by-step instructions for building, configuring, and optimizing
+        your mesh network experience
+      </p>
+    </div>
+
+    <!-- Getting Started -->
+    <div class="mb-16">
+      <h2 class="mb-12 text-center">Getting Started</h2>
+      <div class="grid gap-8 sm:grid-cols-2">
+        {
+          gettingStarted.map((g) => (
+            <Card title={g.title}>
+              <p class:list={["mb-4", !g.href && "text-ink-muted"]}>
+                {g.body}
+              </p>
+              {g.href ? (
+                <Button href={g.href}>{g.cta}</Button>
+              ) : (
+                <Button variant="outline" disabled>
+                  Coming Soon
+                </Button>
+              )}
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Building -->
+    <div class="mb-16">
+      <h2 class="mb-12 text-center">Building</h2>
+      <div class="grid gap-8 sm:grid-cols-2">
+        {
+          building.map((g) => (
+            <Card title={g.title}>
+              <p class="mb-4 text-ink-muted">{g.body}</p>
+              <Button variant="outline" disabled>
+                Coming Soon
+              </Button>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Advanced -->
+    <div class="mb-16">
+      <h2 class="mb-12 text-center">Advanced</h2>
+      <div class="grid gap-8 sm:grid-cols-2">
+        {
+          advanced.map((g) => (
+            <Card title={g.title}>
+              <p class="mb-4 text-ink-muted">{g.body}</p>
+              <Button variant="outline" disabled>
+                Coming Soon
+              </Button>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+
+  <!-- Contributing -->
+  <Section surface class="text-center">
+    <h2 class="mb-4">Contribute to Guides</h2>
+    <p class="mx-auto mb-8 max-w-2xl text-lg">
+      Have expertise to share? Help us build comprehensive documentation for
+      the MTMesh community.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <Button
+        href="https://github.com/mtmesh/www"
+        target="_blank"
+        rel="noopener"
+        variant="secondary"
+        size="lg"
+      >
+        Contribute on GitHub
+      </Button>
+      <Button
+        href="https://discord.gg/DsReq2nr"
+        target="_blank"
+        rel="noopener"
+        variant="outline"
+        size="lg"
+      >
+        Discuss on Discord
+      </Button>
+    </div>
+  </Section>
+</Base>

@@ -1,0 +1,171 @@
+---
+import Base from "../../layouts/Base.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+import Button from "../../components/Button.astro";
+---
+
+<Base
+  title="Network Settings"
+  fullTitle="Network Settings Best Practices | MTMesh"
+  description="Recommended Meshtastic network settings for optimal MTMesh performance including MQTT, device roles, hop counts, and broadcast intervals."
+>
+  <Section>
+    <div class="mb-12 text-center">
+      <h1>Network Settings Best Practices</h1>
+      <p class="text-lg">
+        Recommended Meshtastic configuration for optimal MTMesh network
+        performance
+      </p>
+    </div>
+
+    <!-- Quick Reference Card -->
+    <Card highlight title="Quick Reference - TL;DR" class="mb-12">
+      <div class="grid gap-8 sm:grid-cols-2">
+        <ul class="list-none p-0">
+          <li class="mb-2"><strong>MQTT:</strong> Optional (see below)</li>
+          <li class="mb-2">
+            <strong>Role:</strong> Client (NOT Router & Client)
+          </li>
+        </ul>
+        <ul class="list-none p-0">
+          <li class="mb-2">
+            <strong>Hop Count:</strong> 5 (up to 7 in rural areas)
+          </li>
+          <li class="mb-2"><strong>Broadcast Intervals:</strong> 3 hours</li>
+        </ul>
+      </div>
+      <p class="text-sm text-ink-muted mt-4">
+        Following these guidelines ensures the best experience for everyone as
+        we grow.
+      </p>
+    </Card>
+
+    <!-- Detailed Guidelines -->
+    <div class="grid gap-8 sm:grid-cols-2">
+      <Card title="MQTT Settings">
+        <p class="mb-4">
+          MTMesh runs a dedicated MQTT server to bridge distant areas of
+          Montana and provide real-time mesh monitoring. This helps connect
+          isolated regions and track network health.
+        </p>
+        <p class="mb-4">
+          <strong>Want to connect?</strong> Join our
+          <a href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener"
+            >Discord</a
+          > or check
+          <a
+            href="https://www.reddit.com/r/mtmesh/"
+            target="_blank"
+            rel="noopener">Reddit</a
+          > for MQTT configuration details and server information.
+        </p>
+        <p class="font-semibold">
+          Note: MQTT is optional - the mesh works great without it!
+        </p>
+      </Card>
+
+      <Card title="Device Role">
+        <p class="mb-4">
+          Use "Client" role for best results. While "Client/Router" may seem
+          better, extensive testing shows "Client" works best for users and
+          the network.
+        </p>
+        <p class="mb-4">
+          <strong>For device-connected nodes</strong> not contributing to the
+          network, use "Client Mute" to reduce airtime.
+        </p>
+        <p class="font-semibold">
+          Recommendation: Start with "Client" role even for well-placed nodes
+        </p>
+      </Card>
+
+      <Card title="Hop Count">
+        <p class="mb-4">
+          Start with 5 hops and use the minimum needed to reach your
+          destination.
+        </p>
+        <p class="mb-4">
+          <strong>Rural areas:</strong> Use up to 7 hops for very remote locations
+          with sparse node coverage.
+        </p>
+        <p class="mb-4">
+          <strong>Dense areas:</strong> 3-4 hops may be sufficient where many nodes
+          are present.
+        </p>
+        <p class="font-semibold">
+          Recommendation: Start with 5, aim for as low as possible while
+          maintaining connectivity
+        </p>
+      </Card>
+
+      <Card title="Broadcast Intervals">
+        <p class="mb-4">
+          Reduce channel utilization with these recommended settings:
+        </p>
+        <div class="mb-4">
+          <p class="font-semibold mb-1">Device Config:</p>
+          <p class="text-sm">Node Info Broadcast: 3 Hours</p>
+        </div>
+        <div class="mb-4">
+          <p class="font-semibold mb-1">Position:</p>
+          <p class="text-sm">
+            Broadcast: 1 Hour, Smart Position: Enabled, Min Interval: 1 Min,
+            Min Distance: 100m
+          </p>
+        </div>
+        <div>
+          <p class="font-semibold mb-1">Telemetry:</p>
+          <p class="text-sm">
+            Device Metrics: 3 Hours, Sensor Metrics: 1 Hour
+          </p>
+        </div>
+      </Card>
+    </div>
+
+    <!-- Why These Settings -->
+    <Card title="Why These Settings Matter" class="mt-12">
+      <div class="rich-text">
+        <p>
+          Montana's geography presents unique challenges for mesh networking.
+          These recommendations are based on real-world testing across:
+        </p>
+        <ul>
+          <li>Sparse population density with long distances between nodes</li>
+          <li>Mountainous terrain affecting signal propagation</li>
+          <li>Extreme temperature ranges (-40°F to 100°F+)</li>
+          <li>Solar-powered nodes with limited battery capacity in winter</li>
+        </ul>
+        <p>
+          As the network grows and node density increases, these
+          recommendations may evolve. Check back periodically or join our
+          <a href="https://discord.gg/DsReq2nr" target="_blank" rel="noopener"
+            >Discord</a
+          > for updates.
+        </p>
+      </div>
+    </Card>
+
+    <!-- Questions -->
+    <div class="mt-12 text-center">
+      <h2 class="mb-4">Questions About Settings?</h2>
+      <p class="text-lg mb-6">
+        Our community is here to help with configuration and troubleshooting.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button
+          href="https://discord.gg/DsReq2nr"
+          target="_blank"
+          variant="secondary"
+          size="lg">Ask on Discord</Button
+        >
+        <Button
+          href="https://www.reddit.com/r/mtmesh/"
+          target="_blank"
+          variant="outline"
+          size="lg">Post on Reddit</Button
+        >
+      </div>
+    </div>
+  </Section>
+</Base>

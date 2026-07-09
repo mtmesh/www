@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * MTMesh design tokens (ported from the original modern-styles.css)
+ * Dark "wilderness signal" theme: signal-green on deep slate.
+ * ------------------------------------------------------------------ */
+@theme {
+  /* Brand / signal greens */
+  --color-brand: #67ea94;
+  --color-brand-light: #8ef0ac;
+  --color-accent: #2ce26a;
+
+  /* Text */
+  --color-ink: #ffffff;
+  --color-ink-light: #e0e0e0;
+  --color-ink-muted: #b0b0b0;
+
+  /* Surfaces */
+  --color-base: #2c2d3c;
+  --color-surface: #3a3b4a;
+  --color-surface-hover: #424354;
+  --color-line: #4a4b5a;
+  --color-line-soft: #3a3b4a;
+  --color-footer: #1a1b2a;
+
+  /* Dark ink used on the green header / green buttons */
+  --color-header-ink: #1a1b2a;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* ------------------------------------------------------------------ *
+ * Base element styles — mirror the original global typography so
+ * content-heavy pages read correctly without classing every node.
+ * ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base text-ink-light font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-brand font-semibold leading-tight text-balance;
+  }
+  h1 {
+    @apply text-4xl font-bold md:text-5xl;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+
+  /* Content links (anything that isn't a styled component) */
+  a:not([class]) {
+    @apply text-brand underline-offset-2 transition-colors hover:text-brand-light hover:underline;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Reusable pieces
+ * ------------------------------------------------------------------ */
+@layer components {
+  /* Flowing prose for long-form pages (learn, privacy, faq...). Apply
+     .rich-text to a wrapper and child elements inherit sensible rhythm. */
+  .rich-text :where(h2) {
+    @apply mt-10 mb-4;
+  }
+  .rich-text :where(h3) {
+    @apply mt-8 mb-3;
+  }
+  .rich-text :where(h4) {
+    @apply mt-6 mb-2;
+  }
+  .rich-text :where(p) {
+    @apply mb-4 leading-relaxed;
+  }
+  .rich-text :where(ul, ol) {
+    @apply mb-4 space-y-2 pl-6;
+  }
+  .rich-text :where(ul) {
+    @apply list-disc;
+  }
+  .rich-text :where(ol) {
+    @apply list-decimal;
+  }
+  .rich-text :where(li) {
+    @apply text-ink-light;
+  }
+  .rich-text :where(strong) {
+    @apply font-semibold text-ink;
+  }
+  .rich-text :where(a) {
+    @apply text-brand underline underline-offset-2 hover:text-brand-light;
+  }
+
+  /* Fluid table wrapper used on data pages */
+  .table-scroll {
+    @apply overflow-x-auto rounded-2xl border border-line;
+  }
+}
+
+/* Staggered load-in used on the homepage hero + cards */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

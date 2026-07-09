@@ -1,0 +1,80 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+---
+
+<Base
+  title="Privacy Policy"
+  fullTitle="Privacy Policy - MTMesh"
+  description="MTMesh Privacy Policy - Learn how we protect your privacy in our community-driven mesh network."
+>
+  <Section>
+    <div class="mb-12 text-center">
+      <h1 class="mb-4">Privacy Policy</h1>
+      <p class="text-lg">
+        MTMesh values your privacy. We are a non-commercial, community-driven
+        project, and we collect as little personal information as possible.
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2">
+      <div id="information-collection">
+        <Card title="Information We Collect">
+          <div class="rich-text">
+            <ul>
+              <li>
+                <strong>Website analytics</strong> through standard web server
+                logs.
+              </li>
+            </ul>
+            <p>
+              <strong>We do not</strong> sell, rent, or share your personal
+              information with advertisers or third parties for marketing
+              purposes.
+            </p>
+          </div>
+        </Card>
+      </div>
+
+      <div id="cookies-analytics">
+        <Card title="Cookies & Analytics">
+          <p>
+            We do not use cookies or analytics tracking on our website. Your
+            browsing activity remains private.
+          </p>
+        </Card>
+      </div>
+
+      <div id="affiliate-links">
+        <Card title="Affiliate Links">
+          <p>
+            Some pages may contain affiliate links. If you click one and make
+            a purchase, we may earn a small commission to support the MTMesh
+            network at no extra cost to you.
+          </p>
+        </Card>
+      </div>
+
+      <div id="third-party-services">
+        <Card title="Third-Party Services">
+          <p>
+            If we link to other websites or embed third-party tools, their
+            privacy practices apply. We encourage you to review the privacy
+            policies of any external services you access through our site.
+          </p>
+        </Card>
+      </div>
+
+      <div id="your-choices">
+        <Card title="Your Choices">
+          <p>
+            You may contact us to request deletion of any information you
+            have provided. We respect your right to privacy and will respond
+            to legitimate requests promptly.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </Section>
+</Base>

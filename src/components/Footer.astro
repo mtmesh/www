@@ -1,0 +1,51 @@
+---
+const social = [
+  { href: "https://www.reddit.com/r/mtmesh/", label: "Reddit", icon: "/images/social/reddit-simple.svg" },
+  { href: "https://discord.gg/DsReq2nr", label: "Discord", icon: "/images/social/discord-simple.svg" },
+  { href: "https://github.com/mtmesh/www", label: "GitHub", icon: "/images/social/github-simple.svg" },
+];
+const year = new Date().getFullYear();
+
+const footLink =
+  "text-ink-light no-underline underline-offset-2 transition-colors hover:text-accent hover:underline";
+---
+
+<footer class="border-t-2 border-line bg-footer text-ink-muted">
+  <div class="mx-auto max-w-6xl px-4 py-12 text-center text-sm">
+    <div class="mb-6 flex justify-center gap-2">
+      {
+        social.map((s) => (
+          <a
+            href={s.href}
+            target="_blank"
+            rel="noopener"
+            aria-label={s.label}
+            class="rounded p-2 opacity-80 transition hover:bg-white/5 hover:opacity-100"
+          >
+            <img src={s.icon} width="22" height="22" alt="" class="brightness-0 invert" />
+          </a>
+        ))
+      }
+    </div>
+
+    <nav aria-label="Footer" class="mb-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
+      <a href="/learn/" class={footLink}>Learn</a>
+      <a href="/join/" class={footLink}>Join</a>
+      <a href="/devices/" class={footLink}>Devices</a>
+      <a href="/partners/" class={footLink}>Partners</a>
+      <a href="/privacy/" class={footLink}>Privacy Policy</a>
+    </nav>
+
+    <p class="mx-auto max-w-2xl text-xs leading-relaxed text-ink-muted">
+      This website is a fork of
+      <a
+        href="https://www.austinmesh.org/"
+        target="_blank"
+        rel="noopener"
+        class={footLink}>Austin Mesh's site</a
+      > (which is &copy; by Tommy Ekstrand and is licensed under a Creative
+      Commons Attribution-ShareAlike 4.0 International License).
+    </p>
+    <p class="mt-3 text-xs text-ink-muted">&copy; {year} MTMesh</p>
+  </div>
+</footer>
