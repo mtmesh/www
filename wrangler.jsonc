@@ -8,6 +8,10 @@
     { "pattern": "www.mtmesh.net", "custom_domain": true }
   ],
   "assets": {
+    // Without a binding name `env.ASSETS` is undefined, and the Astro
+    // Cloudflare adapter's no-route fallback (`env.ASSETS.fetch(...)`)
+    // throws — surfacing every miss as CF error 1101 / HTTP 500.
+    "binding": "ASSETS",
     "directory": "./dist"
   },
   "observability": {

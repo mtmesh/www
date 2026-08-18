@@ -1,0 +1,74 @@
+---
+import Base from "../layouts/Base.astro";
+import Button from "../components/Button.astro";
+
+const links = [
+  { href: "/learn/", label: "Learn", body: "What a mesh network is and how MTMesh works." },
+  { href: "/join/", label: "Join", body: "Get a node on the air and connect to the mesh." },
+  { href: "/devices/", label: "Devices", body: "Radios, antennas and solar builds that hold up out here." },
+  { href: "/coverage-map/", label: "Coverage Map", body: "Where the network reaches across Montana." },
+];
+---
+
+<Base
+  title="Page not found"
+  fullTitle="Page not found · MTMesh"
+  description="No route to that page. Head back to MTMesh."
+  noindex
+>
+  <section class="mx-auto max-w-4xl px-4 py-20 text-center md:py-28">
+    <p
+      class="rise text-sm font-medium uppercase tracking-[0.35em] text-ink-muted"
+    >
+      Signal lost
+    </p>
+
+    <p
+      class="rise mt-6 font-bold leading-none text-brand text-7xl md:text-8xl"
+      style="animation-delay: 0.08s"
+      aria-hidden="true"
+    >
+      404
+    </p>
+
+    <h1 class="rise mt-6 text-3xl md:text-4xl" style="animation-delay: 0.16s">
+      No route to that page
+    </h1>
+
+    <p
+      class="rise mx-auto mt-4 max-w-xl text-lg leading-relaxed text-ink-light"
+      style="animation-delay: 0.24s"
+    >
+      The page you asked for isn&rsquo;t on the network. It may have moved, or
+      the link that sent you here is out of date.
+    </p>
+
+    <div
+      class="rise mt-8 flex flex-wrap items-center justify-center gap-3"
+      style="animation-delay: 0.32s"
+    >
+      <Button href="/" size="lg">Back to home</Button>
+      <Button href="/guides/" variant="outline" size="lg">Browse guides</Button>
+    </div>
+
+    <nav
+      aria-label="Popular pages"
+      class="rise mt-14 grid gap-4 text-left sm:grid-cols-2"
+      style="animation-delay: 0.4s"
+    >
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-2xl border border-line bg-surface p-5 no-underline shadow-md shadow-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-surface-hover hover:no-underline hover:shadow-black/25"
+          >
+            <span class="block text-lg font-semibold text-brand">
+              {link.label}
+            </span>
+            <span class="mt-1 block text-ink-light">{link.body}</span>
+          </a>
+        ))
+      }
+    </nav>
+  </section>
+</Base>
